@@ -2,26 +2,40 @@
 
 {% block body %}
 	<div class="container">
-		<form method="post">
-			{% if error %}
-				<div class="alert alert-danger">{{ error.messageKey|trans }}</div>
-			{% endif %}
+		<div class="row">
+			<div class="login-form bg-light mt-4 p-4">
+				<form method="post" class="row g-3">
 
-			<h1 class="h3 mb-3 font-weight-normal">{{ "login.title"|trans }}</h1>
-			<label for="inputEmail">{{ "login.email"|trans }}</label>
-			<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-			<label for="inputPassword">{{ "login.password"|trans }}</label>
-			<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+					<h1 class="h3 mb-3 font-weight-normal">{{ "login.title"|trans }}</h1>
 
-			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-			<div class="checkbox mb-3">
-				<label>
-					<input type="checkbox" name="_remember_me">
-					{{ "login.rememberme"|trans }}
-				</label>
+					{% if error %}
+						<div class="alert alert-danger">{{ error.messageKey|trans }}</div>
+					{% endif %}
+
+					<div class="col-6">
+						<label for="inputEmail">{{ "login.email"|trans }}</label>
+						<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+					</div>
+
+					<div class="col-6">
+						<label for="inputPassword">{{ "login.password"|trans }}</label>
+						<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+					</div>
+
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+					<div class="checkbox mb-3">
+						<label>
+							<input type="checkbox" name="_remember_me">
+							{{ "login.rememberme"|trans }}
+						</label>
+					</div>
+
+					<div class="col-6">
+						<button class="btn btn-lg btn-primary" type="submit">{{ "login.form"|trans }}</button>
+					</div>
+				</form>
 			</div>
-
-			<button class="btn btn-lg btn-primary" type="submit">{{ "login.form"|trans }}</button>
-		</form>
+		</div>
 	</div>
 {% endblock %}
