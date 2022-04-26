@@ -3,7 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}me.bio{% endblock %}
+			{% block title %}
+				{{ get_env("APP_TITLE") }}
+			{% endblock %}
 		</title>
 	
 		{% block stylesheets %}
