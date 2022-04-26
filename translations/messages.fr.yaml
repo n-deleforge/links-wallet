@@ -4,9 +4,12 @@
 "navbar.login" : "Connexion"
 "navbar.signup" : "Inscription"
 "navbar.logout" : "Déconnexion"
+"navbar.bio" : "Ma me.bio"
 
 "login.title" : "Connexion"
 "login.email" : "Courriel"
 "login.password" : "Mot de passe"
 "login.rememberme" : "Se souvenir de moi ?"
 "login.form" : "Connexion"
+
+"Invalid credentials." : "Courriel ou mot de passe incorrect."

@@ -37,6 +37,9 @@
                                 <img src="{{ app.user.avatarURI }}" alt="{{ app.user.email }}">
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="user-dropdown">
+						    <li>
+                                <a class="dropdown-item" href="#">{{ "navbar.bio"|trans }}</a>
+                            </li>
                             <li>
                                 <a class="dropdown-item" href="{{ path('app_logout') }}">{{ "navbar.logout"|trans }}</a>
                             </li>
@@ -45,7 +48,7 @@
 				{% else %}
 				    <div class="col-md-3 text-end">
                         <a href="{{ path('app_login') }}" class="btn" role="button">{{ "navbar.login"|trans }}</a>
-                        <a href="#" class="btn btn-dark" role="button">{{ "navbar.signup"|trans }}</a>
+                        <a href="{{ path('app_register') }}" class="btn btn-dark" role="button">{{ "navbar.signup"|trans }}</a>
                     </div>
 				{% endif %}
 
