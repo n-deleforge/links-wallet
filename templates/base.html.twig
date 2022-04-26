@@ -21,17 +21,34 @@
 				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 						<li>
-							<a href="{{ path('app_home') }}" class="nav-link px-2 link-secondary">Home</a>
-						</li>
-						<li>
-							<a href="#" class="nav-link px-2 link-dark">Contact</a>
+							<a href="{{ path('app_home') }}" class="nav-link px-2 link-secondary">{{ "navbar.home"|trans }}</a>
 						</li>
 					</ul>
 
-                    <div class="col-md-3 text-end">
-                        <a href="{{ path('app_login') }}" class="btn" role="button">Login</a>
-                        <a href="#" class="btn btn-dark" role="button">Sign-up</a>
+				{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+					<div class="dropdown">
+                        <button
+                            class="dropdown-toggle btn"
+                            type="button"
+                            id="user-dropdown"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            >
+                                <img src="{{ app.user.avatarURI }}" alt="{{ app.user.email }}">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="user-dropdown">
+                            <li>
+                                <a class="dropdown-item" href="{{ path('app_logout') }}">{{ "navbar.logout"|trans }}</a>
+                            </li>
+                        </ul>
                     </div>
+				{% else %}
+				    <div class="col-md-3 text-end">
+                        <a href="{{ path('app_login') }}" class="btn" role="button">{{ "navbar.login"|trans }}</a>
+                        <a href="#" class="btn btn-dark" role="button">{{ "navbar.signup"|trans }}</a>
+                    </div>
+				{% endif %}
+
 				</div>
 			</div>
 		</header>

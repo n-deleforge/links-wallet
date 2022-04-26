@@ -16,7 +16,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method UserDetail[]    findAll()
  * @method UserDetail[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class UserLinkRepository extends ServiceEntityRepository
+class UserDetailRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
