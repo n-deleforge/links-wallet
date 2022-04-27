@@ -1,10 +1,10 @@
-"homepage.welcome" : "Bienvenue sur me.bio"
+"homepage.welcome" : "Bienvenue sur read.me"
 
 "navbar.home" : "Accueil"
 "navbar.login" : "Connexion"
 "navbar.signup" : "Inscription"
 "navbar.logout" : "Déconnexion"
-"navbar.bio" : "Ma me.bio"
+"navbar.bio" : "Mon read.me"
 
 "login.title" : "Connexion"
 "login.email" : "Courriel"
@@ -17,5 +17,10 @@
 "register.password" : "Mot de passe"
 "register.confirm" : "Confirmation du mot de passe"
 "register.form" : "S'inscrire"
+
+"email.title" : "Bienvenue"
+"email.confirm" : "Merci de confirmer votre courriel en cliquant sur le lien suivant :"
+"email.link" : "Confirmer mon courriel"
+"email.expire" : "Ce lien expirera dans "
 
 "Invalid credentials." : "Courriel ou mot de passe incorrect."
