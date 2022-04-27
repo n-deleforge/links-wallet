@@ -12,4 +12,10 @@
 "login.rememberme" : "Se souvenir de moi ?"
 "login.form" : "Connexion"
 
+"register.title" : "Inscription"
+"register.email" : "Courriel"
+"register.password" : "Mot de passe"
+"register.confirm" : "Confirmation du mot de passe"
+"register.form" : "S'inscrire"
+
 "Invalid credentials." : "Courriel ou mot de passe incorrect."
