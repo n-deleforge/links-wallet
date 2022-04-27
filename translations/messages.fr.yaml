@@ -24,3 +24,5 @@
 "email.expire" : "Ce lien expirera dans "
 
 "Invalid credentials." : "Courriel ou mot de passe incorrect."
+"Invalid CSRF token." : "Une erreur est survenue, merci de réessayer."
+"There is already an account with this email" : "Ce courriel est déjà utilisé"

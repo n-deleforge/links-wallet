@@ -2,75 +2,39 @@
 
 {% block body %}
 	<div class="container">
-			<div class="row">
-				<div class="login-form bg-light mt-4 p-4">
-	
-					{{ form_start(registrationForm) }}
-	
-	                	<h1>{{ 'register.title'|trans }}</h1>
-	
-	                    {% for flash_error in app.flashes('verify_email_error') %}
-	                        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-	                    {% endfor %}
-
-						<div class="col-12 mt-3">
-	                    {{ form_row(registrationForm.email, { 'label': 'register.email'|trans })  }}
-						</div>
-
-						<div class="row">
-							<div class="col-6">
-							{{ form_row(registrationForm.plainPassword.password, { 'label' : 'register.password'|trans }) }}
-							</div>
-
-							<div class="col-6">
-							{{ form_row(registrationForm.plainPassword.confirm, { 'label' : 'register.confirm'|trans }) }}
-							</div>
-						</div>
-
-						<div class="col-6">
-							<button class="btn btn-lg btn-primary" type="submit">{{ 'register.form'|trans }}</button>
-						</div>
-
-						{{ form_rest(registrationForm) }}
-					{{ form_end(registrationForm) }}
-	
-				</div>
-			</div>
-		</div>
-	
-	
-
-	{# <div class="container">
 		<div class="row">
 			<div class="login-form bg-light mt-4 p-4">
-				<form method="post" class="row">
 
-					<h1 class="h3 mb-3 font-weight-normal">{{ "register.title"|trans }}</h1>
+				{{ form_start(registrationForm) }}
 
-					{% for flash_error in app.flashes('verify_email_error') %}
-						<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-					{% endfor %}
+				<h1 class="h3 mb-3 font-weight-normal">{{ 'register.title'|trans }}</h1>
 
-					<div class="col-12 mb-3">
-						<label for="inputEmail">{{ "register.email"|trans }}</label>
-						<input type="email" name="email" id="inputEmail" class="form-control" required autofocus>
+				{% for flash_error in app.flashes('verify_email_error') %}
+					<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+				{% endfor %}
+
+				<div class="col-12 mt-3">
+					{{ form_row(registrationForm.email, { 'label': 'register.email'|trans })  }}
+				</div>
+
+				<div class="row">
+					<div class="col-6">
+						{{ form_row(registrationForm.plainPassword.password, { 'label' : 'register.password'|trans }) }}
 					</div>
 
 					<div class="col-6">
-						<label for="inputPassword">{{ "register.password"|trans }}</label>
-						<input type="password" name="password" id="inputPassword" class="form-control" required>
+						{{ form_row(registrationForm.plainPassword.confirm, { 'label' : 'register.confirm'|trans }) }}
 					</div>
+				</div>
 
-					<div class="col-6">
-						<label for="inputConfirm">{{ "register.confirm"|trans }}</label>
-						<input type="password" name="confirm" id="inputConfirm" class="form-control" required>
-					</div>
+				<div class="col-6">
+					<button class="btn btn-lg btn-primary" type="submit">{{ 'register.form'|trans }}</button>
+				</div>
 
-					<div class="col-6 my-3">
-						<button class="btn btn-lg btn-primary" type="submit">{{ "register.form"|trans }}</button>
-					</div>
-				</form>
+				{{ form_rest(registrationForm) }}
+				{{ form_end(registrationForm) }}
+
 			</div>
 		</div>
-	</div> #}
+	</div>
 {% endblock %}
