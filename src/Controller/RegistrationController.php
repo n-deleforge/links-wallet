@@ -8,13 +8,17 @@ use App\Security\EmailVerifier;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
+use Symfony\Component\Security\Http\Authenticator\FormLoginAuthenticator;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
+
 
 class RegistrationController extends AbstractController
 {
@@ -28,7 +32,7 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/register", name="app_register")
      */
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, FormLoginAuthenticator $formLoginAuthenticator, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -56,6 +60,14 @@ class RegistrationController extends AbstractController
                     ->subject('read.me')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );
+
+            $userAuthenticator->authenticateUser(
+                $user,
+                $formLoginAuthenticator,
+                $request
+            );
+
+            return $this->redirectToRoute('app_home');
         }
 
         return $this->render('registration/register.html.twig', [
@@ -73,12 +85,12 @@ class RegistrationController extends AbstractController
         try {
             $this->emailVerifier->handleEmailConfirmation($request, $this->getUser());
         } catch (VerifyEmailExceptionInterface $exception) {
-            $this->addFlash('verify_email_error', $translator->trans($exception->getReason(), [], 'VerifyEmailBundle'));
+            $this->addFlash('error', $translator->trans('email.incorrect'));
 
             return $this->redirectToRoute('app_register');
         }
 
-        $this->addFlash('success', 'Your email address has been verified.');
+        $this->addFlash('success', $translator->trans('email.success'));
 
         return $this->redirectToRoute('app_home');
     }

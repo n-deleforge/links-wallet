@@ -14,7 +14,6 @@ class DefaultController extends AbstractController
      */
     public function index(): Response
     {
-
         $generator = new Generator;
         $paragraph = $generator->getParagraphs(2);
 

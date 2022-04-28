@@ -19,9 +19,11 @@
 "register.form" : "S'inscrire"
 
 "email.title" : "Bienvenue"
-"email.confirm" : "Merci de confirmer votre courriel en cliquant sur le lien suivant :"
-"email.link" : "Confirmer mon courriel"
+"email.confirm" : "Merci de valider votre courriel en cliquant sur le lien suivant :"
+"email.link" : "valider mon compte"
 "email.expire" : "Ce lien expirera dans "
+"email.success" : "Votre compte est validé !"
+"email.incorrect" : "Une erreur est survenue lors de la vérification de votre compte."
 
 "Invalid credentials." : "Courriel ou mot de passe incorrect."
 "Invalid CSRF token." : "Une erreur est survenue, merci de réessayer."

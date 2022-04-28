@@ -1,4 +1,8 @@
-<h1>{{ 'email.title'|trans }}</h1>
+<div class="container">
+	<div class="row">
+        <h1 class="h3 mb-3 font-weight-normal">{{ 'email.title'|trans }}</h1>
 
-<p>{{ 'email.confirm'|trans }} <a href="{{ signedUrl }}">{{ 'email.link'|trans }}</a>.</p>
-<p>{{ 'email.expire'|trans }} {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.</p>
+        <p>{{ 'email.confirm'|trans }} <a href="{{ signedUrl }}">{{ 'email.link'|trans }}</a>.</p>
+        <p>{{ 'email.expire'|trans }} {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.</p>
+    </div>
+</div>

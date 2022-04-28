@@ -18,12 +18,12 @@ class AppFixtures extends Fixture
     
     public function load(ObjectManager $manager): void
     {
-        $user = new User();
-        $user->setEmail("hello@nicolas-deleforge.fr");
-        $password = $this->hasher->hashPassword($user, 'password');
-        $user->setPassword($password);
+        // $user = new User();
+        // $user->setEmail("hello@nicolas-deleforge.fr");
+        // $password = $this->hasher->hashPassword($user, 'password');
+        // $user->setPassword($password);
 
-        $manager->persist($user);
+        // $manager->persist($user);
         $manager->flush();
     }
 }
