@@ -5,7 +5,7 @@
     <h1>{{ "profile.welcome"|trans }}</h1>
 
         <div class="col p-3 bg-light mt-3">
-            <p>{{ "profile.hello"|trans }}, </p>
+            <p>{{ "profile.hello"|trans }} {{ app.user.name }},</p>
 
                 {% if (app.user.isVerified) %}
                     

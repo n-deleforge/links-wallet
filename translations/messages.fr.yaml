@@ -1,11 +1,14 @@
+# Homepage
 "homepage.welcome" : "Bienvenue sur read.me"
 
+# Navbar
 "navbar.home" : "Accueil"
 "navbar.login" : "Connexion"
 "navbar.signup" : "Inscription"
 "navbar.logout" : "Déconnexion"
 "navbar.bio" : "Mon read.me"
 
+# Login
 "login.title" : "Connexion"
 "login.email" : "Courriel"
 "login.password" : "Mot de passe"
@@ -14,12 +17,15 @@
 "login.remember" : "Se souvenir de moi ?"
 "login.help" : "Cochez cette case si vous voulez rester connecté. Ne pas utiliser sur un appareil public !"
 
+# Register
 "register.title" : "Inscription"
 "register.email" : "Courriel"
+"register.username" : "Nom d'utilisateur"
 "register.password" : "Mot de passe"
 "register.confirm" : "Confirmation du mot de passe"
 "register.form" : "S'inscrire"
 
+# Email
 "email.title" : "Bienvenue"
 "email.confirm" : "Merci de valider votre compte en cliquant sur le lien suivant :"
 "email.link" : "validation"
@@ -27,11 +33,14 @@
 "email.success" : "Votre compte est validé !"
 "email.incorrect" : "Une erreur est survenue lors de la vérification de votre compte."
 
+# Custom error message for login or register
 "Invalid credentials." : "Courriel ou mot de passe incorrect."
 "Invalid CSRF token." : "Une erreur est survenue, merci de réessayer."
 "There is already an account with this email" : "Ce courriel est déjà utilisé"
 "Your email must be valid, you will have to confirm your subscription with a link sent by email." : "Votre email doit être valide, vous allez confirmer votre inscription avec un lien envoyé par courriel."
+"The username will be used to display and share your profile." : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profile."
 
+# Profile
 "profile.welcome" : "Bienvenue sur votre espace personnel"
 "profile.hello" : "Bonjour"
 "profile.notVerified" : "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir utiliser l'application."

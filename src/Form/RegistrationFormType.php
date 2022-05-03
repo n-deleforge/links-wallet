@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Length;
@@ -22,6 +23,15 @@ class RegistrationFormType extends AbstractType
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),
+                ]
+            ])
+            ->add('name', TextType::class, [
+                'help' => "The username will be used to display and share your profile.",
+                'required' => true,
+                'constraints' => [
+                    new Length([
+                        'min' => 4
+                    ]),
                 ]
             ])
             ->add('plainPassword', RepeatedType::class, [

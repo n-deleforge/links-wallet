@@ -30,6 +30,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $email;
 
     /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $name;
+
+    /**
      * @ORM\Column(type="json")
      */
     private $roles = [];
@@ -44,11 +49,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
-
-    public function __construct()
-    {
-        $this->userLinks = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -156,6 +156,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }
