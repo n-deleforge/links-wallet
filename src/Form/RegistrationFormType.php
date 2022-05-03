@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Translation\TranslatableMessage;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
@@ -19,16 +20,18 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'help' => 'Your email must be valid, you will have to confirm your subscription with a link sent by email.',
+                'help' => new TranslatableMessage('register.email.help'),
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),
                 ]
             ])
             ->add('name', TextType::class, [
-                'help' => "The username will be used to display and share your profile.",
+                'help' => new TranslatableMessage('register.name.help'),
+                'invalid_message' => "Prout",
                 'required' => true,
                 'constraints' => [
+                    new NotBlank(),
                     new Length([
                         'min' => 4
                     ]),
@@ -36,6 +39,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('plainPassword', RepeatedType::class, [
                     'type' => PasswordType::class,
+                    'invalid_message' => "The password fields must match.",
                     'required' => true,
                     'mapped' => false,
                     'constraints' => [
@@ -46,7 +50,10 @@ class RegistrationFormType extends AbstractType
                         ]),
                     ],
                     'first_name' => 'password',
-                    'second_name' => 'confirm'
+                    'second_name' => 'confirm',
+                    'first_options' => [
+                        'help' => new TranslatableMessage('register.password.help')
+                    ]
                 ]
             );
     }

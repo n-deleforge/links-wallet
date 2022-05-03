@@ -15,7 +15,7 @@
 "login.rememberme" : "Se souvenir de moi ?"
 "login.form" : "Connexion"
 "login.remember" : "Se souvenir de moi ?"
-"login.help" : "Cochez cette case si vous voulez rester connecté. Ne pas utiliser sur un appareil public !"
+"login.help" : "Cochez cette case si vous voulez rester connecté après avoir quitté l'application. Ne pas utiliser sur un appareil public !"
 
 # Register
 "register.title" : "Inscription"
@@ -24,6 +24,9 @@
 "register.password" : "Mot de passe"
 "register.confirm" : "Confirmation du mot de passe"
 "register.form" : "S'inscrire"
+"register.email.help" : "Votre email doit être valide, vous allez devoir confirmer votre inscription avec un lien envoyé par courriel."
+"register.name.help" : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
+"register.password.help" : "Les deux mots de passe doivent être identiques et contenir au moins 6 caractères."
 
 # Email
 "email.title" : "Bienvenue"
@@ -37,8 +40,9 @@
 "Invalid credentials." : "Courriel ou mot de passe incorrect."
 "Invalid CSRF token." : "Une erreur est survenue, merci de réessayer."
 "There is already an account with this email" : "Ce courriel est déjà utilisé"
-"Your email must be valid, you will have to confirm your subscription with a link sent by email." : "Votre email doit être valide, vous allez confirmer votre inscription avec un lien envoyé par courriel."
-"The username will be used to display and share your profile." : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profile."
+"The password fields must match." : "Les deux mots de passe ne sont pas identiques."
+# "Your email must be valid, you will have to confirm your subscription with a link sent by email." : "Votre email doit être valide, vous allez devoir confirmer votre inscription avec un lien envoyé par courriel."
+# "The username will be used to display and share your profile." : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
 
 # Profile
 "profile.welcome" : "Bienvenue sur votre espace personnel"
