@@ -11,6 +11,8 @@
 "login.password" : "Mot de passe"
 "login.rememberme" : "Se souvenir de moi ?"
 "login.form" : "Connexion"
+"login.remember" : "Se souvenir de moi ?"
+"login.help" : "Cochez cette case si vous voulez rester connecté. Ne pas utiliser sur un appareil public !"
 
 "register.title" : "Inscription"
 "register.email" : "Courriel"
@@ -19,8 +21,8 @@
 "register.form" : "S'inscrire"
 
 "email.title" : "Bienvenue"
-"email.confirm" : "Merci de valider votre courriel en cliquant sur le lien suivant :"
-"email.link" : "valider mon compte"
+"email.confirm" : "Merci de valider votre compte en cliquant sur le lien suivant :"
+"email.link" : "validation"
 "email.expire" : "Ce lien expirera dans "
 "email.success" : "Votre compte est validé !"
 "email.incorrect" : "Une erreur est survenue lors de la vérification de votre compte."
@@ -28,3 +30,8 @@
 "Invalid credentials." : "Courriel ou mot de passe incorrect."
 "Invalid CSRF token." : "Une erreur est survenue, merci de réessayer."
 "There is already an account with this email" : "Ce courriel est déjà utilisé"
+"Your email must be valid, you will have to confirm your subscription with a link sent by email." : "Votre email doit être valide, vous allez confirmer votre inscription avec un lien envoyé par courriel."
+
+"profile.welcome" : "Bienvenue sur votre espace personnel"
+"profile.hello" : "Bonjour"
+"profile.notVerified" : "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir utiliser l'application."

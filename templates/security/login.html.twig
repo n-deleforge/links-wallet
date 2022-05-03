@@ -2,73 +2,50 @@
 
 {% block body %}
 	<div class="container">
-			<div class="row">
-				<div class="login-form bg-light mt-4 p-4">
-	
-					{{ form_start(loginForm) }}
-	
-					<h1 class="h3 mb-3 font-weight-normal">{{ "login.title"|trans }}</h1>
-	
-					{% if error %}
-						<div class="alert alert-danger">{{ error.messageKey|trans }}</div>
-					{% endif %}
-	
-					<div class="row">
-						<div class="col-6">
-							{{ form_row(loginForm.email, { 
+		<div class="row">
+			<div class="login-form bg-light mt-4 p-4">
+
+				{{ form_start(loginForm) }}
+
+				<h1 class="h3 mb-3 font-weight-normal">{{ "login.title"|trans }}</h1>
+
+				{% if error %}
+					<div class="alert alert-danger">{{ error.messageKey|trans }}</div>
+				{% endif %}
+
+				<div class="row">
+					<div class="col-6">
+						{{ form_row(loginForm.email, {
 								'label': 'login.email'|trans, 
 								'value': lastEmail 
 								}) 
 							}}
-						</div>
-	
-						<div class="col-6">
-							{{ form_row(loginForm.plainPassword, { 'label': 'login.password'|trans })  }}
-						</div>
 					</div>
-	
-					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-	
-					<div class="col-12">
-						<button class="btn btn-lg btn-primary" type="submit">{{ "login.form"|trans }}</button>
+
+					<div class="col-6">
+						{{ form_row(loginForm.plainPassword, { 'label': 'login.password'|trans })  }}
 					</div>
-	
-					{{ form_rest(loginForm) }}
-					{{ form_end(loginForm) }}
-	
 				</div>
+
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+				<div class="col-12 mb-3">
+					<label>
+						<input type="checkbox" name="_remember_me" class="form-check-input"> {{ "login.remember"|trans }}
+					</label>
+					<p class="form-text mb-0 help-text">{{ "login.help"|trans }}</p>
+				</div>
+
+				<div class="col-12">
+					<button class="btn btn-lg btn-primary" type="submit">
+						{{ "login.form"|trans }}
+					</button>
+				</div>
+
+				{{ form_rest(loginForm) }}
+				{{ form_end(loginForm) }}
+
 			</div>
 		</div>
-
-	{# <form method="post" class="row">
-
-		<h1 class="h3 mb-3 font-weight-normal">{{ "login.title"|trans }}</h1>
-
-		{% if error %}
-			<div class="alert alert-danger">{{ error.messageKey|trans }}</div>
-		{% endif %}
-
-		<div class="col-6">
-			<label for="inputEmail">{{ "login.email"|trans }}</label>
-			<input type="email" value="{{ lastEmail }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-		</div>
-
-		<div class="col-6">
-			<label for="inputPassword">{{ "login.password"|trans }}</label>
-			<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-		</div>
-
-		<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-		<div class="checkbox my-3">
-			<label>
-				<input type="checkbox" name="_remember_me">
-				{{ "login.rememberme"|trans }}
-			</label>
-		</div>
-
-		<div class="col-6">
-			<button class="btn btn-lg btn-primary" type="submit">{{ "login.form"|trans }}</button>
-		</div>
-	</form> #}
+	</div>
 {% endblock %}

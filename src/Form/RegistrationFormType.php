@@ -18,6 +18,7 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
+                'help' => 'Your email must be valid, you will have to confirm your subscription with a link sent by email.',
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),
