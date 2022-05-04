@@ -6,7 +6,8 @@
 "navbar.login" : "Connexion"
 "navbar.signup" : "Inscription"
 "navbar.logout" : "Déconnexion"
-"navbar.bio" : "Mon read.me"
+"navbar.readme" : "Mon readme"
+"navbar.settings" : "Paramètres"
 
 # Login
 "login.title" : "Connexion"
@@ -24,14 +25,15 @@
 "register.password" : "Mot de passe"
 "register.confirm" : "Confirmation du mot de passe"
 "register.form" : "S'inscrire"
-"register.email.help" : "Votre email doit être valide, vous allez devoir confirmer votre inscription avec un lien envoyé par courriel."
+"register.email.help" : "Votre courriel doit être valide, vous allez devoir confirmer votre inscription avec un lien envoyé par courriel."
 "register.name.help" : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
-"register.password.help" : "Les deux mots de passe doivent être identiques et contenir au moins 6 caractères."
+"register.password.help" : "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
 
 # Email
 "email.title" : "Bienvenue"
 "email.confirm" : "Merci de valider votre compte en cliquant sur le lien suivant :"
-"email.link" : "validation"
+"email.link" : "valider"
+"email.secondLink" : "Si le lien ne fonctionne, vous pouvez copier coller l'adresse directement dans la barre d'adresse de votre navigateur : "
 "email.expire" : "Ce lien expirera dans "
 "email.success" : "Votre compte est validé !"
 "email.incorrect" : "Une erreur est survenue lors de la vérification de votre compte."
@@ -44,7 +46,14 @@
 # "Your email must be valid, you will have to confirm your subscription with a link sent by email." : "Votre email doit être valide, vous allez devoir confirmer votre inscription avec un lien envoyé par courriel."
 # "The username will be used to display and share your profile." : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
 
-# Profile
-"profile.welcome" : "Bienvenue sur votre espace personnel"
-"profile.hello" : "Bonjour"
-"profile.notVerified" : "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir utiliser l'application."
+# Settings
+"settings.title" : "Paramètres"
+"settings.modifyUsername.title" : "Modifier nom d'utilisateur"
+"settings.modifyUsername.form" : "Mettre à jour"
+"settings.modifyUsername.success" : "Nom d'utilisateur mis à jour !"
+
+# Readme
+"readme.title" : "Mon readme"
+
+# All
+"notVerified" : "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir pleinement utiliser l'application."

@@ -13,6 +13,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Translation\TranslatableMessage;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class RegistrationFormType extends AbstractType
 {
@@ -28,7 +29,6 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('name', TextType::class, [
                 'help' => new TranslatableMessage('register.name.help'),
-                'invalid_message' => "Prout",
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),
@@ -44,10 +44,7 @@ class RegistrationFormType extends AbstractType
                     'mapped' => false,
                     'constraints' => [
                         new NotBlank(),
-                        new Length([
-                            'min' => 6,
-                            'max' => 4096,
-                        ]),
+                        new Regex('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#\$%\^&\*+])[a-zA-Z\d!@#\$%\^&\*+]{6,4096}$/')
                     ],
                     'first_name' => 'password',
                     'second_name' => 'confirm',

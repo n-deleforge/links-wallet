@@ -39,12 +39,9 @@
                                 <img src="{{ app.user.avatarURI }}" alt="{{ app.user.email }}">
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="user-dropdown">
-						    <li>
-                                <a class="dropdown-item" href="{{ path('app_profile') }}">{{ "navbar.bio"|trans }}</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="{{ path('app_logout') }}">{{ "navbar.logout"|trans }}</a>
-                            </li>
+						    <li><a class="dropdown-item" href="{{ path('app_readme') }}">{{ "navbar.readme"|trans }}</a></li>
+							<li><a class="dropdown-item" href="{{ path('app_settings') }}">{{ "navbar.settings"|trans }}</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_logout') }}">{{ "navbar.logout"|trans }}</a></li>
                         </ul>
                     </div>
 				{% else %}
@@ -57,6 +54,14 @@
 				</div>
 			</div>
 		</header>
+
+		{% if app.user and not app.user.isVerified %}
+			<div class="container">
+				<div class="row">
+            		<div class="alert alert-danger">{{ "notVerified"|trans }}</div>
+				</div>
+			</div>
+		{% endif %}
 
 		{% for error in app.flashes('error') %}
 			<div class="container">

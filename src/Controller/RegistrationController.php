@@ -58,7 +58,7 @@ class RegistrationController extends AbstractController
                     ->from(new Address('hello@nicolas-deleforge.fr', 'read.me'))
                     ->to($user->getEmail())
                     ->subject('read.me')
-                    ->htmlTemplate('registration/confirmation_email.html.twig')
+                    ->htmlTemplate('registration/email.html.twig')
             );
 
             $userAuthenticator->authenticateUser(
@@ -67,7 +67,7 @@ class RegistrationController extends AbstractController
                 $request
             );
 
-            return $this->redirectToRoute('app_profile');
+            return $this->redirectToRoute('app_home');
         }
 
         return $this->render('registration/register.html.twig', [
