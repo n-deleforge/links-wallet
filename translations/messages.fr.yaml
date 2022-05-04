@@ -21,13 +21,13 @@
 # Register
 "register.title" : "Inscription"
 "register.email" : "Courriel"
-"register.username" : "Nom d'utilisateur"
+"register.email.help" : "Votre courriel doit être valide, vous allez devoir confirmer votre inscription avec un lien envoyé par courriel."
+"register.name" : "Nom d'utilisateur"
+"register.name.help" : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
 "register.password" : "Mot de passe"
+"register.password.help" : "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
 "register.confirm" : "Confirmation du mot de passe"
 "register.form" : "S'inscrire"
-"register.email.help" : "Votre courriel doit être valide, vous allez devoir confirmer votre inscription avec un lien envoyé par courriel."
-"register.name.help" : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
-"register.password.help" : "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
 
 # Email
 "email.title" : "Bienvenue"
@@ -46,11 +46,30 @@
 # "Your email must be valid, you will have to confirm your subscription with a link sent by email." : "Votre email doit être valide, vous allez devoir confirmer votre inscription avec un lien envoyé par courriel."
 # "The username will be used to display and share your profile." : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
 
-# Settings
+# Settings homepage
 "settings.title" : "Paramètres"
-"settings.modifyUsername.title" : "Modifier nom d'utilisateur"
-"settings.modifyUsername.form" : "Mettre à jour"
-"settings.modifyUsername.success" : "Nom d'utilisateur mis à jour !"
+"settings.profile" : "Information de base"
+"settings.profile.changeName" : "Changer nom utilisateur"
+"settings.profile.changeEmail" : "Changer courriel"
+"settings.profile.changePassword" : "Changer mot de passe"
+"settings.data" : "Données et profil"
+"settings.data.deleteAccount" : "Supprimer mon compte"
+
+# Settings name
+"settings.modifyName.title" : "Modifier nom d'utilisateur"
+"settings.modifyName.name" : "Nom d'utilisateur"
+"settings.modifyName.name.help" : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
+"settings.modifyName.form" : "Mettre à jour"
+"settings.modifyName.success" : "Nom d'utilisateur mis à jour !"
+
+# Settings email
+"settings.modifyEmail.title" : "Modifier courriel"
+"settings.mail.help" : "Votre courriel doit être valide, vous allez devoir confirmer votre nouveau courriel avec un lien envoyé sur celui-ci."
+"settings.modifyEmail.form" : "Mettre à jour"
+"settings.modifyEmail.success" : "Courriel mis à jour !"
+"settings.modifyEmail.notVerified" : "Votre courriel n'a pas été validé, il est impossible de changer votre courriel tant que celui-ci n'a pas été validé."
+
+# Settings password
 
 # Readme
 "readme.title" : "Mon readme"

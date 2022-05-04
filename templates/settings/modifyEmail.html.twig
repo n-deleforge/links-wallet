@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+		<div class="row">
+			<div class="login-form bg-light mt-4 p-4">
+				<h1 class="h3 mb-3 font-weight-normal">{{ 'settings.modifyEmail.title'|trans }}</h1>
+
+				{% if not app.user.isVerified %}
+					<p>{{ 'settings.modifyEmail.notVerified'|trans }}</p>
+				{% else %} 
+					{{ form_start(emailForm) }}
+
+					<div class="col-12 mt-3">
+						{{ form_row(emailForm.email, { 'label': 'register.email'|trans })  }}
+					</div>
+
+					<div class="col-6">
+						<button class="btn btn-lg btn-primary" type="submit">{{ 'settings.modifyEmail.form'|trans }}</button>
+					</div>
+
+					{{ form_rest(emailForm) }}
+					{{ form_end(emailForm) }}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

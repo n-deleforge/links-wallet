@@ -2,7 +2,8 @@
 
 namespace App\Controller;
 
-use App\Form\NameType;
+use App\Form\EmailFormType;
+use App\Form\NameFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,22 +29,22 @@ class SettingsController extends AbstractController
     }
 
     /**
-     * @Route("/settings/modify/username", name="app_modify_username")
+     * @Route("/settings/modify/name", name="app_modify_name")
      */
-    public function modifyUsername(Request $request, EntityManagerInterface $entityManager): Response
+    public function modifyName(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
-        $form = $this->createForm(NameType::class, $user);
+        $form = $this->createForm(NameFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', new TranslatableMessage('settings.modifyUsername.success'));
+            $this->addFlash('success', new TranslatableMessage('settings.modifyName.success'));
         }
 
-        return $this->render('settings/modifyUsername.html.twig', [
+        return $this->render('settings/modifyName.html.twig', [
             'nameForm' => $form->createView(),
             'user' => $user
         ]);
@@ -52,9 +53,23 @@ class SettingsController extends AbstractController
     /**
      * @Route("/settings/modify/email", name="app_modify_email")
      */
-    public function modifyEmail(): Response
+    public function modifyEmail(Request $request, EntityManagerInterface $entityManager): Response
     {
-        return $this->render('settings/index.html.twig');
+        $user = $this->security->getUser();
+        $form = $this->createForm(EmailFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            $this->addFlash('success', new TranslatableMessage('settings.modifyEmail.success'));
+        }
+
+        return $this->render('settings/modifyEmail.html.twig', [
+            'emailForm' => $form->createView(),
+            'user' => $user
+        ]);
     }
 
     /**

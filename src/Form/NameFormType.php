@@ -11,13 +11,13 @@ use Symfony\Component\Translation\TranslatableMessage;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class NameType extends AbstractType
+class NameFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('name', TextType::class, [
-                'help' => new TranslatableMessage('register.name.help'),
+                'help' => new TranslatableMessage('settings.modifyName.name.help'),
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),
