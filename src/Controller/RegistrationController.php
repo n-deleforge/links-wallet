@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 use Symfony\Component\Security\Http\Authenticator\FormLoginAuthenticator;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -23,10 +24,12 @@ use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 class RegistrationController extends AbstractController
 {
     private EmailVerifier $emailVerifier;
+    private $security;
 
-    public function __construct(EmailVerifier $emailVerifier)
+    public function __construct(EmailVerifier $emailVerifier, Security $security)
     {
         $this->emailVerifier = $emailVerifier;
+        $this->security = $security;
     }
 
     /**
@@ -91,6 +94,26 @@ class RegistrationController extends AbstractController
         }
 
         $this->addFlash('success', $translator->trans('email.success'));
+
+        return $this->redirectToRoute('app_home');
+    }
+
+    /**
+     * @Route("/verify/resend", name="app_resend_email")
+     */
+    public function resendEmail()
+    {
+        $user = $this->security->getUser();
+
+        $this->emailVerifier->sendEmailConfirmation(
+            'app_verify_email',
+            $user,
+            (new TemplatedEmail())
+                ->from(new Address('hello@nicolas-deleforge.fr', 'read.me'))
+                ->to($user->getEmail())
+                ->subject('read.me')
+                ->htmlTemplate('registration/email.html.twig')
+        );
 
         return $this->redirectToRoute('app_home');
     }

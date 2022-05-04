@@ -1,18 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container">
+	<div class="container">
+		<h1>{{ "settings.title"|trans }}</h1>
+
 		<div class="row">
 			<div class="login-form bg-light mt-4 p-4">
 				<h1 class="h3 mb-3 font-weight-normal">{{ 'settings.modifyEmail.title'|trans }}</h1>
 
 				{% if not app.user.isVerified %}
 					<p>{{ 'settings.modifyEmail.notVerified'|trans }}</p>
-				{% else %} 
+				{% else %}
 					{{ form_start(emailForm) }}
 
 					<div class="col-12 mt-3">
-						{{ form_row(emailForm.email, { 'label': 'register.email'|trans })  }}
+						{{ form_row(emailForm.email, { 'label': 'settings.modifyEmail.email'|trans })  }}
 					</div>
 
 					<div class="col-6">

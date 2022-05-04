@@ -37,6 +37,8 @@
 "email.expire" : "Ce lien expirera dans "
 "email.success" : "Votre compte est validé !"
 "email.incorrect" : "Une erreur est survenue lors de la vérification de votre compte."
+"email.notVerified" : "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir pleinement utiliser l'application."
+"email.resend" : "Renvoyer un courriel de vérification"
 
 # Custom error message for login or register
 "Invalid credentials." : "Courriel ou mot de passe incorrect."
@@ -64,15 +66,20 @@
 
 # Settings email
 "settings.modifyEmail.title" : "Modifier courriel"
-"settings.mail.help" : "Votre courriel doit être valide, vous allez devoir confirmer votre nouveau courriel avec un lien envoyé sur celui-ci."
+"settings.modifyEmail.email" : "Courriel"
+"settings.modifyEmail.email.help" : "Votre courriel doit être valide, il sera utilisé en cas de problème de connexion."
 "settings.modifyEmail.form" : "Mettre à jour"
 "settings.modifyEmail.success" : "Courriel mis à jour !"
 "settings.modifyEmail.notVerified" : "Votre courriel n'a pas été validé, il est impossible de changer votre courriel tant que celui-ci n'a pas été validé."
 
 # Settings password
+"settings.modifyPassword.title" : "Modifier mot de passe"
+"settings.modifyPassword.password" : "Mot de passe"
+"settings.changePassword.help" : "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
+"settings.modifyPassword.confirm" : "Confirmation du mot de passe"
+"settings.modifyPassword.form" : "Mettre à jour"
+"settings.modifyPassword.success" : "Votre mot de passe a été mis à jour !"
 
 # Readme
 "readme.title" : "Mon readme"
 
-# All
-"notVerified" : "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir pleinement utiliser l'application."

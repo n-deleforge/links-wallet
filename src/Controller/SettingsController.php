@@ -4,10 +4,12 @@ namespace App\Controller;
 
 use App\Form\EmailFormType;
 use App\Form\NameFormType;
+use App\Form\PasswordFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Translation\TranslatableMessage;
@@ -75,9 +77,30 @@ class SettingsController extends AbstractController
     /**
      * @Route("/settings/modify/password", name="app_modify_password")
      */
-    public function modifyPassword(): Response
+    public function modifyPassword(Request $request, UserPasswordHasherInterface $userPasswordHasher ,EntityManagerInterface $entityManager): Response
     {
-        return $this->render('settings/index.html.twig');
+        $user = $this->security->getUser();
+        $form = $this->createForm(PasswordFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                    $user,
+                    $form->get('plainPassword')->getData()
+                )
+            );
+
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            $this->addFlash('success', new TranslatableMessage('settings.modifyPassword.success'));
+        }
+
+        return $this->render('settings/modifyPassword.html.twig', [
+            'passwordForm' => $form->createView(),
+            'user' => $user
+        ]);
     }
 
     /**

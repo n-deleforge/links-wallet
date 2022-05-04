@@ -22,9 +22,7 @@
 			<div class="container">
 				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-						<li>
-							<a href="{{ path('app_home') }}" class="nav-link px-2 link-secondary">{{ "navbar.home"|trans }}</a>
-						</li>
+						<li><a href="{{ path('app_home') }}" class="nav-link px-2 link-secondary">{{ "navbar.home"|trans }}</a></li>
 					</ul>
 
 				{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
@@ -58,7 +56,7 @@
 		{% if app.user and not app.user.isVerified %}
 			<div class="container">
 				<div class="row">
-            		<div class="alert alert-danger">{{ "notVerified"|trans }}</div>
+            		<div class="alert alert-danger">{{ "email.notVerified"|trans }} <a href="{{ path('app_resend_email') }}">{{ 'email.resend'|trans }}</a></div>
 				</div>
 			</div>
 		{% endif %}
@@ -66,7 +64,7 @@
 		{% for error in app.flashes('error') %}
 			<div class="container">
 				<div class="row">
-            		<div class="alert alert-danger">{{ error }}</div>
+            		<div class="alert alert-danger">{{ error|trans }}</div>
 				</div>
 			</div>
 		{% endfor %}
@@ -74,7 +72,7 @@
 		{% for message in app.flashes('success') %}
 			<div class="container">
 				<div class="row">
-            		<div class="alert alert-success">{{ message }}</div>
+            		<div class="alert alert-success">{{ message|trans }}</div>
 				</div>
 			</div>
         {% endfor %}
