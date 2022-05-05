@@ -4,6 +4,22 @@
 	<div class="container">
 		<h1>{{ "readme.title"|trans }}</h1>
 
+		<div class="row p-3">
+			<div class="col p-3 bg-light ml-2">
+			<h2>{{ "readme.actionMenu"|trans }}</h2>
+				<div class="py-2">
+					<a class="btn btn-primary" href="#" role="button">{{ "readme.addLink"|trans }}</a>
+					<a class="btn btn-primary" href="{{ path('app_view_readme', {username: app.user.name}) }}" role="button">{{ "readme.seeReadme"|trans }}</a>
+				</div>
+
+				<h2>{{ "readme.listMenu"|trans }}</h2>
+				{% if not links %}
+					<p>{{ "readme.noLinks"|trans }}</p>
+				{% else %}
+
+				{% endif %}
+			</div>
+		</div>
 
 	</div>
 {% endblock %}
