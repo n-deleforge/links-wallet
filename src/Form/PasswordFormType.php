@@ -28,7 +28,7 @@ class PasswordFormType extends AbstractType
                 'first_name' => 'password',
                 'second_name' => 'confirm',
                 'first_options' => [
-                    'help' => new TranslatableMessage('settings.changePassword.help')
+                    'help' => new TranslatableMessage('settings.modifyPassword.passwordHelp')
                 ]
             ]
         );

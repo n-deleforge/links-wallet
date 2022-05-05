@@ -1,85 +1,90 @@
+# General
+main:
+  update: "Mettre à jour"
+
 # Homepage
-"homepage.welcome" : "Bienvenue sur read.me"
+homepage:
+  welcome: Bienvenue sur read.me
 
 # Navbar
-"navbar.home" : "Accueil"
-"navbar.login" : "Connexion"
-"navbar.signup" : "Inscription"
-"navbar.logout" : "Déconnexion"
-"navbar.readme" : "Mon readme"
-"navbar.settings" : "Paramètres"
+navbar:
+  home: Accueil
+  login: Connexion
+  signup: Inscription
+  logout: Déconnexion
+  readme: Mon readme
+  settings: Paramètres
 
 # Login
-"login.title" : "Connexion"
-"login.email" : "Courriel"
-"login.password" : "Mot de passe"
-"login.rememberme" : "Se souvenir de moi ?"
-"login.form" : "Connexion"
-"login.remember" : "Se souvenir de moi ?"
-"login.help" : "Cochez cette case si vous voulez rester connecté après avoir quitté l'application. Ne pas utiliser sur un appareil public !"
+login:
+  title: Connexion
+  email: Courriel
+  password: Mot de passe
+  rememberme: Se souvenir de moi ?
+  form: Connexion
+  remember: Se souvenir de moi ?
+  help: Cochez cette case si vous voulez rester connecté après avoir quitté l'application. Ne pas utiliser sur un appareil public !
 
 # Register
-"register.title" : "Inscription"
-"register.email" : "Courriel"
-"register.email.help" : "Votre courriel doit être valide, vous allez devoir confirmer votre inscription avec un lien envoyé par courriel."
-"register.name" : "Nom d'utilisateur"
-"register.name.help" : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
-"register.password" : "Mot de passe"
-"register.password.help" : "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
-"register.confirm" : "Confirmation du mot de passe"
-"register.form" : "S'inscrire"
+register:
+  title: "Inscription"
+  email: "Courriel"
+  emailHelp: "Votre courriel doit être valide, vous allez devoir confirmer votre inscription avec un lien envoyé par courriel."
+  name: "Nom d'utilisateur"
+  nameHelp: "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
+  password: "Mot de passe"
+  passwordHelp: "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
+  confirm: "Confirmation du mot de passe"
+  form: "S'inscrire"
 
 # Email
-"email.title" : "Bienvenue"
-"email.confirm" : "Merci de valider votre compte en cliquant sur le lien suivant :"
-"email.link" : "valider"
-"email.secondLink" : "Si le lien ne fonctionne, vous pouvez copier coller l'adresse directement dans la barre d'adresse de votre navigateur : "
-"email.expire" : "Ce lien expirera dans "
-"email.success" : "Votre compte est validé !"
-"email.incorrect" : "Une erreur est survenue lors de la vérification de votre compte."
-"email.notVerified" : "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir pleinement utiliser l'application."
-"email.resend" : "Renvoyer un courriel de vérification"
+email:
+  title: "Bienvenue"
+  confirm: "Merci de valider votre compte en cliquant sur le lien suivant :"
+  link: "valider"
+  secondLink: "Si le lien ne fonctionne, vous pouvez copier coller l'adresse directement dans la barre d'adresse de votre navigateur : "
+  expire: "Ce lien expirera dans "
+  success: Votre compte est validé !"
+  incorrect: Une erreur est survenue lors de la vérification de votre compte."
+  notVerified: Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir pleinement utiliser l'application."
+  resend: Renvoyer un courriel de vérification"
 
 # Custom error message for login or register
 "Invalid credentials." : "Courriel ou mot de passe incorrect."
 "Invalid CSRF token." : "Une erreur est survenue, merci de réessayer."
 "There is already an account with this email" : "Ce courriel est déjà utilisé"
 "The password fields must match." : "Les deux mots de passe ne sont pas identiques."
-# "Your email must be valid, you will have to confirm your subscription with a link sent by email." : "Votre email doit être valide, vous allez devoir confirmer votre inscription avec un lien envoyé par courriel."
-# "The username will be used to display and share your profile." : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
 
-# Settings homepage
-"settings.title" : "Paramètres"
-"settings.profile" : "Information de base"
-"settings.profile.changeName" : "Changer nom utilisateur"
-"settings.profile.changeEmail" : "Changer courriel"
-"settings.profile.changePassword" : "Changer mot de passe"
-"settings.data" : "Données et profil"
-"settings.data.deleteAccount" : "Supprimer mon compte"
+# Settings
+settings:
+  title: "Paramètres"
+  profile: "Information de base"
+  changeName: "Changer nom utilisateur"
+  changeEmail: "Changer courriel"
+  changePassword: "Changer mot de passe"
+  data: "Données et profil"
+  deleteAccount: "Supprimer mon compte"
 
-# Settings name
-"settings.modifyName.title" : "Modifier nom d'utilisateur"
-"settings.modifyName.name" : "Nom d'utilisateur"
-"settings.modifyName.name.help" : "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
-"settings.modifyName.form" : "Mettre à jour"
-"settings.modifyName.success" : "Nom d'utilisateur mis à jour !"
+  modifyName:
+    title: "Modifier nom d'utilisateur"
+    name: "Nouveau nom d'utilisateur"
+    nameHelp: "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
+    success: "Nom d'utilisateur mis à jour !"
 
-# Settings email
-"settings.modifyEmail.title" : "Modifier courriel"
-"settings.modifyEmail.email" : "Courriel"
-"settings.modifyEmail.email.help" : "Votre courriel doit être valide, il sera utilisé en cas de problème de connexion."
-"settings.modifyEmail.form" : "Mettre à jour"
-"settings.modifyEmail.success" : "Courriel mis à jour !"
-"settings.modifyEmail.notVerified" : "Votre courriel n'a pas été validé, il est impossible de changer votre courriel tant que celui-ci n'a pas été validé."
+  modifyEmail:
+    title: "Modifier courriel"
+    email: "Nouveau courriel"
+    emailHelp: "Votre courriel doit être valide, il sera utilisé en cas de problème de connexion."
+    success: "Votre courriel a été mis à jour !"
+    notVerified: "Votre courriel n'a pas été validé, il est impossible de changer votre courriel tant que celui-ci n'a pas été validé."
 
-# Settings password
-"settings.modifyPassword.title" : "Modifier mot de passe"
-"settings.modifyPassword.password" : "Mot de passe"
-"settings.changePassword.help" : "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
-"settings.modifyPassword.confirm" : "Confirmation du mot de passe"
-"settings.modifyPassword.form" : "Mettre à jour"
-"settings.modifyPassword.success" : "Votre mot de passe a été mis à jour !"
+  modifyPassword:
+    title: "Modifier mot de passe"
+    password: "Nouveau mot de passe"
+    passwordHelp: "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
+    confirm: "Confirmation du nouveau mot de passe"
+    success: "Votre mot de passe a été mis à jour !"
 
 # Readme
-"readme.title" : "Mon readme"
-
+readme:
+  title: "Mon readme"

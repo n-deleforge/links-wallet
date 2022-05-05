@@ -21,14 +21,14 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'help' => new TranslatableMessage('register.email.help'),
+                'help' => new TranslatableMessage('register.emailHelp'),
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),
                 ]
             ])
             ->add('name', TextType::class, [
-                'help' => new TranslatableMessage('register.name.help'),
+                'help' => new TranslatableMessage('register.nameHelp'),
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),
@@ -49,7 +49,7 @@ class RegistrationFormType extends AbstractType
                     'first_name' => 'password',
                     'second_name' => 'confirm',
                     'first_options' => [
-                        'help' => new TranslatableMessage('register.password.help')
+                        'help' => new TranslatableMessage('register.passwordHelp')
                     ]
                 ]
             );

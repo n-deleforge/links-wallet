@@ -16,7 +16,7 @@ class EmailFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'help' => new TranslatableMessage('settings.modifyEmail.email.help'),
+                'help' => new TranslatableMessage('settings.modifyEmail.emailHelp'),
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),

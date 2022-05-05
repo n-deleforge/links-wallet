@@ -6,6 +6,7 @@ use App\Form\EmailFormType;
 use App\Form\NameFormType;
 use App\Form\PasswordFormType;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,6 +15,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Translation\TranslatableMessage;
 
+
+/**
+ * @isGranted("IS_AUTHENTICATED_FULLY")
+ */
 class SettingsController extends AbstractController
 {
     private $security;
@@ -22,6 +27,7 @@ class SettingsController extends AbstractController
     {
         $this->security = $security;
     }
+
     /**
      * @Route("/settings", name="app_settings")
      */
