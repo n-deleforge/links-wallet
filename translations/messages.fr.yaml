@@ -1,5 +1,6 @@
 # General
 main:
+  add: "Ajouter"
   update: "Mettre à jour"
 
 # Homepage
@@ -90,6 +91,17 @@ readme:
   title: "Mon readme"
   actionMenu: "Actions principales"
   addLink: "Ajouter un lien"
-  seeReadme: "Visualiser mon profil"
+  seeReadme: "Visualiser mon Readme"
   listMenu: "Gestion de mon Readme"
   noLinks: "Votre Readme est vide pour le moment."
+
+  add:
+    title: "Ajouter un lien"
+    name: "Nom"
+    nameHelp: "Titre du lien"
+    url: "Lien"
+    urlHelp : "Adresse sur laquelle sera renvoyé l'utilisateur."
+    success: "Le nouveau lien a été ajouté !"
+
+  delete:
+    success: "Le lien a été supprimé !"
