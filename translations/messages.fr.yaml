@@ -2,6 +2,7 @@
 main:
   add: "Ajouter"
   update: "Mettre à jour"
+  back: "Retour"
 
 # Homepage
 homepage:
@@ -24,7 +25,7 @@ login:
   rememberme: Se souvenir de moi ?
   form: Connexion
   remember: Se souvenir de moi ?
-  help: Cochez cette case si vous voulez rester connecté après avoir quitté l'application. Ne pas utiliser sur un appareil public !
+  help: Cochez cette case si vous voulez rester connecté après avoir quitté l'application.
 
 # Register
 register:

@@ -4,28 +4,29 @@
 	<div class="container">
 		<h1>{{ "readme.title"|trans }}</h1>
 
-		<div class="row p-3">
-			<div class="col p-3 bg-light ml-2">
+		<div class="p-3 bg-light">
 			<h2>{{ "readme.actionMenu"|trans }}</h2>
-				<div class="py-2">
-					<a class="btn btn-primary" href="{{ path('app_readme_add') }}" role="button">{{ "readme.addLink"|trans }}</a>
-					<a class="btn btn-primary" href="{{ path('app_view_readme', {username: app.user.name}) }}" role="button">{{ "readme.seeReadme"|trans }}</a>
-				</div>
+			<div class="py-2">
+				<a class="btn btn-primary" href="{{ path('app_readme_add') }}" role="button">{{ "readme.addLink"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_view_readme', {username: app.user.name}) }}" role="button">{{ "readme.seeReadme"|trans }}</a>
+			</div>
+		</div>
 
-				<h2>{{ "readme.listMenu"|trans }}</h2>
-				{% if not links %}
-					<p>{{ "readme.noLinks"|trans }}</p>
-				{% else %}
+		<div class="p-3 bg-light mt-3">
+			<h2>{{ "readme.listMenu"|trans }}</h2>
 
-					<table class="table table-hover table-striped">
-						<thead>
-							<tr>
-								<th scope="col">Name</th>
-								<th scope="col">URL</th>
-								<th scope="col">Actions</th>
-							</tr>
-						</thead>
-						 <tbody>
+			{% if not links %}
+				<p>{{ "readme.noLinks"|trans }}</p>
+			{% else %}
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">Name</th>
+							<th scope="col">URL</th>
+							<th scope="col">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
 						{%for link in links%}
 							<tr>
 								<td>{{ link.name }}</td>
@@ -36,11 +37,10 @@
 								</td>
 							</tr>
 						{% endfor %}
-						</tbody>
-					</table>
-				{% endif %}
-			</div>
-		</div>
+					</tbody>
+				</table>
+			{% endif %}
 
+		</div>
 	</div>
 {% endblock %}

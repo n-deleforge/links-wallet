@@ -2,39 +2,39 @@
 
 {% block body %}
 	<div class="container">
-		<div class="row">
-			<div class="login-form bg-light mt-4 p-4">
+		<div class="bg-light mt-4 p-4">
 
-				{{ form_start(registrationForm) }}
+			{{ form_start(registrationForm) }}
 
-				<h1 class="h3 mb-3 font-weight-normal">{{ 'register.title'|trans }}</h1>
+			<h1 class="h3 mb-3 font-weight-normal">{{ 'register.title'|trans }}</h1>
 
-				<div class="col-12 mt-3">
+			<div class="row mt-3">
+				<div class="col-6">
 					{{ form_row(registrationForm.email, { 'label': 'register.email'|trans })  }}
-				</div>
-				
-				<div class="col-12 mt-3">
-					{{ form_row(registrationForm.name, { 'label': 'register.name'|trans })  }}
-				</div>
-
-				<div class="row">
-					<div class="col-6">
-						{{ form_row(registrationForm.plainPassword.password, { 'label' : 'register.password'|trans }) }}
-					</div>
-
-					<div class="col-6">
-						{{ form_row(registrationForm.plainPassword.confirm, { 'label' : 'register.confirm'|trans }) }}
-					</div>
 				</div>
 
 				<div class="col-6">
-					<button class="btn btn-lg btn-primary" type="submit">{{ 'register.form'|trans }}</button>
+					{{ form_row(registrationForm.name, { 'label': 'register.name'|trans })  }}
+				</div>
+			</div>
+
+			<div class="row mt-3">
+				<div class="col-6">
+					{{ form_row(registrationForm.plainPassword.password, { 'label' : 'register.password'|trans }) }}
 				</div>
 
-				{{ form_rest(registrationForm) }}
-				{{ form_end(registrationForm) }}
-
+				<div class="col-6">
+					{{ form_row(registrationForm.plainPassword.confirm, { 'label' : 'register.confirm'|trans }) }}
+				</div>
 			</div>
+
+			<div class="col-6">
+				<button class="btn btn-primary" type="submit">{{ 'register.form'|trans }}</button>
+			</div>
+
+			{{ form_rest(registrationForm) }}
+			{{ form_end(registrationForm) }}
+
 		</div>
 	</div>
 {% endblock %}

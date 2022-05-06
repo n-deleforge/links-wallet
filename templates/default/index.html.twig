@@ -1,16 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container">
-    <h1>{{ "homepage.welcome"|trans }}</h1>
+	<div class="container">
+		<h1>{{ "homepage.welcome"|trans }}</h1>
 
-    <div class="row p-3">
-        <div class="col p-3 bg-light mr-2">
-            <p>{{ lorem.0 }}</p>
-        </div>
-        <div class="col p-3 bg-light ml-2">
-            <p>{{ lorem.1 }}</p>
-        </div>
-    </div>
-</div>
+		<div class="col p-3 bg-light mr-2">
+			<p>{{ lorem.0 }}</p>
+		</div>
+		<div class="col p-3 bg-light ml-2">
+			<p>{{ lorem.1 }}</p>
+		</div>
+	</div>
 {% endblock %}
