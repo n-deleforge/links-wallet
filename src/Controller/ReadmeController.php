@@ -55,6 +55,12 @@ class ReadmeController extends AbstractController
     public function add(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
+
+        if (!$user->isVerified()) {
+            $this->addFlash('warning', new TranslatableMessage("readme.add.notVerified"));
+            return $this->redirectToRoute('app_readmephp');
+        }
+
         $link = new Link();
         $form = $this->createForm(ReadmeFormType::class, $link);
         $form->handleRequest($request);

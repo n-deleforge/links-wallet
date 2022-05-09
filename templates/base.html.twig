@@ -73,10 +73,18 @@
 			</div>
 		{% endfor %}
 
-		{% for message in app.flashes('success') %}
+		{% for warning in app.flashes('warning') %}
 			<div class="container">
 				<div class="row">
-					<div class="alert alert-success">{{ message|trans }}</div>
+					<div class="alert alert-warning">{{ warning|trans }}</div>
+				</div>
+			</div>
+		{% endfor %}
+
+		{% for success in app.flashes('success') %}
+			<div class="container">
+				<div class="row">
+					<div class="alert alert-success">{{ success|trans }}</div>
 				</div>
 			</div>
 		{% endfor %}

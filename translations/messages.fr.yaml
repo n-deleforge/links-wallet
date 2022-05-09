@@ -48,7 +48,7 @@ email:
   expire: "Ce lien expirera dans "
   success: "Votre compte est validé !"
   incorrect: "Une erreur est survenue lors de la vérification de votre compte."
-  notVerified: "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir pleinement utiliser l'application."
+  notVerified: "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir utiliser l'application."
   resend: "Renvoyer un courriel de vérification"
 
 # Settings
@@ -66,13 +66,14 @@ settings:
     name: "Nouveau nom d'utilisateur"
     nameHelp: "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
     success: "Nom d'utilisateur mis à jour !"
+    notVerified: "Vous ne pouvez pas modifier votre nom d'utilisateur tant que votre courriel n'est pas valide."
 
   modifyEmail:
     title: "Modifier courriel"
     email: "Nouveau courriel"
     emailHelp: "Votre courriel doit être valide, il sera utilisé en cas de problème de connexion."
     success: "Votre courriel a été mis à jour !"
-    notVerified: "Votre courriel n'a pas été validé, il est impossible de changer votre courriel tant que celui-ci n'a pas été validé."
+    notVerified: "Vous ne pouvez pas modifier votre courriel tant que ce dernier n'est pas valide"
 
   modifyPassword:
     title: "Modifier mot de passe"
@@ -80,6 +81,7 @@ settings:
     passwordHelp: "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
     confirm: "Confirmation du nouveau mot de passe"
     success: "Votre mot de passe a été mis à jour !"
+    notVerified: "Vous ne pouvez pas modifier votre mot de passe tant que votre courriel n'est pas valide."
 
 # Readme
 readme:
@@ -97,6 +99,7 @@ readme:
     url: "Lien"
     urlHelp : "Adresse sur laquelle sera renvoyé l'utilisateur."
     success: "Le nouveau lien a été ajouté !"
+    notVerified: "Vous ne pouvez pas ajouter de lien tant que votre courriel n'est pas valide."
 
   delete:
     success: "Le lien a été supprimé !"

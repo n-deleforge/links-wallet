@@ -42,6 +42,12 @@ class SettingsController extends AbstractController
     public function modifyName(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
+
+        if (!$user->isVerified()) {
+            $this->addFlash('warning', new TranslatableMessage("settings.modifyName.notVerified"));
+            return $this->redirectToRoute('app_settings');
+        }
+
         $form = $this->createForm(NameFormType::class, $user);
         $form->handleRequest($request);
 
@@ -64,6 +70,12 @@ class SettingsController extends AbstractController
     public function modifyEmail(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
+
+        if (!$user->isVerified()) {
+            $this->addFlash('warning', new TranslatableMessage("settings.modifyEmail.notVerified"));
+            return $this->redirectToRoute('app_settings');
+        }
+
         $form = $this->createForm(EmailFormType::class, $user);
         $form->handleRequest($request);
 
@@ -86,6 +98,12 @@ class SettingsController extends AbstractController
     public function modifyPassword(Request $request, UserPasswordHasherInterface $userPasswordHasher ,EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
+
+        if (!$user->isVerified()) {
+            $this->addFlash('warning', new TranslatableMessage("settings.modifyPassword.notVerified"));
+            return $this->redirectToRoute('app_settings');
+        }
+
         $form = $this->createForm(PasswordFormType::class, $user);
         $form->handleRequest($request);
 
