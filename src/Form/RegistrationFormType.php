@@ -37,14 +37,20 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ]
             ])
-            ->add('plainPassword', RepeatedType::class, [
+            ->add(
+                'plainPassword',
+                RepeatedType::class,
+                [
                     'type' => PasswordType::class,
                     'invalid_message' => "The password fields must match.",
                     'required' => true,
                     'mapped' => false,
                     'constraints' => [
                         new NotBlank(),
-                        new Regex('/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#\$%\^&\*+])[a-zA-Z\d!@#\$%\^&\*+]{6,4096}$/')
+                        new Regex([
+                            "pattern" => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#\$%\^&\*+])[a-zA-Z\d!@#\$%\^&\*+]{6,4096}$/',
+                            "message" => "Your password does not respect the asked standards."
+                        ])
                     ],
                     'first_name' => 'password',
                     'second_name' => 'confirm',

@@ -46,16 +46,10 @@ email:
   link: "valider"
   secondLink: "Si le lien ne fonctionne, vous pouvez copier coller l'adresse directement dans la barre d'adresse de votre navigateur : "
   expire: "Ce lien expirera dans "
-  success: Votre compte est validé !"
-  incorrect: Une erreur est survenue lors de la vérification de votre compte."
-  notVerified: Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir pleinement utiliser l'application."
-  resend: Renvoyer un courriel de vérification"
-
-# Custom error message for login or register
-"Invalid credentials." : "Courriel ou mot de passe incorrect."
-"Invalid CSRF token." : "Une erreur est survenue, merci de réessayer."
-"There is already an account with this email" : "Ce courriel est déjà utilisé"
-"The password fields must match." : "Les deux mots de passe ne sont pas identiques."
+  success: "Votre compte est validé !"
+  incorrect: "Une erreur est survenue lors de la vérification de votre compte."
+  notVerified: "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir pleinement utiliser l'application."
+  resend: "Renvoyer un courriel de vérification"
 
 # Settings
 settings:
