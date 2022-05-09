@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Translation\TranslatableMessage;
 
+use function PHPUnit\Framework\throwException;
+
 class ReadmeController extends AbstractController
 {
     private $security;
@@ -79,17 +81,22 @@ class ReadmeController extends AbstractController
     /**
      * @Route("/readme/delete/{id}", name="app_readme_delete")
      */
-    // public function delete(Request $request, ManagerRegistry $doctrine, EntityManagerInterface $entityManager, $id): Response
-    // {
-    //     // $user = $this->security->getUser();
-    //     $repository = $doctrine->getRepository(Link::class);
-    //     $link = $repository->find($id);
+    public function delete(ManagerRegistry $doctrine, EntityManagerInterface $entityManager, $id): Response
+    {
+        $user = $this->security->getUser();
+        $repository = $doctrine->getRepository(LinkUser::class);
+        $link = $repository->find($id);
 
-    //     $entityManager->remove($link);
-    //     $entityManager->flush();
+        if ($user->getId() !== $link->getUser()->getId()) {
+            $this->addFlash('warning', new TranslatableMessage('readme.delete.error'));
+        }
+        else {
+            $entityManager->remove($link);
+            $entityManager->flush();
+    
+            $this->addFlash('success', new TranslatableMessage('readme.delete.success'));
+        }
 
-    //     $this->addFlash('success', new TranslatableMessage('readme.delete.success'));
-
-    //     return $this->redirectToRoute('app_readme');
-    // }
+        return $this->redirectToRoute('app_readme');
+    }
 }

@@ -32,8 +32,8 @@
 								<td><i class="{{ link.model.icon }}"></i> {{ link.model.name }}</td>
 								<td>{{ link.username }}</td>
 								<td>
-									Modifier
-									Supprimer
+									{{ 'main.modify'|trans }}
+									<a href="{{ path('app_readme_delete', { id:link.id }) }}">{{ 'main.delete'|trans }}</a>
 								</td>
 							</tr>
 						{% endfor %}

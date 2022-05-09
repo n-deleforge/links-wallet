@@ -3,6 +3,8 @@ main:
   add: "Ajouter"
   update: "Mettre à jour"
   back: "Retour"
+  delete: "Supprimer"
+  modify: "Modifier"
 
 # Homepage
 homepage:
@@ -105,4 +107,5 @@ readme:
     notVerified: "Vous ne pouvez pas ajouter de lien tant que votre courriel n'est pas valide."
 
   delete:
+    error: "Une erreur est survenue."
     success: "Le lien a été supprimé !"
