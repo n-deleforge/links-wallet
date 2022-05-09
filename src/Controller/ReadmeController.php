@@ -2,9 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Link;
+use App\Entity\LinkUser;
 use App\Form\ReadmeFormType;
-use App\Repository\LinkRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,8 +12,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Translation\TranslatableMessage;
-
-use function Symfony\Component\String\s;
 
 class ReadmeController extends AbstractController
 {
@@ -31,11 +28,11 @@ class ReadmeController extends AbstractController
     public function index(ManagerRegistry $doctrine): Response
     {
         $user = $this->security->getUser();
-        $repository = $doctrine->getRepository(Link::class);
-        $links = $repository->findAllForOneUser($user);
+        $repository = $doctrine->getRepository(LinkUser::class);
+        $linksUser = $repository->findAllForOneUser($user);
 
         return $this->render('readme/index.html.twig', [
-            'links' => $links
+            'links' => $linksUser
         ]);
     }
 
@@ -61,7 +58,7 @@ class ReadmeController extends AbstractController
             return $this->redirectToRoute('app_readmephp');
         }
 
-        $link = new Link();
+        $link = new LinkUser();
         $form = $this->createForm(ReadmeFormType::class, $link);
         $form->handleRequest($request);
 
@@ -82,17 +79,17 @@ class ReadmeController extends AbstractController
     /**
      * @Route("/readme/delete/{id}", name="app_readme_delete")
      */
-    public function delete(Request $request, ManagerRegistry $doctrine, EntityManagerInterface $entityManager, $id): Response
-    {
-        // $user = $this->security->getUser();
-        $repository = $doctrine->getRepository(Link::class);
-        $link = $repository->find($id);
+    // public function delete(Request $request, ManagerRegistry $doctrine, EntityManagerInterface $entityManager, $id): Response
+    // {
+    //     // $user = $this->security->getUser();
+    //     $repository = $doctrine->getRepository(Link::class);
+    //     $link = $repository->find($id);
 
-        $entityManager->remove($link);
-        $entityManager->flush();
+    //     $entityManager->remove($link);
+    //     $entityManager->flush();
 
-        $this->addFlash('success', new TranslatableMessage('readme.delete.success'));
+    //     $this->addFlash('success', new TranslatableMessage('readme.delete.success'));
 
-        return $this->redirectToRoute('app_readme');
-    }
+    //     return $this->redirectToRoute('app_readme');
+    // }
 }

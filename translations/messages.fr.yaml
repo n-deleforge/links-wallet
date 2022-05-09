@@ -91,13 +91,16 @@ readme:
   seeReadme: "Visualiser mon Readme"
   listMenu: "Gestion de mon Readme"
   noLinks: "Votre Readme est vide pour le moment."
+  model: "Modèle"
+  username: "Nom d'utilisateur"
+  actions: "Actions"
 
   add:
     title: "Ajouter un lien"
-    name: "Nom"
-    nameHelp: "Titre du lien"
-    url: "Lien"
-    urlHelp : "Adresse sur laquelle sera renvoyé l'utilisateur."
+    username: "Nom d'utilisateur"
+    usernameHelp: "Nom d'utilisateur sur l'application choisie."
+    model: "Modèle"
+    modelHelp : "Application à ajouter au Readme"
     success: "Le nouveau lien a été ajouté !"
     notVerified: "Vous ne pouvez pas ajouter de lien tant que votre courriel n'est pas valide."
 

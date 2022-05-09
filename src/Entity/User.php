@@ -52,13 +52,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $isVerified = false;
 
     /**
-     * @ORM\OneToMany(targetEntity=Link::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=LinkUser::class, mappedBy="user")
      */
-    private $links;
+    private $linkUsers;
 
     public function __construct()
     {
         $this->links = new ArrayCollection();
+        $this->linkUsers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -184,29 +185,29 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, Link>
+     * @return Collection<int, LinkUser>
      */
-    public function getLinks(): Collection
+    public function getLinkUsers(): Collection
     {
-        return $this->links;
+        return $this->linkUsers;
     }
 
-    public function addLink(Link $link): self
+    public function addLinkUser(LinkUser $linkUser): self
     {
-        if (!$this->links->contains($link)) {
-            $this->links[] = $link;
-            $link->setUser($this);
+        if (!$this->linkUsers->contains($linkUser)) {
+            $this->linkUsers[] = $linkUser;
+            $linkUser->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeLink(Link $link): self
+    public function removeLinkUser(LinkUser $linkUser): self
     {
-        if ($this->links->removeElement($link)) {
+        if ($this->linkUsers->removeElement($linkUser)) {
             // set the owning side to null (unless already changed)
-            if ($link->getUser() === $this) {
-                $link->setUser(null);
+            if ($linkUser->getUser() === $this) {
+                $linkUser->setUser(null);
             }
         }
 

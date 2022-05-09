@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\LinkModelRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,16 @@ class LinkModel
      * @ORM\Column(type="string", length=255)
      */
     private $url;
+
+    /**
+     * @ORM\OneToMany(targetEntity=LinkUser::class, mappedBy="model")
+     */
+    private $linkUsers;
+
+    public function __construct()
+    {
+        $this->linkUsers = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +81,36 @@ class LinkModel
     public function setUrl(string $url): self
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, LinkUser>
+     */
+    public function getLinkUsers(): Collection
+    {
+        return $this->linkUsers;
+    }
+
+    public function addLinkUser(LinkUser $linkUser): self
+    {
+        if (!$this->linkUsers->contains($linkUser)) {
+            $this->linkUsers[] = $linkUser;
+            $linkUser->setModel($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLinkUser(LinkUser $linkUser): self
+    {
+        if ($this->linkUsers->removeElement($linkUser)) {
+            // set the owning side to null (unless already changed)
+            if ($linkUser->getModel() === $this) {
+                $linkUser->setModel(null);
+            }
+        }
 
         return $this;
     }

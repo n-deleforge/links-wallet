@@ -2,33 +2,32 @@
 
 namespace App\Repository;
 
-use App\Entity\Link;
+use App\Entity\LinkUser;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Link>
+ * @extends ServiceEntityRepository<LinkUser>
  *
- * @method Link|null find($id, $lockMode = null, $lockVersion = null)
- * @method Link|null findOneBy(array $criteria, array $orderBy = null)
- * @method Link[]    findAll()
- * @method Link[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method LinkUser|null find($id, $lockMode = null, $lockVersion = null)
+ * @method LinkUser|null findOneBy(array $criteria, array $orderBy = null)
+ * @method LinkUser[]    findAll()
+ * @method LinkUser[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class LinkRepository extends ServiceEntityRepository
+class LinkUserRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Link::class);
+        parent::__construct($registry, LinkUser::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Link $entity, bool $flush = true): void
+    public function add(LinkUser $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -40,7 +39,7 @@ class LinkRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Link $entity, bool $flush = true): void
+    public function remove(LinkUser $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -48,8 +47,18 @@ class LinkRepository extends ServiceEntityRepository
         }
     }
 
+    public function findAllForOneUSer($user)
+    {
+        return $this->createQueryBuilder('l')
+            ->andWhere('l.user = :name')
+            ->setParameter('name', $user)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
-    //  * @return Link[] Returns an array of Link objects
+    //  * @return LinkUser[] Returns an array of LinkUser objects
     //  */
     /*
     public function findByExampleField($value)
@@ -65,13 +74,15 @@ class LinkRepository extends ServiceEntityRepository
     }
     */
 
-    public function findAllForOneUSer($user): ?Array
+    /*
+    public function findOneBySomeField($value): ?LinkUser
     {
         return $this->createQueryBuilder('l')
-            ->andWhere('l.user = :id')
-            ->setParameter('id', $user)
+            ->andWhere('l.exampleField = :val')
+            ->setParameter('val', $value)
             ->getQuery()
-            ->getArrayResult()
+            ->getOneOrNullResult()
         ;
     }
+    */
 }
