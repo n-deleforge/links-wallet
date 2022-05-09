@@ -41,6 +41,10 @@ register:
   confirm: "Confirmation du mot de passe"
   form: "S'inscrire"
 
+# Custom error message for login
+"Invalid credentials." : "Courriel ou mot de passe incorrect."
+"Invalid CSRF token." : "Une erreur est survenue, merci de réessayer."
+
 # Email
 email:
   title: "Bienvenue"

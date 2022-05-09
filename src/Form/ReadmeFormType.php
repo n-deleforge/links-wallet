@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\LinkModel;
 use App\Entity\LinkUser;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -34,6 +35,10 @@ class ReadmeFormType extends AbstractType
                 'expanded' => false,
                 'multiple' => false,
                 'help' => new TranslatableMessage('readme.form.modelHelp'),
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('m')
+                        ->orderBy('m.name', 'ASC');
+                },
             ]);
     }
 

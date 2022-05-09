@@ -1,9 +1,8 @@
-# Custom error message for login
-"Invalid credentials." : "Courriel ou mot de passe incorrect."
-"Invalid CSRF token." : "Une erreur est survenue, merci de réessayer."
-
 # Custom error message for register
 "There is already an account with this email." : "Ce courriel est déjà utilisé."
 "There is already an account with this name." : "Ce nom d'utilisateur est déjà utilisé."
 "The password fields must match." : "Les deux mots de passe ne sont pas identiques."
 "Your password does not respect the asked standards." : "Votre mot de passe ne respecte pas les normes demandées."
+
+# Custom error message for readme
+"Your readme already contains this model." : "Votre readme contient déjà ce modèle."

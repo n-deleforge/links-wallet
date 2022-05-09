@@ -1,6 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
+	{% if loginError %}
+		<div class="container">
+			<div class="row">
+				<div class="alert alert-warning">{{ loginError.messageKey|trans }}</div>
+			</div>
+		</div>
+	{% endif %}
+
 	<div class="container">
 		<div class="bg-light mt-4 p-4">
 

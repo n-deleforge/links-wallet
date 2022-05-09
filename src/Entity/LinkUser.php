@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\LinkUserRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
