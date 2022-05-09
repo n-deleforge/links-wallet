@@ -19,7 +19,7 @@ class ReadmeFormType extends AbstractType
     {
         $builder
             ->add('username', TextType::class, [
-                'help' => new TranslatableMessage('readme.add.usernameHelp'),
+                'help' => new TranslatableMessage('readme.form.usernameHelp'),
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),
@@ -33,7 +33,7 @@ class ReadmeFormType extends AbstractType
                 'choice_label' => 'name',
                 'expanded' => false,
                 'multiple' => false,
-                'help' => new TranslatableMessage('readme.add.modelHelp'),
+                'help' => new TranslatableMessage('readme.form.modelHelp'),
             ]);
     }
 

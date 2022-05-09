@@ -5,17 +5,17 @@
 		<h1>{{ "readme.title"|trans }}</h1>
 
 		<div class="bg-light mt-4 p-4">
-			<h1 class="h3 mb-3 font-weight-normal">{{ 'readme.add.title'|trans }}</h1>
+			<h1 class="h3 mb-3 font-weight-normal">{{ title|trans }}</h1>
 
-			{{ form_start(readmeAddForm) }}
+			{{ form_start(readmeForm) }}
 
 			<div class="row">
 				<div class="col-6">
-					{{ form_row(readmeAddForm.model, { 'label' : 'readme.add.model'|trans }) }}
+					{{ form_row(readmeForm.model, { 'label' : 'readme.form.model'|trans }) }}
 				</div>
 
 				<div class="col-6">
-					{{ form_row(readmeAddForm.username, { 'label' : 'readme.add.username'|trans }) }}
+					{{ form_row(readmeForm.username, { 'label' : 'readme.form.username'|trans }) }}
 				</div>
 			</div>
 
@@ -24,8 +24,8 @@
 				<a class="btn btn-secondary" href="{{ path('app_readme') }}">{{ 'main.back'|trans }}</a>
 			</div>
 
-			{{ form_rest(readmeAddForm) }}
-			{{ form_end(readmeAddForm) }}
+			{{ form_rest(readmeForm) }}
+			{{ form_end(readmeForm) }}
 
 		</div>
 	</div>

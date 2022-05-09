@@ -48,7 +48,7 @@ email:
   link: "valider"
   secondLink: "Si le lien ne fonctionne, vous pouvez copier coller l'adresse directement dans la barre d'adresse de votre navigateur : "
   expire: "Ce lien expirera dans "
-  success: "Votre compte est validé !"
+  success: "Votre compte est validé."
   incorrect: "Une erreur est survenue lors de la vérification de votre compte."
   notVerified: "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir utiliser l'application."
   resend: "Renvoyer un courriel de vérification"
@@ -67,14 +67,14 @@ settings:
     title: "Modifier nom d'utilisateur"
     name: "Nouveau nom d'utilisateur"
     nameHelp: "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
-    success: "Nom d'utilisateur mis à jour !"
+    success: "Nom d'utilisateur mis à jour."
     notVerified: "Vous ne pouvez pas modifier votre nom d'utilisateur tant que votre courriel n'est pas valide."
 
   modifyEmail:
     title: "Modifier courriel"
     email: "Nouveau courriel"
     emailHelp: "Votre courriel doit être valide, il sera utilisé en cas de problème de connexion."
-    success: "Votre courriel a été mis à jour !"
+    success: "Votre courriel a été mis à jour."
     notVerified: "Vous ne pouvez pas modifier votre courriel tant que ce dernier n'est pas valide"
 
   modifyPassword:
@@ -82,7 +82,7 @@ settings:
     password: "Nouveau mot de passe"
     passwordHelp: "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
     confirm: "Confirmation du nouveau mot de passe"
-    success: "Votre mot de passe a été mis à jour !"
+    success: "Votre mot de passe a été mis à jour."
     notVerified: "Vous ne pouvez pas modifier votre mot de passe tant que votre courriel n'est pas valide."
 
 # Readme
@@ -98,14 +98,20 @@ readme:
   actions: "Actions"
 
   add:
-    title: "Ajouter un lien"
+    title: "Ajouter un nouveau lien"
+    success: "Le nouveau lien a été ajouté."
+    notVerified: "Vous ne pouvez pas ajouter de lien tant que votre courriel n'est pas valide."
+
+  form:
     username: "Nom d'utilisateur"
     usernameHelp: "Nom d'utilisateur sur l'application choisie."
     model: "Modèle"
     modelHelp : "Application à ajouter au Readme"
-    success: "Le nouveau lien a été ajouté !"
-    notVerified: "Vous ne pouvez pas ajouter de lien tant que votre courriel n'est pas valide."
+
+  edit:
+    title: "Modifier un lien existant"
+    success: "Le lien a été modifié."
 
   delete:
     error: "Une erreur est survenue."
-    success: "Le lien a été supprimé !"
+    success: "Le lien a été supprimé."
