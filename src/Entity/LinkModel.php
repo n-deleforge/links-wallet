@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\LinkModelRepository;
+use Symfony\Component\Uid\Uuid;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -14,8 +15,7 @@ class LinkModel
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="uuid", unique=true)
      */
     private $id;
 
@@ -41,10 +41,11 @@ class LinkModel
 
     public function __construct()
     {
+        $this->id = Uuid::v4();
         $this->linkUsers = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId(): ?Uuid
     {
         return $this->id;
     }

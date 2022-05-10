@@ -15,7 +15,7 @@
 		<div class="bg-light p-3 mt-3">
 			<h2>{{ "readme.listMenu"|trans }}</h2>
 
-			{% if not links %}
+			{% if not app.user.linkUsers %}
 				<p>{{ "readme.noLinks"|trans }}</p>
 			{% else %}
 				<table class="table table-hover table-striped table-condensed">
@@ -27,7 +27,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						{%for link in links%}
+						{%for link in app.user.linkUsers %}
 							<tr>
 								<td class="align-middle"><i class="{{ link.model.icon }}"></i> {{ link.model.name }}</td>
 								<td class="align-middle">{{ link.username }}</td>

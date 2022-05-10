@@ -28,15 +28,9 @@ class ReadmeController extends AbstractController
     /**
      * @Route("/readme", name="app_readme")
      */
-    public function index(ManagerRegistry $doctrine): Response
+    public function index(): Response
     {
-        $user = $this->security->getUser();
-        $repository = $doctrine->getRepository(LinkUser::class);
-        $linksUser = $repository->findAllForOneUser($user);
-
-        return $this->render('readme/index.html.twig', [
-            'links' => $linksUser
-        ]);
+        return $this->render('readme/index.html.twig');
     }
 
     /**

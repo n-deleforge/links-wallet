@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\LinkUserRepository;
+use Symfony\Component\Uid\Uuid;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -14,8 +15,7 @@ class LinkUser
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="uuid", unique=true)
      */
     private $id;
 
@@ -36,7 +36,12 @@ class LinkUser
      */
     private $user;
 
-    public function getId(): ?int
+    public function __construct()
+    {
+        $this->id = Uuid::v4();
+    }
+
+    public function getId(): ?Uuid
     {
         return $this->id;
     }

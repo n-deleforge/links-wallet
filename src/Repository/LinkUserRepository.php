@@ -47,11 +47,11 @@ class LinkUserRepository extends ServiceEntityRepository
         }
     }
 
-    public function findAllForOneUSer($user)
+    public function findAllForOneUSer($username)
     {
         return $this->createQueryBuilder('l')
             ->andWhere('l.user = :name')
-            ->setParameter('name', $user)
+            ->setParameter('name', $username)
             ->getQuery()
             ->getResult()
         ;
