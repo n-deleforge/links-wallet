@@ -1,7 +1,7 @@
 <div class="container">
     <h1 class="h3 mb-3 font-weight-normal">{{ 'email.title'|trans }}</h1>
 
-    <div class="container mt-5">
+	<div class="bg-light p-3 mt-3">
         <p>{{ 'email.confirm'|trans }} <a href="{{ signedUrl }}">{{ 'email.link'|trans }}</a>.</p>
         <p>{{ 'email.secondLink'|trans }} : {{ signedUrl|raw }}.</p>
         <p>{{ 'email.expire'|trans }} {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}</p>

@@ -5,6 +5,7 @@ main:
   back: "Retour"
   delete: "Supprimer"
   modify: "Modifier"
+  error: "Une erreur est survenue."
 
 # Homepage
 homepage:
@@ -119,3 +120,6 @@ readme:
   delete:
     error: "Une erreur est survenue."
     success: "Le lien a été supprimé."
+
+  view:
+    empty: "Aucun lien n'a été défini pour le moment."

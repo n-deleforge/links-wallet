@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\LinkUser;
 use App\Form\ReadmeFormType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -39,12 +40,20 @@ class ReadmeController extends AbstractController
     }
 
     /**
-     * @Route("/readme/view/{username}", name="app_view_readme")
+     * @Route("/@{username}", name="app_view_readme")
      */
-    public function view($username): Response
+    public function view(ManagerRegistry $doctrine, $username): Response
     {
+        $repository = $doctrine->getRepository(User::class);
+        $user = $repository->findByUsername($username);
+
+        if (!$user) {
+            $this->addFlash('warning', new TranslatableMessage("main.error"));
+            return $this->redirectToRoute('app_home');
+        }
+
         return $this->render('readme/view.html.twig', [
-            'username' => $username
+            'user' => $user
         ]);
     }
 
@@ -91,11 +100,16 @@ class ReadmeController extends AbstractController
         $form = $this->createForm(ReadmeFormType::class, $link);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($link);
-            $entityManager->flush();
+        if ($user->getId() !== $link->getUser()->getId()) {
+            $this->addFlash('warning', new TranslatableMessage("main.error"));
+        } 
+        else {
+            if ($form->isSubmitted() && $form->isValid()) {
+                $entityManager->persist($link);
+                $entityManager->flush();
 
-            $this->addFlash('success', new TranslatableMessage('readme.edit.success'));
+                $this->addFlash('success', new TranslatableMessage('readme.edit.success'));
+            }
         }
 
         return $this->render('readme/form.html.twig', [
@@ -115,11 +129,11 @@ class ReadmeController extends AbstractController
 
         if ($user->getId() !== $link->getUser()->getId()) {
             $this->addFlash('warning', new TranslatableMessage("main.error"));
-        }
+        } 
         else {
             $entityManager->remove($link);
             $entityManager->flush();
-    
+
             $this->addFlash('success', new TranslatableMessage('readme.delete.success'));
         }
 

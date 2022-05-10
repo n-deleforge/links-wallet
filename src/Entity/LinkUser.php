@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=LinkUserRepository::class)
+ * @UniqueEntity(fields={"model"}, message= "Your readme already contains this model.")
  */
 class LinkUser
 {
