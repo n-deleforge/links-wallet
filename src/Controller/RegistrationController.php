@@ -60,7 +60,7 @@ class RegistrationController extends AbstractController
                     ->from(new Address('hello@nicolas-deleforge.fr', 'read.me'))
                     ->to($user->getEmail())
                     ->subject('read.me')
-                    ->htmlTemplate('registration/email.html.twig')
+                    ->htmlTemplate('security/emailTemplate.html.twig')
             );
 
             $userAuthenticator->authenticateUser(
@@ -72,7 +72,7 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('app_home');
         }
 
-        return $this->render('registration/register.html.twig', [
+        return $this->render('security/register.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
     }
@@ -111,7 +111,7 @@ class RegistrationController extends AbstractController
                 ->from(new Address('hello@nicolas-deleforge.fr', 'read.me'))
                 ->to($user->getEmail())
                 ->subject('read.me')
-                ->htmlTemplate('registration/email.html.twig')
+                ->htmlTemplate('security/emailTemplate.html.twig')
         );
 
         return $this->redirectToRoute('app_home');

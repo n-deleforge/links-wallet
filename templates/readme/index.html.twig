@@ -15,7 +15,7 @@
 		<div class="bg-light p-3 mt-3">
 			<h2>{{ "readme.listMenu"|trans }}</h2>
 
-			{% if not app.user.linkUsers %}
+			{% if app.user.linkUsers|length == 0 %}
 				<p>{{ "readme.noLinks"|trans }}</p>
 			{% else %}
 				<table class="table table-hover table-striped table-condensed">

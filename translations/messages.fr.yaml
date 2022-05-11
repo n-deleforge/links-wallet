@@ -19,6 +19,7 @@ navbar:
   logout: Déconnexion
   readme: Mon readme
   settings: Paramètres
+  admin: Panneau d'administation
 
 # Login
 login:
@@ -125,8 +126,11 @@ readme:
     empty: "Aucun lien n'a été défini pour le moment."
 
 admin:
-  userTitle: "Utilisateurs"
-  user: "Liste des utilisateurs"
-  linkUser: "Liens des utilisateurs"
-  modelTitle: "Modèles"
-  model:  "Liste des modèles"
+  title: "Panneau d'administation"
+  content: "Bienvenue sur le panneau d'adminstation. Sur cette interface, il est possible de modifier les données des utilisateurs, des modèles et bien plus encore."
+  navbar:
+    userTitle: "Utilisateurs"
+    user: "Liste des utilisateurs"
+    linkUser: "Liens des utilisateurs"
+    modelTitle: "Modèles"
+    model:  "Liste des modèles"

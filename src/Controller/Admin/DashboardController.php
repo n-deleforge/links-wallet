@@ -33,11 +33,11 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToRoute(new TranslatableMessage('main.back'), 'fa-solid fa-arrow-left-to-line', 'app_home');
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
 
-        yield MenuItem::section(new TranslatableMessage('admin.userTitle'));
-        yield MenuItem::linkToCrud(new TranslatableMessage('admin.user'), 'fa solid fa-users', User::class);
+        yield MenuItem::section(new TranslatableMessage('admin.navbar.userTitle'));
+        yield MenuItem::linkToCrud(new TranslatableMessage('admin.navbar.user'), 'fa solid fa-users', User::class);
 
-        yield MenuItem::section(new TranslatableMessage('admin.modelTitle'));
-        yield MenuItem::linkToCrud(new TranslatableMessage('admin.model'), 'fa solid fa-sitemap', LinkModel::class);
+        yield MenuItem::section(new TranslatableMessage('admin.navbar.modelTitle'));
+        yield MenuItem::linkToCrud(new TranslatableMessage('admin.navbar.model'), 'fa solid fa-sitemap', LinkModel::class);
         
     }
 }
