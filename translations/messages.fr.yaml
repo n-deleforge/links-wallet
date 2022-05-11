@@ -123,3 +123,10 @@ readme:
 
   view:
     empty: "Aucun lien n'a été défini pour le moment."
+
+admin:
+  userTitle: "Utilisateurs"
+  user: "Liste des utilisateurs"
+  linkUser: "Liens des utilisateurs"
+  modelTitle: "Modèles"
+  model:  "Liste des modèles"
