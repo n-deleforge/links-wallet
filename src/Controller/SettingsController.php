@@ -132,6 +132,7 @@ class SettingsController extends AbstractController
      */
     public function deleteAccount(): Response
     {
-        return $this->render('settings/index.html.twig');
+        $this->addFlash('warning', new TranslatableMessage("main.error"));
+        return $this->redirectToRoute('app_settings');
     }
 }

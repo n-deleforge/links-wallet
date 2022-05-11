@@ -9,7 +9,7 @@ main:
 
 # Homepage
 homepage:
-  welcome: Bienvenue sur read.me
+  welcome: Bienvenue sur readme
 
 # Navbar
 navbar:
@@ -19,7 +19,7 @@ navbar:
   logout: Déconnexion
   readme: Mon readme
   settings: Paramètres
-  admin: Panneau d'administation
+  admin: Panneau d'admin.
 
 # Login
 login:
@@ -95,18 +95,18 @@ settings:
 readme:
   title: "Mon readme"
   actionMenu: "Actions principales"
-  addLink: "Ajouter un lien"
+  addModel: "Ajouter un modèle"
   seeReadme: "Visualiser mon Readme"
   listMenu: "Gestion de mon Readme"
-  noLinks: "Votre Readme est vide pour le moment."
+  noModels: "Votre Readme est vide pour le moment."
   model: "Modèle"
   username: "Nom d'utilisateur"
   actions: "Actions"
 
   add:
-    title: "Ajouter un nouveau lien"
-    success: "Le nouveau lien a été ajouté."
-    notVerified: "Vous ne pouvez pas ajouter de lien tant que votre courriel n'est pas valide."
+    title: "Ajouter un modèle"
+    success: "Le nouveau modèle a été ajouté."
+    notVerified: "Vous ne pouvez pas ajouter de modèle tant que votre courriel n'est pas valide."
 
   form:
     username: "Nom d'utilisateur"
@@ -116,14 +116,14 @@ readme:
 
   edit:
     title: "Modifier un lien existant"
-    success: "Le lien a été modifié."
+    success: "Le modèle a été modifié."
 
   delete:
     error: "Une erreur est survenue."
-    success: "Le lien a été supprimé."
+    success: "Le modèle a été supprimé."
 
   view:
-    empty: "Aucun lien n'a été défini pour le moment."
+    empty: "Le readme de l'utilisateur est en cours de construction."
 
 admin:
   title: "Panneau d'administation"

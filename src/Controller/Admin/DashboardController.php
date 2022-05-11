@@ -30,14 +30,12 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToRoute(new TranslatableMessage('main.back'), 'fa-solid fa-arrow-left-to-line', 'app_home');
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToRoute(new TranslatableMessage('main.back'), 'fa-solid fa-arrow-left', 'app_home');
 
         yield MenuItem::section(new TranslatableMessage('admin.navbar.userTitle'));
         yield MenuItem::linkToCrud(new TranslatableMessage('admin.navbar.user'), 'fa solid fa-users', User::class);
 
         yield MenuItem::section(new TranslatableMessage('admin.navbar.modelTitle'));
         yield MenuItem::linkToCrud(new TranslatableMessage('admin.navbar.model'), 'fa solid fa-sitemap', LinkModel::class);
-        
     }
 }

@@ -7,7 +7,7 @@
 		<div class="bg-light p-3 mt-3">
 			<h2>{{ "readme.actionMenu"|trans }}</h2>
 			<div class="py-2">
-				<a class="btn btn-primary" href="{{ path('app_readme_add') }}" role="button">{{ "readme.addLink"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_readme_add') }}" role="button">{{ "readme.addModel"|trans }}</a>
 				<a class="btn btn-primary" href="{{ path('app_view_readme', {username: app.user.name}) }}" role="button">{{ "readme.seeReadme"|trans }}</a>
 			</div>
 		</div>
@@ -16,7 +16,7 @@
 			<h2>{{ "readme.listMenu"|trans }}</h2>
 
 			{% if app.user.linkUsers|length == 0 %}
-				<p>{{ "readme.noLinks"|trans }}</p>
+				<p>{{ "readme.noModels"|trans }}</p>
 			{% else %}
 				<table class="table table-hover table-striped table-condensed">
 					<thead>

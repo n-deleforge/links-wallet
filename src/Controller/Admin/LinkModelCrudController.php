@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\LinkModel;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class LinkModelCrudController extends AbstractCrudController
 {
@@ -12,14 +13,12 @@ class LinkModelCrudController extends AbstractCrudController
         return LinkModel::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            TextField::new('name'),
+            TextField::new('icon'),
+            TextField::new('url')
         ];
     }
-    */
 }
