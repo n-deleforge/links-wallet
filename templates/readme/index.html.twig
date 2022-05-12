@@ -5,32 +5,34 @@
 		<h1>{{ "readme.title"|trans }}</h1>
 
 		<div class="bg-light p-3 mt-3">
-			<h2>{{ "readme.actionMenu"|trans }}</h2>
-			<div class="py-2">
-				<a class="btn btn-primary" href="{{ path('app_readme_addModel') }}" role="button">{{ "readme.addModel"|trans }}</a>
-				<a class="btn btn-primary" href="{{ path('app_readme_updateBio') }}" role="button">{{ "readme.updateBio"|trans }}</a>
-				<a class="btn btn-primary" href="{{ path('app_readme_view', {username: app.user.name}) }}" role="button">{{ "readme.seeProfile"|trans }}</a>
+			<h2>{{ "readme.menu.title"|trans }}</h2>
+			<div class="p-2">
+				<a class="btn btn-primary" href="{{ path('app_readme_addModel') }}" role="button">{{ "readme.menu.addModel"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_readme_updateBio') }}" role="button">{{ "readme.menu.updateBio"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_readme_view', {username: app.user.name}) }}" role="button">{{ "readme.menu.seeProfile"|trans }}</a>
 			</div>
 		</div>
 
 		<div class="bg-light p-3 mt-3">
-			<h2>{{ "readme.listMenu"|trans }}</h2>
+			<h2>{{ "readme.listModel.title"|trans }}</h2>
 
 			{% if app.user.linkUsers|length == 0 %}
-				<p>{{ "readme.noModels"|trans }}</p>
+				<p>{{ "readme.listModel.noModels"|trans }}</p>
 			{% else %}
 				<table class="table table-hover table-striped table-condensed">
 					<thead>
 						<tr class="text-center">
-							<th width="30%" scope="col">{{ 'readme.model'|trans }}</th>
-							<th width="50%" scope="col">{{ 'readme.username'|trans }}</th>
-							<th width="20%" scope="col">{{ 'readme.actions'|trans }}</th>
+							<th width="5%" scope="col"></th>
+							<th width="30%" scope="col">{{ 'readme.listModel.tableModel'|trans }}</th>
+							<th width="45%" scope="col">{{ 'readme.listModel.tableUsername'|trans }}</th>
+							<th width="20%" scope="col">{{ 'readme.listModel.tableActions'|trans }}</th>
 						</tr>
 					</thead>
 					<tbody>
 						{%for link in app.user.linkUsers %}
 							<tr>
-								<td class="align-middle"><i class="{{ link.model.icon }}"></i> {{ link.model.name }}</td>
+								<td class="text-center align-middle"><i class="{{ link.model.icon }}"></i></td>
+								<td class="align-middle">{{ link.model.name }}</td>
 								<td class="align-middle">{{ link.username }}</td>
 								<td class="text-center">
 									<a class="btn btn-primary btn-sm" href="{{ path('app_readme_updateModel', { id:link.id }) }}">{{ 'main.update'|trans }}</a>

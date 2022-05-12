@@ -8,27 +8,26 @@ main:
 
 # Homepage
 homepage:
-  welcome: Bienvenue sur readme
+  welcome: "Bienvenue sur readme"
 
 # Navbar
 navbar:
-  home: Accueil
-  login: Connexion
-  signup: Inscription
-  logout: Déconnexion
-  readme: Mon readme
-  settings: Paramètres
-  admin: Panneau d'admin.
+  home: "Accueil"
+  login: "Connexion"
+  signup: "Inscription"
+  logout: "Déconnexion"
+  readme: "Mon readme"
+  settings: "Paramètres"
+  admin: "Panneau d'admin."
 
 # Login
 login:
-  title: Connexion
-  email: Courriel
-  password: Mot de passe
-  rememberme: Se souvenir de moi ?
-  form: Connexion
-  remember: Se souvenir de moi ?
-  help: Cochez cette case si vous voulez rester connecté après avoir quitté l'application.
+  title: "Connexion"
+  email: "Courriel"
+  password: "Mot de passe"
+  rememberMe: "Se souvenir de moi ?"
+  loginButton: "Se connecter"
+  help: "Cochez cette case si vous voulez rester connecté après avoir quitté l'application."
 
 # Register
 register:
@@ -40,7 +39,7 @@ register:
   password: "Mot de passe"
   passwordHelp: "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
   confirm: "Confirmation du mot de passe"
-  form: "S'inscrire"
+  registerButton: "S'inscrire"
 
 # Custom error message for login
 "Invalid credentials." : "Courriel ou mot de passe incorrect."
@@ -62,14 +61,14 @@ email:
 settings:
   title: "Paramètres"
 
-  profile:
-    title: "Information de base"
+  account:
+    title: "Mon compte"
     updateName: "Changer nom utilisateur"
     updateEmail: "Changer courriel"
     updatePassword: "Changer mot de passe"
 
   data:
-    title: "Données et profil"
+    title: "Mes données"
     deleteAccount: "Supprimer mon compte"
 
   updateName:
@@ -97,15 +96,19 @@ settings:
 # Readme
 readme:
   title: "Mon readme"
-  actionMenu: "Actions principales"
-  addModel: "Ajouter un modèle"
-  seeProfile: "Visualiser mon profil"
-  updateBio: "Modifier ma bio"
-  listMenu: "Gestion de mon profil"
-  noModels: "Votre Readme est vide pour le moment."
-  actions: "Actions"
-  model: "Modèle"
-  username: "Nom d'utilisateur"
+
+  menu:
+    title: "Gestion de mon readme"
+    addModel: "Ajouter un modèle"
+    seeProfile: "Visualiser mon profil"
+    updateBio: "Modifier ma bio"
+
+  listModel:
+    title: "Gestion de mes modèles"
+    noModels: "Votre Readme est vide pour le moment."
+    tableModel: "Modèle"
+    tableUsername: "Nom d'utilisateur"
+    tableActions: "Actions"
 
   modelForm:
     username: "Nom d'utilisateur"
@@ -136,6 +139,7 @@ readme:
     bioHelp: "Un texte assez court (255 caractères) pour vous présenter, qui se situera en haut de votre profil."
     success: "Votre biographie a été mise à jour."
 
+# Admin
 admin:
   title: "Panneau d'administation"
   content: "Bienvenue sur le panneau d'adminstation. Sur cette interface, il est possible de modifier les données des utilisateurs, des modèles et bien plus encore."
