@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\LinkModel;
+use App\Entity\Model;
 use App\Entity\LinkUser;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -30,7 +30,7 @@ class ReadmeFormType extends AbstractType
                 ]
             ])
             ->add('model', EntityType::class, [
-                'class' => LinkModel::class,
+                'class' => Model::class,
                 'choice_label' => 'name',
                 'expanded' => false,
                 'multiple' => false,

@@ -14,8 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Translation\TranslatableMessage;
 
-use function PHPUnit\Framework\throwException;
-
 class ReadmeController extends AbstractController
 {
     private $security;

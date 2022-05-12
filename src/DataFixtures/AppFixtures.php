@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\LinkModel;
+use App\Entity\Model;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -41,7 +41,7 @@ class AppFixtures extends Fixture
         ];
 
         foreach($models as $model) {
-            $newModel = new LinkModel();
+            $newModel = new Model();
             $newModel->setName($model[0]);
             $newModel->setUrl($model[1]);
             $newModel->setIcon($model[2]);

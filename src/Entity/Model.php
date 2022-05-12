@@ -2,16 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\LinkModelRepository;
+use App\Repository\ModelRepository;
 use Symfony\Component\Uid\Uuid;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=LinkModelRepository::class)
+ * @ORM\Entity(repositoryClass=ModelRepository::class)
  */
-class LinkModel
+class Model
 {
     /**
      * @ORM\Id

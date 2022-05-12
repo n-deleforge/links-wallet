@@ -2,32 +2,32 @@
 
 namespace App\Repository;
 
-use App\Entity\LinkModel;
+use App\Entity\Model;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<LinkModel>
+ * @extends ServiceEntityRepository<Model>
  *
- * @method LinkModel|null find($id, $lockMode = null, $lockVersion = null)
- * @method LinkModel|null findOneBy(array $criteria, array $orderBy = null)
- * @method LinkModel[]    findAll()
- * @method LinkModel[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Model|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Model|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Model[]    findAll()
+ * @method Model[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class LinkModelRepository extends ServiceEntityRepository
+class ModelRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, LinkModel::class);
+        parent::__construct($registry, Model::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(LinkModel $entity, bool $flush = true): void
+    public function add(Model $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -39,7 +39,7 @@ class LinkModelRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(LinkModel $entity, bool $flush = true): void
+    public function remove(Model $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -48,7 +48,7 @@ class LinkModelRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return LinkModel[] Returns an array of LinkModel objects
+    //  * @return Model[] Returns an array of Model objects
     //  */
     /*
     public function findByExampleField($value)
@@ -65,7 +65,7 @@ class LinkModelRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?LinkModel
+    public function findOneBySomeField($value): ?Model
     {
         return $this->createQueryBuilder('l')
             ->andWhere('l.exampleField = :val')

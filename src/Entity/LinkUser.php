@@ -25,7 +25,7 @@ class LinkUser
     private $username;
 
     /**
-     * @ORM\ManyToOne(targetEntity=LinkModel::class, inversedBy="linkUsers")
+     * @ORM\ManyToOne(targetEntity=Model::class, inversedBy="linkUsers")
      * @ORM\JoinColumn(nullable=false)
      */
     private $model;
@@ -58,12 +58,12 @@ class LinkUser
         return $this;
     }
 
-    public function getModel(): ?LinkModel
+    public function getModel(): ?Model
     {
         return $this->model;
     }
 
-    public function setModel(?LinkModel $model): self
+    public function setModel(?Model $model): self
     {
         $this->model = $model;
 

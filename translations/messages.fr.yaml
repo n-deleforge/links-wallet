@@ -96,8 +96,8 @@ readme:
   title: "Mon readme"
   actionMenu: "Actions principales"
   addModel: "Ajouter un modèle"
-  seeReadme: "Visualiser mon Readme"
-  listMenu: "Gestion de mon Readme"
+  seeProfile: "Visualiser mon profil"
+  listMenu: "Gestion de mon profil"
   noModels: "Votre Readme est vide pour le moment."
   model: "Modèle"
   username: "Nom d'utilisateur"
@@ -112,10 +112,10 @@ readme:
     username: "Nom d'utilisateur"
     usernameHelp: "Nom d'utilisateur sur l'application choisie."
     model: "Modèle"
-    modelHelp : "Application à ajouter au Readme"
+    modelHelp : "Modèle d'application à ajouter"
 
   edit:
-    title: "Modifier un lien existant"
+    title: "Modifier un modèle existant"
     success: "Le modèle a été modifié."
 
   delete:
