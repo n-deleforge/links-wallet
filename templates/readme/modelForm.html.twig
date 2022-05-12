@@ -7,25 +7,25 @@
 		<div class="bg-light p-3 mt-3">
 			<h1 class="h3 mb-3 font-weight-normal">{{ title|trans }}</h1>
 
-			{{ form_start(readmeForm) }}
+			{{ form_start(modelForm) }}
 
 			<div class="row">
 				<div class="col-6">
-					{{ form_row(readmeForm.model, { 'label' : 'readme.form.model'|trans }) }}
+					{{ form_row(modelForm.model, { 'label' : 'readme.modelForm.model'|trans }) }}
 				</div>
 
 				<div class="col-6">
-					{{ form_row(readmeForm.username, { 'label' : 'readme.form.username'|trans }) }}
+					{{ form_row(modelForm.username, { 'label' : 'readme.modelForm.username'|trans }) }}
 				</div>
 			</div>
 
 			<div class="col-6">
-				<button class="btn btn-primary" type="submit">{{ 'main.add'|trans }}</button>
+				<button class="btn btn-primary" type="submit">{{ submit|trans }}</button>
 				<a class="btn btn-secondary" href="{{ path('app_readme') }}">{{ 'main.back'|trans }}</a>
 			</div>
 
-			{{ form_rest(readmeForm) }}
-			{{ form_end(readmeForm) }}
+			{{ form_rest(modelForm) }}
+			{{ form_end(modelForm) }}
 
 		</div>
 	</div>

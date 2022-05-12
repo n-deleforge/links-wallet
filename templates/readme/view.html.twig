@@ -4,19 +4,22 @@
 	<div class="container">
 		<h1>{{ user.name }}</h1>
 
-		<div class="p-3 mt-3">
-			{% if user.linkUsers|length == 0 %}
-				<p>{{ 'readme.view.empty'|trans }}</p>
-			{% else %}
-				<div class="mt-3 text-center">
-					{% for link in user.linkUsers %}
-						<div class="p-2">
-							<i class="{{ link.model.icon }}"></i>
-							<a class="text-decoration-none" href="{{ link.model.url }}{{ link.username }}">{{ link.model.name }}</a>
-						</div>
-					{% endfor %}
-				</div>
-			{% endif %}
-		</div>
+		{% if user.bio|length > 0 %}
+			<div class="bg-light p-3 mt-3">
+				<p class="mt-3">{{ user.bio }}</p>
+			</div>
+		{% endif %}
+
+		{% if user.linkUsers|length != 0 %}
+			<div class="p-3 mt-3 text-center">
+				{% for link in user.linkUsers %}
+					<div class="btn btn-primary text-light">
+						<i class="{{ link.model.icon }}"></i>
+						<a class="text-light text-decoration-none" href="{{ link.model.url }}{{ link.username }}">{{ link.model.name }}</a>
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+
 	</div>
 {% endblock %}

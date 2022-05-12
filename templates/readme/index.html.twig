@@ -7,8 +7,9 @@
 		<div class="bg-light p-3 mt-3">
 			<h2>{{ "readme.actionMenu"|trans }}</h2>
 			<div class="py-2">
-				<a class="btn btn-primary" href="{{ path('app_readme_add') }}" role="button">{{ "readme.addModel"|trans }}</a>
-				<a class="btn btn-primary" href="{{ path('app_view_readme', {username: app.user.name}) }}" role="button">{{ "readme.seeProfile"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_readme_addModel') }}" role="button">{{ "readme.addModel"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_readme_updateBio') }}" role="button">{{ "readme.updateBio"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_readme_view', {username: app.user.name}) }}" role="button">{{ "readme.seeProfile"|trans }}</a>
 			</div>
 		</div>
 
@@ -32,8 +33,8 @@
 								<td class="align-middle"><i class="{{ link.model.icon }}"></i> {{ link.model.name }}</td>
 								<td class="align-middle">{{ link.username }}</td>
 								<td class="text-center">
-									<a class="btn btn-primary btn-sm" href="{{ path('app_readme_edit', { id:link.id }) }}">{{ 'main.modify'|trans }}</a>
-									<a class="btn btn-danger btn-sm" href="{{ path('app_readme_delete', { id:link.id }) }}">{{ 'main.delete'|trans }}</a>
+									<a class="btn btn-primary btn-sm" href="{{ path('app_readme_updateModel', { id:link.id }) }}">{{ 'main.update'|trans }}</a>
+									<a class="btn btn-danger btn-sm" href="{{ path('app_readme_deleteModel', { id:link.id }) }}">{{ 'main.delete'|trans }}</a>
 								</td>
 							</tr>
 						{% endfor %}

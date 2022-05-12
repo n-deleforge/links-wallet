@@ -4,7 +4,6 @@ main:
   update: "Mettre à jour"
   back: "Retour"
   delete: "Supprimer"
-  modify: "Modifier"
   error: "Une erreur est survenue."
 
 # Homepage
@@ -62,28 +61,32 @@ email:
 # Settings
 settings:
   title: "Paramètres"
-  profile: "Information de base"
-  changeName: "Changer nom utilisateur"
-  changeEmail: "Changer courriel"
-  changePassword: "Changer mot de passe"
-  data: "Données et profil"
-  deleteAccount: "Supprimer mon compte"
 
-  modifyName:
+  profile:
+    title: "Information de base"
+    updateName: "Changer nom utilisateur"
+    updateEmail: "Changer courriel"
+    updatePassword: "Changer mot de passe"
+
+  data:
+    title: "Données et profil"
+    deleteAccount: "Supprimer mon compte"
+
+  updateName:
     title: "Modifier nom d'utilisateur"
     name: "Nouveau nom d'utilisateur"
     nameHelp: "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
     success: "Nom d'utilisateur mis à jour."
     notVerified: "Vous ne pouvez pas modifier votre nom d'utilisateur tant que votre courriel n'est pas valide."
 
-  modifyEmail:
+  updateEmail:
     title: "Modifier courriel"
     email: "Nouveau courriel"
     emailHelp: "Votre courriel doit être valide, il sera utilisé en cas de problème de connexion."
     success: "Votre courriel a été mis à jour."
     notVerified: "Vous ne pouvez pas modifier votre courriel tant que ce dernier n'est pas valide"
 
-  modifyPassword:
+  updatePassword:
     title: "Modifier mot de passe"
     password: "Nouveau mot de passe"
     passwordHelp: "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
@@ -97,37 +100,46 @@ readme:
   actionMenu: "Actions principales"
   addModel: "Ajouter un modèle"
   seeProfile: "Visualiser mon profil"
+  updateBio: "Modifier ma bio"
   listMenu: "Gestion de mon profil"
   noModels: "Votre Readme est vide pour le moment."
+  actions: "Actions"
   model: "Modèle"
   username: "Nom d'utilisateur"
-  actions: "Actions"
 
-  add:
-    title: "Ajouter un modèle"
-    success: "Le nouveau modèle a été ajouté."
-    notVerified: "Vous ne pouvez pas ajouter de modèle tant que votre courriel n'est pas valide."
-
-  form:
+  modelForm:
     username: "Nom d'utilisateur"
     usernameHelp: "Nom d'utilisateur sur l'application choisie."
     model: "Modèle"
     modelHelp : "Modèle d'application à ajouter"
 
-  edit:
-    title: "Modifier un modèle existant"
-    success: "Le modèle a été modifié."
+    add:
+      title: "Ajouter un modèle"
+      success: "Le nouveau modèle a été ajouté."
+      notVerified: "Vous ne pouvez pas ajouter de modèle tant que votre courriel n'est pas valide."
+      submit: "Ajouter"
 
-  delete:
-    error: "Une erreur est survenue."
-    success: "Le modèle a été supprimé."
+    update:
+      title: "Modifier un modèle existant"
+      success: "Le modèle a été modifié."
+      submit: "Mettre à jour"
+
+    delete:
+      error: "Une erreur est survenue."
+      success: "Le modèle a été supprimé."
 
   view:
-    empty: "Le readme de l'utilisateur est en cours de construction."
+
+  bioForm:
+    title: "Mettre à jour votre biographie"
+    bio: "Biographie"
+    bioHelp: "Un texte assez court (255 caractères) pour vous présenter, qui se situera en haut de votre profil."
+    success: "Votre biographie a été mise à jour."
 
 admin:
   title: "Panneau d'administation"
   content: "Bienvenue sur le panneau d'adminstation. Sur cette interface, il est possible de modifier les données des utilisateurs, des modèles et bien plus encore."
+
   navbar:
     userTitle: "Utilisateurs"
     user: "Liste des utilisateurs"

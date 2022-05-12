@@ -37,14 +37,14 @@ class SettingsController extends AbstractController
     }
 
     /**
-     * @Route("/settings/modify/name", name="app_modify_name")
+     * @Route("/settings/update/name", name="app_settings_updateName")
      */
-    public function modifyName(Request $request, EntityManagerInterface $entityManager): Response
+    public function updateName(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
 
         if (!$user->isVerified()) {
-            $this->addFlash('warning', new TranslatableMessage("settings.modifyName.notVerified"));
+            $this->addFlash('warning', new TranslatableMessage("settings.updateName.notVerified"));
             return $this->redirectToRoute('app_settings');
         }
 
@@ -55,24 +55,24 @@ class SettingsController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', new TranslatableMessage('settings.modifyName.success'));
+            $this->addFlash('success', new TranslatableMessage('settings.updateName.success'));
         }
 
-        return $this->render('settings/modifyName.html.twig', [
+        return $this->render('settings/updateName.html.twig', [
             'nameForm' => $form->createView(),
             'user' => $user
         ]);
     }
 
     /**
-     * @Route("/settings/modify/email", name="app_modify_email")
+     * @Route("/settings/update/email", name="app_settings_updateEmail")
      */
-    public function modifyEmail(Request $request, EntityManagerInterface $entityManager): Response
+    public function updateEmail(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
 
         if (!$user->isVerified()) {
-            $this->addFlash('warning', new TranslatableMessage("settings.modifyEmail.notVerified"));
+            $this->addFlash('warning', new TranslatableMessage("settings.updateEmail.notVerified"));
             return $this->redirectToRoute('app_settings');
         }
 
@@ -83,24 +83,24 @@ class SettingsController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', new TranslatableMessage('settings.modifyEmail.success'));
+            $this->addFlash('success', new TranslatableMessage('settings.updateEmail.success'));
         }
 
-        return $this->render('settings/modifyEmail.html.twig', [
+        return $this->render('settings/updateEmail.html.twig', [
             'emailForm' => $form->createView(),
             'user' => $user
         ]);
     }
 
     /**
-     * @Route("/settings/modify/password", name="app_modify_password")
+     * @Route("/settings/update/password", name="app_settings_updatePassword")
      */
-    public function modifyPassword(Request $request, UserPasswordHasherInterface $userPasswordHasher ,EntityManagerInterface $entityManager): Response
+    public function updatePassword(Request $request, UserPasswordHasherInterface $userPasswordHasher ,EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
 
         if (!$user->isVerified()) {
-            $this->addFlash('warning', new TranslatableMessage("settings.modifyPassword.notVerified"));
+            $this->addFlash('warning', new TranslatableMessage("settings.updatePassword.notVerified"));
             return $this->redirectToRoute('app_settings');
         }
 
@@ -118,17 +118,17 @@ class SettingsController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', new TranslatableMessage('settings.modifyPassword.success'));
+            $this->addFlash('success', new TranslatableMessage('settings.updatePassword.success'));
         }
 
-        return $this->render('settings/modifyPassword.html.twig', [
+        return $this->render('settings/updatePassword.html.twig', [
             'passwordForm' => $form->createView(),
             'user' => $user
         ]);
     }
 
     /**
-     * @Route("/settings/delete", name="app_delete_account")
+     * @Route("/settings/deleteAccount", name="app_settings_deleteAccount")
      */
     public function deleteAccount(): Response
     {

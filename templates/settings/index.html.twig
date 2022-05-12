@@ -5,18 +5,18 @@
 		<h1>{{ "settings.title"|trans }}</h1>
 
 		<div class="bg-light p-3 mt-3">
-			<h2>{{ "settings.profile"|trans }}</h2>
+			<h2>{{ "settings.profile.title"|trans }}</h2>
 			<div class="py-2">
-				<a class="btn btn-primary" href="{{ path('app_modify_name') }}" role="button">{{ "settings.changeName"|trans }}</a>
-				<a class="btn btn-primary" href="{{ path('app_modify_email') }}" role="button">{{ "settings.changeEmail"|trans }}</a>
-				<a class="btn btn-primary" href="{{ path('app_modify_password') }}" role="button">{{ "settings.changePassword"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_settings_updateName') }}" role="button">{{ "settings.profile.updateName"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_settings_updateEmail') }}" role="button">{{ "settings.profile.updateEmail"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_settings_updatePassword') }}" role="button">{{ "settings.profile.updatePassword"|trans }}</a>
 			</div>
 		</div>
 
 		<div class="bg-light p-3 mt-3">
-			<h2>{{ "settings.data"|trans }}</h2>
+			<h2>{{ "settings.data.title"|trans }}</h2>
 			<div class="py-2">
-				<a class="btn btn-danger" href="{{ path('app_delete_account') }}" role="button">{{ "settings.deleteAccount"|trans }}</a>
+				<a class="btn btn-danger" href="{{ path('app_settings_deleteAccount') }}" role="button">{{ "settings.data.deleteAccount"|trans }}</a>
 			</div>
 		</div>
 

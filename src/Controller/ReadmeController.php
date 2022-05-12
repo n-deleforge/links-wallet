@@ -4,7 +4,8 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\LinkUser;
-use App\Form\ReadmeFormType;
+use App\Form\BioFormType;
+use App\Form\ModelFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -32,7 +33,7 @@ class ReadmeController extends AbstractController
     }
 
     /**
-     * @Route("/@{username}", name="app_view_readme")
+     * @Route("/@{username}", name="app_readme_view")
      */
     public function view(ManagerRegistry $doctrine, $username): Response
     {
@@ -50,9 +51,9 @@ class ReadmeController extends AbstractController
     }
 
     /**
-     * @Route("/readme/add/", name="app_readme_add")
+     * @Route("/readme/model/add/", name="app_readme_addModel")
      */
-    public function add(Request $request, EntityManagerInterface $entityManager): Response
+    public function addModel(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
 
@@ -62,7 +63,7 @@ class ReadmeController extends AbstractController
         }
 
         $link = new LinkUser();
-        $form = $this->createForm(ReadmeFormType::class, $link);
+        $form = $this->createForm(ModelFormType::class, $link);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -71,25 +72,26 @@ class ReadmeController extends AbstractController
             $entityManager->persist($link);
             $entityManager->flush();
 
-            $this->addFlash('success', new TranslatableMessage('readme.add.success'));
+            $this->addFlash('success', new TranslatableMessage('readme.modelForm.add.success'));
         }
 
-        return $this->render('readme/form.html.twig', [
-            'title' => new TranslatableMessage('readme.add.title'),
-            'readmeForm' => $form->createView()
+        return $this->render('readme/modelForm.html.twig', [
+            'title' => new TranslatableMessage('readme.modelForm.add.title'),
+            'submit' => new TranslatableMessage('readme.modelForm.add.submit'),
+            'modelForm' => $form->createView()
         ]);
     }
 
     /**
-     * @Route("/readme/edit/{id}", name="app_readme_edit")
+     * @Route("/readme/model/update/{id}", name="app_readme_updateModel")
      */
-    public function edit(Request $request, ManagerRegistry $doctrine, EntityManagerInterface $entityManager, $id): Response
+    public function updateModel(Request $request, ManagerRegistry $doctrine, EntityManagerInterface $entityManager, $id): Response
     {
         $user = $this->security->getUser();
         $repository = $doctrine->getRepository(LinkUser::class);
         $link = $repository->find($id);
 
-        $form = $this->createForm(ReadmeFormType::class, $link);
+        $form = $this->createForm(ModelFormType::class, $link);
         $form->handleRequest($request);
 
         if ($user->getId() !== $link->getUser()->getId()) {
@@ -100,20 +102,21 @@ class ReadmeController extends AbstractController
                 $entityManager->persist($link);
                 $entityManager->flush();
 
-                $this->addFlash('success', new TranslatableMessage('readme.edit.success'));
+                $this->addFlash('success', new TranslatableMessage('readme.modelForm.update.success'));
             }
         }
 
-        return $this->render('readme/form.html.twig', [
-            'title' => new TranslatableMessage('readme.edit.title'),
-            'readmeForm' => $form->createView()
+        return $this->render('readme/modelForm.html.twig', [
+            'title' => new TranslatableMessage('readme.modelForm.update.title'),
+            'submit' => new TranslatableMessage('readme.modelForm.update.submit'),
+            'modelForm' => $form->createView()
         ]);
     }
 
     /**
-     * @Route("/readme/delete/{id}", name="app_readme_delete")
+     * @Route("/readme/model/delete/{id}", name="app_readme_deleteModel")
      */
-    public function delete(ManagerRegistry $doctrine, EntityManagerInterface $entityManager, $id): Response
+    public function deleteModel(ManagerRegistry $doctrine, EntityManagerInterface $entityManager, $id): Response
     {
         $user = $this->security->getUser();
         $repository = $doctrine->getRepository(LinkUser::class);
@@ -126,9 +129,31 @@ class ReadmeController extends AbstractController
             $entityManager->remove($link);
             $entityManager->flush();
 
-            $this->addFlash('success', new TranslatableMessage('readme.delete.success'));
+            $this->addFlash('success', new TranslatableMessage('readme.modelForm.delete.success'));
         }
 
         return $this->redirectToRoute('app_readme');
+    }
+
+    /**
+     * @Route("/readme/update/bio", name="app_readme_updateBio")
+     */
+    public function updateBio(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $user = $this->security->getUser();
+
+        $form = $this->createForm(BioFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            $this->addFlash('success', new TranslatableMessage('readme.bioForm.success'));
+        }
+
+        return $this->render('readme/bioForm.html.twig', [
+            'bioForm' => $form->createView()
+        ]);
     }
 }

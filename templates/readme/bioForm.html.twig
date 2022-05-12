@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<h1>{{ "readme.title"|trans }}</h1>
+
+		<div class="bg-light p-3 mt-3">
+			<h1 class="h3 mb-3 font-weight-normal">{{ 'readme.bioForm.title'|trans }}</h1>
+
+			{{ form_start(bioForm) }}
+
+			{{ form_row(bioForm.bio, { 'label' : 'readme.bioForm.bio'|trans }) }}
+
+			<div class="col-6">
+				<button class="btn btn-primary" type="submit">{{ 'main.update'|trans }}</button>
+				<a class="btn btn-secondary" href="{{ path('app_readme') }}">{{ 'main.back'|trans }}</a>
+			</div>
+
+			{{ form_rest(bioForm) }}
+			{{ form_end(bioForm) }}
+
+		</div>
+	</div>
+{% endblock %}

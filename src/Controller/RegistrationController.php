@@ -54,7 +54,7 @@ class RegistrationController extends AbstractController
 
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation(
-                'app_verify_email',
+                'app_register_verifyEmail',
                 $user,
                 (new TemplatedEmail())
                     ->from(new Address('hello@nicolas-deleforge.fr', 'read.me'))
@@ -78,7 +78,7 @@ class RegistrationController extends AbstractController
     }
 
     /**
-     * @Route("/verify/email", name="app_verify_email")
+     * @Route("/verify/email", name="app_register_verifyEmail")
      */
     public function verifyUserEmail(Request $request, TranslatorInterface $translator): Response
     {
@@ -98,14 +98,14 @@ class RegistrationController extends AbstractController
     }
 
     /**
-     * @Route("/verify/resend", name="app_resend_email")
+     * @Route("/verify/resend", name="app_register_resendEmail")
      */
     public function resendEmail()
     {
         $user = $this->security->getUser();
 
         $this->emailVerifier->sendEmailConfirmation(
-            'app_verify_email',
+            'app_register_verifyEmail',
             $user,
             (new TemplatedEmail())
                 ->from(new Address('hello@nicolas-deleforge.fr', 'read.me'))
