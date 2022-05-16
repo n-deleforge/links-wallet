@@ -6,19 +6,23 @@ main:
   delete: "Supprimer"
   error: "Une erreur est survenue."
 
-# Homepage
-homepage:
-  welcome: "Bienvenue sur readme"
-
 # Navbar
 navbar:
   home: "Accueil"
   login: "Connexion"
   signup: "Inscription"
   logout: "Déconnexion"
-  readme: "Gestion du readme"
-  account: "Gestion du compte"
+  settings: "Paramètres"
   admin: "Panneau d'admin."
+
+# Homepage
+homepage:
+  welcome: "Bienvenue sur readme"
+
+# Readme
+view:
+  notVisible: "Le profil de l'utilisateur n'est pas visible."
+  alwaysVisible: "Votre profil est toujours visible et accessible par vous-même, même si vous l'avez mis en non visible."
 
 # Login
 login:
@@ -57,96 +61,86 @@ email:
   notVerified: "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir utiliser l'application."
   resend: "Renvoyer un courriel de vérification"
 
-# Account
-account:
-  title: "Mon compte"
+# Settings
+settings:
+  title: "Paramètres"
 
-  settings:
-    title: "Paramètres"
+  # Account
+  account:
+    title: "Gestion de mon compte"
     updateName: "Changer nom utilisateur"
     updateEmail: "Changer courriel"
     updatePassword: "Changer mot de passe"
 
-  data:
-    title: "Mes données"
-    deleteAccount: "Supprimer mon compte"
+    name:
+      title: "Modifier nom d'utilisateur"
+      input: "Nouveau nom d'utilisateur"
+      help: "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
+      success: "Nom d'utilisateur mis à jour."
+      notVerified: "Vous ne pouvez pas modifier votre nom d'utilisateur tant que votre courriel n'est pas valide."
 
-  updateName:
-    title: "Modifier nom d'utilisateur"
-    name: "Nouveau nom d'utilisateur"
-    nameHelp: "Votre nom d'utilisateur sera utilisé pour l'affichage et le partage de votre profil."
-    success: "Nom d'utilisateur mis à jour."
-    notVerified: "Vous ne pouvez pas modifier votre nom d'utilisateur tant que votre courriel n'est pas valide."
+    email:
+      title: "Modifier courriel"
+      input: "Nouveau courriel"
+      help: "Votre courriel doit être valide, il sera utilisé en cas de problème de connexion."
+      success: "Votre courriel a été mis à jour."
+      notVerified: "Vous ne pouvez pas modifier votre courriel tant que ce dernier n'est pas valide"
 
-  updateEmail:
-    title: "Modifier courriel"
-    email: "Nouveau courriel"
-    emailHelp: "Votre courriel doit être valide, il sera utilisé en cas de problème de connexion."
-    success: "Votre courriel a été mis à jour."
-    notVerified: "Vous ne pouvez pas modifier votre courriel tant que ce dernier n'est pas valide"
-
-  updatePassword:
-    title: "Modifier mot de passe"
-    password: "Nouveau mot de passe"
-    passwordHelp: "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
-    confirm: "Confirmation du nouveau mot de passe"
-    success: "Votre mot de passe a été mis à jour."
-    notVerified: "Vous ne pouvez pas modifier votre mot de passe tant que votre courriel n'est pas valide."
+    password:
+      title: "Modifier mot de passe"
+      input: "Nouveau mot de passe"
+      help: "Votre mot de passe doit faire au moins 8 caractères dont une minuscule, une majuscule, un chiffre et un caractère spécial."
+      confirm: "Confirmation du nouveau mot de passe"
+      success: "Votre mot de passe a été mis à jour."
+      notVerified: "Vous ne pouvez pas modifier votre mot de passe tant que votre courriel n'est pas valide."
 
 # Readme
-readme:
-  title: "Mon readme"
-
-  menu:
+  readme:
     title: "Gestion de mon readme"
-    addModel: "Ajouter un modèle"
     seeProfile: "Visualiser mon profil"
-    settings: "Paramètres supplémentaires"
 
-  listModel:
-    title: "Gestion de mes modèles"
-    noModels: "Votre Readme est vide pour le moment."
-    tableModel: "Modèle"
-    tableUsername: "Nom d'utilisateur"
-    tableActions: "Actions"
+    model:
+      title: "Gestion de mes modèles"
+      noModels: "Votre Readme est vide pour le moment."
+      buttonAdd: "Ajouter un modèle"
+      tableModel: "Modèle"
+      tableUsername: "Nom d'utilisateur"
+      tableActions: "Actions"
 
-  modelForm:
-    username: "Nom d'utilisateur"
-    usernameHelp: "Nom d'utilisateur sur l'application choisie."
-    model: "Modèle"
-    modelHelp : "Modèle d'application à ajouter"
+      form:
+        username: "Nom d'utilisateur"
+        usernameHelp: "Nom d'utilisateur sur l'application choisie."
+        model: "Modèle"
+        modelHelp : "Modèle d'application à ajouter"
 
-    add:
-      title: "Ajouter un modèle"
-      success: "Le nouveau modèle a été ajouté."
-      notVerified: "Vous ne pouvez pas ajouter de modèle tant que votre courriel n'est pas valide."
-      submit: "Ajouter"
+      add:
+        title: "Ajouter un modèle"
+        success: "Le nouveau modèle a été ajouté."
+        notVerified: "Vous ne pouvez pas ajouter de modèle tant que votre courriel n'est pas valide."
+        submit: "Ajouter"
 
-    update:
-      title: "Modifier un modèle existant"
-      success: "Le modèle a été modifié."
-      submit: "Mettre à jour"
+      update:
+        title: "Modifier un modèle existant"
+        success: "Le modèle a été modifié."
+        submit: "Mettre à jour"
 
-    delete:
-      error: "Une erreur est survenue."
-      success: "Le modèle a été supprimé."
+      delete:
+        error: "Une erreur est survenue."
+        success: "Le modèle a été supprimé."
 
-  view:
-    notVisible: "Le profil de l'utilisateur n'est pas visible."
-    alwaysVisible: "Votre profil est toujours visible et accessible par vous-même, même si vous l'avez mis en non visible."
+    personalization:
+      title: "Paramètres supplémentaires"
+      success: "Vos paramètres ont été mis à jour."
 
-  settings:
-    success: "Vos paramètres ont été mis à jour."
-
-    bio:
-      title: "Mettre à jour votre biographie"
-      input: "Biographie"
-      help: "Un texte de 255 caractères (au maximum) pour vous présenter, qui se situera en haut de votre profil."
-      
-    visibility:
-      title: "Visibilité de votre readme"
-      input: "Rendre votre profil visible ?"
-      help: "En cochant cette case, vous rendez votre profil public pour tout le monde. En décochant cette case, votre profil ne sera accessible qu'à vous-même."
+      bio:
+        title: "Mettre à jour votre biographie"
+        input: "Biographie"
+        help: "Un texte de 255 caractères (au maximum) pour vous présenter, qui se situera en haut de votre profil."
+        
+      visibility:
+        title: "Visibilité de votre readme"
+        input: "Rendre votre profil visible ?"
+        help: "En cochant cette case, vous rendez votre profil public pour tout le monde. En décochant cette case, votre profil ne sera accessible qu'à vous-même."
 
 # Admin
 admin:

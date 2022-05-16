@@ -10,22 +10,20 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Translation\TranslatableMessage;
 use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\NotBlank;
 
-class ReadmeSettingsFormType extends AbstractType
+class ReadmePersonalizationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('isVisible', CheckboxType::class, [
                 'required' => false,
-                'help' => new TranslatableMessage('readme.settings.visibility.help')
+                'help' => new TranslatableMessage('settings.readme.personalization.visibility.help')
             ])
             ->add('bio', TextareaType::class, [
-                'help' => new TranslatableMessage('readme.settings.bio.help'),
-                'required' => true,
+                'help' => new TranslatableMessage('settings.readme.personalization.bio.help'),
+                'required' => false,
                 'constraints' => [
-                    new NotBlank(),
                     new Length([
                         'min' => 4,
                         'max' => 255

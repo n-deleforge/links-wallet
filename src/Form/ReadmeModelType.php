@@ -14,13 +14,13 @@ use Symfony\Component\Translation\TranslatableMessage;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class ModelFormType extends AbstractType
+class ReadmeModelType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('username', TextType::class, [
-                'help' => new TranslatableMessage('readme.modelForm.usernameHelp'),
+                'help' => new TranslatableMessage('settings.readme.model.form.usernameHelp'),
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),
@@ -34,7 +34,7 @@ class ModelFormType extends AbstractType
                 'choice_label' => 'name',
                 'expanded' => false,
                 'multiple' => false,
-                'help' => new TranslatableMessage('readme.modelForm.modelHelp'),
+                'help' => new TranslatableMessage('settings.readme.model.form.modelHelp'),
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('m')
                         ->orderBy('m.name', 'ASC');

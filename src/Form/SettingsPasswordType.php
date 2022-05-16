@@ -12,7 +12,7 @@ use Symfony\Component\Translation\TranslatableMessage;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
 
-class PasswordFormType extends AbstractType
+class SettingsPasswordType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -28,7 +28,7 @@ class PasswordFormType extends AbstractType
                 'first_name' => 'password',
                 'second_name' => 'confirm',
                 'first_options' => [
-                    'help' => new TranslatableMessage('account.updatePassword.passwordHelp')
+                    'help' => new TranslatableMessage('settings.account.password.help')
                 ]
             ]
         );

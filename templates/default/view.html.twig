@@ -4,7 +4,7 @@
 	{% if not user.isVisible and app.request.pathinfo == "/@" ~ user.name %}
 		<div class="container">
 			<div class="row">
-				<div class="alert alert-primary">{{ 'readme.view.alwaysVisible'|trans }}</div>
+				<div class="alert alert-primary">{{ 'view.alwaysVisible'|trans }}</div>
 			</div>
 		</div>
 	{% endif %}
@@ -12,7 +12,6 @@
 	<div class="container">
 		<h1>{{ user.name }}</h1>
 
-		{# {% if user.isVisible %} #}
 		{% if user.isVisible or app.request.pathinfo == "/@" ~ user.name %}
 			{% if user.bio|length > 0 %}
 				<div class="bg-light p-3 mt-3">
@@ -31,7 +30,7 @@
 				</div>
 			{% endif %}
 		{% else %}
-			<p class="text-center mt-5">{{ 'readme.view.notVisible'|trans }}</p>
+			<p class="text-center mt-5">{{ 'view.notVisible'|trans }}</p>
 		{% endif %}
 
 	</div>

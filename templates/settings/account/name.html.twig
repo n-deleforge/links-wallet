@@ -2,22 +2,22 @@
 
 {% block body %}
 	<div class="container">
-		<h1>{{ "account.title"|trans }}</h1>
+		<h1>{{ "settings.title"|trans }}</h1>
 
 		{{ form_start(nameForm) }}
 
 		<div class="bg-light p-3 mt-3">
-			<h1 class="h3 mb-3 font-weight-normal">{{ 'account.updateName.title'|trans }}</h1>
+			<h1 class="h3 mb-3 font-weight-normal">{{ 'settings.account.name.title'|trans }}</h1>
 
 			<div class="col-6 mt-3">
-				{{ form_row(nameForm.name, { 'label': 'account.updateName.name'|trans })  }}
+				{{ form_row(nameForm.name, { 'label': 'settings.account.name.input'|trans })  }}
 			</div>
 
 		</div>
 
 		<div class="col-6 p-3">
 			<button class="btn btn-primary" type="submit">{{ 'main.update'|trans }}</button>
-			<a class="btn btn-secondary" href="{{ path('app_account') }}">{{ 'main.back'|trans }}</a>
+			<a class="btn btn-secondary" href="{{ path('app_settings') }}">{{ 'main.back'|trans }}</a>
 		</div>
 
 		{{ form_rest(nameForm) }}

@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<h1>{{ "settings.title"|trans }}</h1>
+
+		<div class="bg-light p-3 mt-3">
+			<h2>{{ "settings.account.title"|trans }}</h2>
+			<div class="p-2">
+				<a class="btn btn-primary" href="{{ path('app_settings_update_name') }}" role="button">{{ "settings.account.updateName"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_settings_update_email') }}" role="button">{{ "settings.account.updateEmail"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_settings_update_password') }}" role="button">{{ "settings.account.updatePassword"|trans }}</a>
+			</div>
+		</div>
+
+		<div class="bg-light p-3 mt-3">
+			<h2>{{ "settings.readme.title"|trans }}</h2>
+			<div class="p-2">
+				<a class="btn btn-primary" href="{{ path('app_view', {username: app.user.name}) }}" role="button">{{ "settings.readme.seeProfile"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_settings_add_model') }}" role="button">{{ "settings.readme.model.buttonAdd"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_settings_personalization') }}" role="button">{{ "settings.readme.personalization.title"|trans }}</a>
+			</div>
+		</div>
+
+		<div class="bg-light p-3 mt-3">
+			<h2>{{ "settings.readme.model.title"|trans }}</h2>
+
+			{% if app.user.linkUsers|length == 0 %}
+				<p class="p-2">{{ "settings.readme.model.noModels"|trans }}</p>
+			{% else %}
+				<table class="table table-hover table-striped table-condensed">
+					<thead>
+						<tr class="text-center">
+							<th width="5%" scope="col"></th>
+							<th width="30%" scope="col">{{ 'settings.readme.model.tableModel'|trans }}</th>
+							<th width="45%" scope="col">{{ 'settings.readme.model.tableUsername'|trans }}</th>
+							<th width="20%" scope="col">{{ 'settings.readme.model.tableActions'|trans }}</th>
+						</tr>
+					</thead>
+					<tbody>
+						{%for link in app.user.linkUsers %}
+							<tr>
+								<td class="text-center align-middle">
+									<i class="{{ link.model.icon }}"></i>
+								</td>
+								<td class="align-middle">{{ link.model.name }}</td>
+								<td class="align-middle">{{ link.username }}</td>
+								<td class="text-center">
+									<a class="btn btn-primary btn-sm" href="{{ path('app_settings_update_model', { id:link.id }) }}">{{ 'main.update'|trans }}</a>
+									<a class="btn btn-danger btn-sm" href="{{ path('app_settings_delete_model', { id:link.id }) }}">{{ 'main.delete'|trans }}</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% endif %}
+
+		</div>
+	{% endblock %}

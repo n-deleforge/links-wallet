@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<h1>{{ "settings.title"|trans }}</h1>
+
+		{{ form_start(settingsForm) }}
+
+		<div class="bg-light p-3 mt-3">
+			<h1 class="h3 mb-3 font-weight-normal">{{ 'settings.readme.personalization.visibility.title'|trans }}</h1>
+
+			{{ form_row(settingsForm.isVisible, { 'label' : 'settings.readme.personalization.visibility.input'|trans }) }}
+		</div>
+
+		<div class="bg-light p-3 mt-3">
+			<h1 class="h3 mb-3 font-weight-normal">{{ 'settings.readme.personalization.bio.title'|trans }}</h1>
+
+			{{ form_row(settingsForm.bio, { 'label' : 'settings.readme.personalization.bio.input'|trans }) }}
+		</div>
+
+		<div class="col-6 p-3">
+			<button class="btn btn-primary" type="submit">{{ 'main.update'|trans }}</button>
+			<a class="btn btn-secondary" href="{{ path('app_settings') }}">{{ 'main.back'|trans }}</a>
+		</div>
+
+		{{ form_rest(settingsForm) }}
+		{{ form_end(settingsForm) }}
+
+	</div>
+{% endblock %}
