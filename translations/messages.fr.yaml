@@ -16,8 +16,8 @@ navbar:
   login: "Connexion"
   signup: "Inscription"
   logout: "Déconnexion"
-  readme: "Mon readme"
-  settings: "Paramètres"
+  readme: "Gestion du readme"
+  account: "Gestion du compte"
   admin: "Panneau d'admin."
 
 # Login
@@ -57,12 +57,12 @@ email:
   notVerified: "Merci de vérifier vos courriels, vous devez valider votre compte avant de pouvoir utiliser l'application."
   resend: "Renvoyer un courriel de vérification"
 
-# Settings
-settings:
-  title: "Paramètres"
+# Account
+account:
+  title: "Mon compte"
 
-  account:
-    title: "Mon compte"
+  settings:
+    title: "Paramètres"
     updateName: "Changer nom utilisateur"
     updateEmail: "Changer courriel"
     updatePassword: "Changer mot de passe"
@@ -101,7 +101,7 @@ readme:
     title: "Gestion de mon readme"
     addModel: "Ajouter un modèle"
     seeProfile: "Visualiser mon profil"
-    updateBio: "Modifier ma bio"
+    settings: "Paramètres supplémentaires"
 
   listModel:
     title: "Gestion de mes modèles"
@@ -132,12 +132,21 @@ readme:
       success: "Le modèle a été supprimé."
 
   view:
+    notVisible: "Le profil de l'utilisateur n'est pas visible."
+    alwaysVisible: "Votre profil est toujours visible et accessible par vous-même, même si vous l'avez mis en non visible."
 
-  bioForm:
-    title: "Mettre à jour votre biographie"
-    bio: "Biographie"
-    bioHelp: "Un texte assez court (255 caractères) pour vous présenter, qui se situera en haut de votre profil."
-    success: "Votre biographie a été mise à jour."
+  settings:
+    success: "Vos paramètres ont été mis à jour."
+
+    bio:
+      title: "Mettre à jour votre biographie"
+      input: "Biographie"
+      help: "Un texte assez court (255 caractères) pour vous présenter, qui se situera en haut de votre profil."
+      
+    visibility:
+      title: "Visibilité de votre readme"
+      input: "Rendre votre profil visible ?"
+      help: "En cochant cette case, vous rendez votre profil public pour tout le monde. En décochant cette case, votre profil ne sera accessible qu'à vous-même."
 
 # Admin
 admin:

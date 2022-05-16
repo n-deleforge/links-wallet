@@ -7,9 +7,9 @@
 		<div class="bg-light p-3 mt-3">
 			<h2>{{ "readme.menu.title"|trans }}</h2>
 			<div class="p-2">
-				<a class="btn btn-primary" href="{{ path('app_readme_addModel') }}" role="button">{{ "readme.menu.addModel"|trans }}</a>
-				<a class="btn btn-primary" href="{{ path('app_readme_updateBio') }}" role="button">{{ "readme.menu.updateBio"|trans }}</a>
 				<a class="btn btn-primary" href="{{ path('app_readme_view', {username: app.user.name}) }}" role="button">{{ "readme.menu.seeProfile"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_readme_addModel') }}" role="button">{{ "readme.menu.addModel"|trans }}</a>
+				<a class="btn btn-primary" href="{{ path('app_readme_settings') }}" role="button">{{ "readme.menu.settings"|trans }}</a>
 			</div>
 		</div>
 

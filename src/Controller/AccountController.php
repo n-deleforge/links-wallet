@@ -19,7 +19,7 @@ use Symfony\Component\Translation\TranslatableMessage;
 /**
  * @isGranted("IS_AUTHENTICATED_FULLY")
  */
-class SettingsController extends AbstractController
+class AccountController extends AbstractController
 {
     private $security;
 
@@ -29,23 +29,23 @@ class SettingsController extends AbstractController
     }
 
     /**
-     * @Route("/settings", name="app_settings")
+     * @Route("/account", name="app_account")
      */
     public function index(): Response
     {
-        return $this->render('settings/index.html.twig');
+        return $this->render('account/index.html.twig');
     }
 
     /**
-     * @Route("/settings/update/name", name="app_settings_updateName")
+     * @Route("/account/update/name", name="app_account_updateName")
      */
     public function updateName(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
 
         if (!$user->isVerified()) {
-            $this->addFlash('warning', new TranslatableMessage("settings.updateName.notVerified"));
-            return $this->redirectToRoute('app_settings');
+            $this->addFlash('warning', new TranslatableMessage("account.updateName.notVerified"));
+            return $this->redirectToRoute('app_account');
         }
 
         $form = $this->createForm(NameFormType::class, $user);
@@ -55,25 +55,25 @@ class SettingsController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', new TranslatableMessage('settings.updateName.success'));
+            $this->addFlash('success', new TranslatableMessage('account.updateName.success'));
         }
 
-        return $this->render('settings/updateName.html.twig', [
+        return $this->render('account/updateName.html.twig', [
             'nameForm' => $form->createView(),
             'user' => $user
         ]);
     }
 
     /**
-     * @Route("/settings/update/email", name="app_settings_updateEmail")
+     * @Route("/account/update/email", name="app_account_updateEmail")
      */
     public function updateEmail(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
 
         if (!$user->isVerified()) {
-            $this->addFlash('warning', new TranslatableMessage("settings.updateEmail.notVerified"));
-            return $this->redirectToRoute('app_settings');
+            $this->addFlash('warning', new TranslatableMessage("account.updateEmail.notVerified"));
+            return $this->redirectToRoute('app_account');
         }
 
         $form = $this->createForm(EmailFormType::class, $user);
@@ -83,25 +83,25 @@ class SettingsController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', new TranslatableMessage('settings.updateEmail.success'));
+            $this->addFlash('success', new TranslatableMessage('account.updateEmail.success'));
         }
 
-        return $this->render('settings/updateEmail.html.twig', [
+        return $this->render('account/updateEmail.html.twig', [
             'emailForm' => $form->createView(),
             'user' => $user
         ]);
     }
 
     /**
-     * @Route("/settings/update/password", name="app_settings_updatePassword")
+     * @Route("/account/update/password", name="app_account_updatePassword")
      */
     public function updatePassword(Request $request, UserPasswordHasherInterface $userPasswordHasher ,EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
 
         if (!$user->isVerified()) {
-            $this->addFlash('warning', new TranslatableMessage("settings.updatePassword.notVerified"));
-            return $this->redirectToRoute('app_settings');
+            $this->addFlash('warning', new TranslatableMessage("account.updatePassword.notVerified"));
+            return $this->redirectToRoute('app_account');
         }
 
         $form = $this->createForm(PasswordFormType::class, $user);
@@ -118,21 +118,21 @@ class SettingsController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', new TranslatableMessage('settings.updatePassword.success'));
+            $this->addFlash('success', new TranslatableMessage('account.updatePassword.success'));
         }
 
-        return $this->render('settings/updatePassword.html.twig', [
+        return $this->render('account/updatePassword.html.twig', [
             'passwordForm' => $form->createView(),
             'user' => $user
         ]);
     }
 
     /**
-     * @Route("/settings/deleteAccount", name="app_settings_deleteAccount")
+     * @Route("/account/delete", name="app_account_delete")
      */
     public function deleteAccount(): Response
     {
         $this->addFlash('warning', new TranslatableMessage("main.error"));
-        return $this->redirectToRoute('app_settings');
+        return $this->redirectToRoute('app_account');
     }
 }

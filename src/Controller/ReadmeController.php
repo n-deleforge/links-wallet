@@ -4,8 +4,8 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Entity\LinkUser;
-use App\Form\BioFormType;
 use App\Form\ModelFormType;
+use App\Form\ReadmeSettingsFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -136,24 +136,24 @@ class ReadmeController extends AbstractController
     }
 
     /**
-     * @Route("/readme/update/bio", name="app_readme_updateBio")
+     * @Route("/readme/settings", name="app_readme_settings")
      */
-    public function updateBio(Request $request, EntityManagerInterface $entityManager): Response
+    public function updateSettings(Request $request, EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
 
-        $form = $this->createForm(BioFormType::class, $user);
+        $form = $this->createForm(ReadmeSettingsFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', new TranslatableMessage('readme.bioForm.success'));
+            $this->addFlash('success', new TranslatableMessage('readme.settings.success'));
         }
 
-        return $this->render('readme/bioForm.html.twig', [
-            'bioForm' => $form->createView()
+        return $this->render('readme/settings.html.twig', [
+            'settingsForm' => $form->createView()
         ]);
     }
 }

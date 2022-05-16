@@ -17,7 +17,7 @@ class NameFormType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'help' => new TranslatableMessage('settings.updateName.nameHelp'),
+                'help' => new TranslatableMessage('account.updateName.nameHelp'),
                 'required' => true,
                 'constraints' => [
                     new NotBlank(),

@@ -27,6 +27,7 @@ class AppFixtures extends Fixture
         $user->setName("Nicolas");
         $user->setRoles(["ROLE_ADMIN"]);
         $user->setIsVerified(1);
+        $user->setIsVisible(0);
         $manager->persist($user);
 
         // models
