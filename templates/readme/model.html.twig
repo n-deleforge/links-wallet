@@ -4,10 +4,10 @@
 	<div class="container">
 		<h1>{{ "readme.title"|trans }}</h1>
 
+		{{ form_start(modelForm) }}
+
 		<div class="bg-light p-3 mt-3">
 			<h1 class="h3 mb-3 font-weight-normal">{{ title|trans }}</h1>
-
-			{{ form_start(modelForm) }}
 
 			<div class="row">
 				<div class="col-6">
@@ -19,14 +19,15 @@
 				</div>
 			</div>
 
-			<div class="col-6">
-				<button class="btn btn-primary" type="submit">{{ submit|trans }}</button>
-				<a class="btn btn-secondary" href="{{ path('app_readme') }}">{{ 'main.back'|trans }}</a>
-			</div>
-
-			{{ form_rest(modelForm) }}
-			{{ form_end(modelForm) }}
-
 		</div>
+
+		<div class="col-6 p-3">
+			<button class="btn btn-primary" type="submit">{{ submit|trans }}</button>
+			<a class="btn btn-secondary" href="{{ path('app_readme') }}">{{ 'main.back'|trans }}</a>
+		</div>
+
+		{{ form_rest(modelForm) }}
+		{{ form_end(modelForm) }}
+
 	</div>
 {% endblock %}

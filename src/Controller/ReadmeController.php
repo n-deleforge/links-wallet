@@ -75,7 +75,7 @@ class ReadmeController extends AbstractController
             $this->addFlash('success', new TranslatableMessage('readme.modelForm.add.success'));
         }
 
-        return $this->render('readme/modelForm.html.twig', [
+        return $this->render('readme/model.html.twig', [
             'title' => new TranslatableMessage('readme.modelForm.add.title'),
             'submit' => new TranslatableMessage('readme.modelForm.add.submit'),
             'modelForm' => $form->createView()
@@ -106,7 +106,7 @@ class ReadmeController extends AbstractController
             }
         }
 
-        return $this->render('readme/modelForm.html.twig', [
+        return $this->render('readme/model.html.twig', [
             'title' => new TranslatableMessage('readme.modelForm.update.title'),
             'submit' => new TranslatableMessage('readme.modelForm.update.submit'),
             'modelForm' => $form->createView()

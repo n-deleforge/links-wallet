@@ -2,8 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\LinkModel;
-use App\Entity\LinkUser;
+use App\Entity\Model;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -36,6 +35,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud(new TranslatableMessage('admin.navbar.user'), 'fa solid fa-users', User::class);
 
         yield MenuItem::section(new TranslatableMessage('admin.navbar.modelTitle'));
-        yield MenuItem::linkToCrud(new TranslatableMessage('admin.navbar.model'), 'fa solid fa-sitemap', LinkModel::class);
+        yield MenuItem::linkToCrud(new TranslatableMessage('admin.navbar.model'), 'fa solid fa-sitemap', Model::class);
     }
 }

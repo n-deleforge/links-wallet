@@ -141,7 +141,7 @@ readme:
     bio:
       title: "Mettre à jour votre biographie"
       input: "Biographie"
-      help: "Un texte assez court (255 caractères) pour vous présenter, qui se situera en haut de votre profil."
+      help: "Un texte de 255 caractères (au maximum) pour vous présenter, qui se situera en haut de votre profil."
       
     visibility:
       title: "Visibilité de votre readme"

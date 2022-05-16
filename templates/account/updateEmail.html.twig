@@ -4,22 +4,24 @@
 	<div class="container">
 		<h1>{{ "account.title"|trans }}</h1>
 
+		{{ form_start(emailForm) }}
+
 		<div class="bg-light p-3 mt-3">
 			<h1 class="h3 mb-3 font-weight-normal">{{ 'account.updateEmail.title'|trans }}</h1>
-
-			{{ form_start(emailForm) }}
 
 			<div class="col-6 mt-3">
 				{{ form_row(emailForm.email, { 'label': 'account.updateEmail.email'|trans })  }}
 			</div>
 
-			<div class="col-6">
-				<button class="btn btn-primary" type="submit">{{ 'main.update'|trans }}</button>
-				<a class="btn btn-secondary" href="{{ path('app_account') }}">{{ 'main.back'|trans }}</a>
-			</div>
-
-			{{ form_rest(emailForm) }}
-			{{ form_end(emailForm) }}
 		</div>
+
+		<div class="col-6 p-3">
+			<button class="btn btn-primary" type="submit">{{ 'main.update'|trans }}</button>
+			<a class="btn btn-secondary" href="{{ path('app_account') }}">{{ 'main.back'|trans }}</a>
+		</div>
+
+		{{ form_rest(emailForm) }}
+		{{ form_end(emailForm) }}
+
 	</div>
 {% endblock %}

@@ -2,15 +2,15 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\LinkModel;
+use App\Entity\Model;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class LinkModelCrudController extends AbstractCrudController
+class ModelCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return LinkModel::class;
+        return Model::class;
     }
 
     public function configureFields(string $pageName): iterable
