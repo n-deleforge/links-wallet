@@ -8,6 +8,7 @@ use App\Form\ReadmePersonalizationType;
 use App\Form\SettingsEmailType;
 use App\Form\SettingsNameType;
 use App\Form\SettingsPasswordType;
+use App\Service\FileUploader;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -219,7 +220,7 @@ class SettingsController extends AbstractController
     /**
      * @Route("/settings/readme/personalization", name="app_settings_personalization")
      */
-    public function updatePersonalization(Request $request, EntityManagerInterface $entityManager): Response
+    public function updatePersonalization(Request $request, EntityManagerInterface $entityManager, FileUploader $fileUploader): Response
     {
         $user = $this->security->getUser();
 
@@ -227,6 +228,13 @@ class SettingsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $avatar = $form->get('avatar')->getData();
+
+            if ($avatar) {
+                $avatarFile = $fileUploader->upload($avatar);
+                $user->setAvatar($avatarFile);
+            }
+
             $entityManager->persist($user);
             $entityManager->flush();
 

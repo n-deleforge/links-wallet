@@ -2,7 +2,7 @@
 
 {% block body %}
 	<div class="container">
-		<h1>{{ "settings.title"|trans }}</h1>
+		<h1>{{ "settings.readme.title"|trans }}</h1>
 
 		{{ form_start(settingsForm) }}
 
@@ -16,6 +16,20 @@
 			<h1 class="h3 mb-3 font-weight-normal">{{ 'settings.readme.personalization.bio.title'|trans }}</h1>
 
 			{{ form_row(settingsForm.bio, { 'label' : 'settings.readme.personalization.bio.input'|trans }) }}
+		</div>
+
+		<div class="bg-light p-3 mt-3">
+			<h1 class="h3 mb-3 font-weight-normal">{{ 'settings.readme.personalization.avatar.title'|trans }}</h1>
+
+			<div class="row p-2">
+				<div class="col-3 text-center">
+					<img src="{{ asset('images/avatars/' ~ app.user.avatar) }}" alt="" width="100px" height="100px"/>
+				</div>
+
+				<div class="col-9">
+					{{ form_row(settingsForm.avatar, { 'label' : 'settings.readme.personalization.avatar.input'|trans }) }}
+				</div>
+			</div>
 		</div>
 
 		<div class="col-6 p-3">

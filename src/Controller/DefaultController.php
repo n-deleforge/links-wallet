@@ -18,10 +18,10 @@ class DefaultController extends AbstractController
     public function index(): Response
     {
         $generator = new Generator;
-        $paragraph = $generator->getParagraphs(2);
+        $lorem = $generator->getParagraphs(2);
 
         return $this->render('default/index.html.twig', [
-            "lorem" => $paragraph
+            "lorem" => $lorem
         ]);
     }
 
@@ -34,7 +34,7 @@ class DefaultController extends AbstractController
         $user = $repository->findByUsername($username);
 
         if (!$user) {
-            $this->addFlash('warning', new TranslatableMessage("main.error"));
+            $this->addFlash('warning', new TranslatableMessage("view.doNotExist"));
             return $this->redirectToRoute('app_home');
         }
 

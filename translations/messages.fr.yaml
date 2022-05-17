@@ -23,6 +23,7 @@ homepage:
 view:
   notVisible: "Le profil de l'utilisateur n'est pas visible."
   alwaysVisible: "Votre profil est toujours visible et accessible par vous-même, même si vous l'avez mis en non visible."
+  doNotExist: "Désolé, cet utilisateur n'existe pas."
 
 # Login
 login:
@@ -141,6 +142,11 @@ settings:
         title: "Visibilité de votre readme"
         input: "Rendre votre profil visible ?"
         help: "En cochant cette case, vous rendez votre profil public pour tout le monde. En décochant cette case, votre profil ne sera accessible qu'à vous-même."
+
+      avatar:
+        title: "Image de profil"
+        input: "Image"
+        help: "L'image choisie ne peut pas exécéder la taille de 2MO et doit être au format PNG ou JPG."
 
 # Admin
 admin:
