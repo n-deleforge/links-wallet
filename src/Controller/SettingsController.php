@@ -231,6 +231,11 @@ class SettingsController extends AbstractController
             $avatar = $form->get('avatar')->getData();
 
             if ($avatar) {
+                $oldAvatar = $user->getAvatar();
+                if ($oldAvatar) {
+                    unlink($this->getParameter("avatar_folder") . $user->getAvatar());
+                }
+
                 $avatarFile = $fileUploader->upload($avatar);
                 $user->setAvatar($avatarFile);
             }
@@ -252,6 +257,8 @@ class SettingsController extends AbstractController
     public function deleteAvatar(EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
+
+        unlink($this->getParameter("avatar_folder") . $user->getAvatar());
         $user->setAvatar("");
 
         $entityManager->persist($user);
