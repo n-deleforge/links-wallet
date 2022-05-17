@@ -166,7 +166,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function getAvatarURI($size = 32)
+    public function getUIAvatar($size = 32)
     {
         return 'https://ui-avatars.com/api/?' . http_build_query([
             'name' => $this->getName(),

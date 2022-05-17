@@ -30,7 +30,7 @@
 					{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 						<div class="dropdown">
 							<button class="dropdown-toggle btn" type="button" id="user-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-								<img src="{{ app.user.avatarURI }}" alt="{{ app.user.email }}">
+								<img src="{{ app.user.UIAvatar }}" alt="{{ app.user.name }}">
 							</button>
 							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="user-dropdown">
 								<li>

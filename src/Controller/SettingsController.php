@@ -246,4 +246,19 @@ class SettingsController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/settings/readme/personalization/delete-avatar", name="app_settings_personalization_delete_avatar")
+     */
+    public function deleteAvatar(EntityManagerInterface $entityManager): Response
+    {
+        $user = $this->security->getUser();
+        $user->setAvatar("");
+
+        $entityManager->persist($user);
+        $entityManager->flush();
+
+        $this->addFlash('success', new TranslatableMessage('settings.readme.personalization.avatar.deleted'));
+
+        return $this->redirectToRoute('app_settings_personalization');
+    }
 }

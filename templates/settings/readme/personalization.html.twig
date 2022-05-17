@@ -23,11 +23,19 @@
 
 			<div class="row p-2">
 				<div class="col-3 text-center">
-					<img src="{{ asset('images/avatars/' ~ app.user.avatar) }}" alt="" width="100px" height="100px"/>
+					{% if app.user.avatar %}
+						<img src="{{ asset('images/avatars/' ~ app.user.avatar) }}" alt="" width="160px" height="160px"/>
+					{% else %}
+						<img src="{{ app.user.UIAvatar(160) }}" alt="{{ app.user.name }}">
+					{% endif %}
 				</div>
 
 				<div class="col-9">
 					{{ form_row(settingsForm.avatar, { 'label' : 'settings.readme.personalization.avatar.input'|trans }) }}
+
+					{% if app.user.avatar %}
+						<a href="{{ path('app_settings_personalization_delete_avatar') }}" class="btn btn-danger">{{'settings.readme.personalization.avatar.delete'|trans }}</a>
+					{% endif %}
 				</div>
 			</div>
 		</div>

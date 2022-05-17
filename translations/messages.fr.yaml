@@ -147,6 +147,8 @@ settings:
         title: "Image de profil"
         input: "Image"
         help: "L'image choisie ne peut pas exécéder la taille de 2MO et doit être au format PNG ou JPG."
+        delete: "Supprimer l'image actuelle"
+        deleted: "Votre image de profil a été supprimé."
 
 # Admin
 admin:
