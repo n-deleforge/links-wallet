@@ -24,7 +24,45 @@ homepage:
 
 # Pricing
 pricing:
-  title: "Tarifs"
+  title: "Une offre pour chacun."
+  subtitle: "Choissiez selon vos besoins !"
+
+  free:
+    title: "Gratuit"
+    price: "Gratuit pour toujours"
+    button: "Rejoindre gratuitement"
+    text: "L'offre gratuite permet de créer son profil et de le partager à tout le monde. Vous pouvez y ajouter tous les liens que vous voulez."
+
+  starter:
+    title: "Starter"
+    price: "2€ / mois"
+    button: "Obtenir le pack starter"
+    text: "L'offre Starter permet, en plus du tiers précédent, de personnaliser votre profil avec une courte biographie et une image de profil."
+
+  premium:
+    title: "Premium"
+    price: "5€ / mois"
+    button: "Obtenir le pack premium"
+    text: "L'offre Premium permet; en plus des deux tiers précédents, de modifier la structure et le style de votre profil selon des modèles établis."
+
+  details:
+    unlimitedLinks:
+      title: "Liens illimités"
+      free: "Oui"
+      starter: "Oui"
+      premium: "Oui"
+
+    personalization:
+      title: "Personnalisation"
+      free: "Non"
+      starter: "Oui"
+      premium: "Oui"
+
+    advancedPersonalization:
+      title: "Personnalisation avancée"
+      free: "Non"
+      starter: "Non"
+      premium: "Oui"
 
 # Profile
 view:

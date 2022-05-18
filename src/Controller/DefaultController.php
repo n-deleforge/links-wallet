@@ -30,7 +30,52 @@ class DefaultController extends AbstractController
      */
     public function pricing(): Response
     {
-        return $this->render('default/pricing.html.twig');
+        $offers = [
+            "free" => [
+                "title" => new TranslatableMessage('pricing.free.title'),
+                "price" => new TranslatableMessage('pricing.free.price'),
+                "text" => new TranslatableMessage('pricing.free.text'),
+                "button" => new TranslatableMessage('pricing.free.button'),
+            ],
+            "starter" => [
+                "title" => new TranslatableMessage('pricing.starter.title'),
+                "price" => new TranslatableMessage('pricing.starter.price'),
+                "text" => new TranslatableMessage('pricing.starter.text'),
+                "button" => new TranslatableMessage('pricing.starter.button'),
+            ],
+            "premium" => [
+                "title" => new TranslatableMessage('pricing.premium.title'),
+                "price" => new TranslatableMessage('pricing.premium.price'),
+                "text" => new TranslatableMessage('pricing.premium.text'),
+                "button" => new TranslatableMessage('pricing.premium.button'),
+            ]
+        ];
+
+        $details = [
+            "unlimitedLinks" => [
+                "title" => new TranslatableMessage('pricing.details.unlimitedLinks.title'),
+                "free" => new TranslatableMessage('pricing.details.unlimitedLinks.free'),
+                "starter" => new TranslatableMessage('pricing.details.unlimitedLinks.starter'),
+                "premium" => new TranslatableMessage('pricing.details.unlimitedLinks.premium'),
+            ],
+            "personalization" => [
+                "title" => new TranslatableMessage('pricing.details.personalization.title'),
+                "free" => new TranslatableMessage('pricing.details.personalization.free'),
+                "starter" => new TranslatableMessage('pricing.details.personalization.starter'),
+                "premium" => new TranslatableMessage('pricing.details.personalization.premium'),
+            ],
+            "advancedPersonalization" => [
+                "title" => new TranslatableMessage('pricing.details.advancedPersonalization.title'),
+                "free" => new TranslatableMessage('pricing.details.advancedPersonalization.free'),
+                "starter" => new TranslatableMessage('pricing.details.advancedPersonalization.starter'),
+                "premium" => new TranslatableMessage('pricing.details.advancedPersonalization.premium'),
+            ],
+        ];
+
+        return $this->render('default/pricing.html.twig', [
+            'offers' => $offers ,
+            'details' => $details
+        ]);
     }
     
     /**

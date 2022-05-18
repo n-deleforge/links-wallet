@@ -2,75 +2,44 @@
 
 {% block body %}
 	<div class="container">
-		<h1>{{ "pricing.title"|trans }}</h1>
+		<h1 class="text-center p-3">{{ "pricing.title"|trans }}</h1>
 
-		
 		<div class="row p-3 justify-content-center">
-			<div class="col-sm-3">
-				<div class="card">
-					<div class="card-body">
-						<h2 class="card-title">Premium</h2>
-						<h5>5€ / Month</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="" class="btn btn-primary">Get premium pack</a>
+			{% for offer in offers %}
+				<div class="col-sm-3">
+					<div class="card">
+						<div class="card-body">
+							<h2 class="card-title">{{ offer.title|trans }}</h2>
+							<h5>{{ offer.price|trans }}</h5>
+							<p class="card-text text-justify">{{ offer.text|trans }}</p>
+							<a href="" class="btn btn-primary">{{ offer.button|trans }}</a>
+						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="col-sm-3">
-				<div class="card">
-					<div class="card-body">
-						<h2 class="card-title">Starter</h2>
-						<h5>2€ / Month</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="" class="btn btn-primary">Get starter pack</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-3">
-				<div class="card">
-					<div class="card-body">
-						<h2 class="card-title">Free</h2>
-						<h5>Free for forever</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="" class="btn btn-primary">Join for free</a>
-					</div>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
+
+		<h1 class="text-center p-3">{{ "pricing.subtitle"|trans }}</h1>
 
 		<table class="table table-hover table-striped">
 			<thead>
 				<tr class="text-center">
 					<td></td>
-					<td>Premium</td>
-					<td>Starter</td>
-					<td>Free</td>
+					<td>{{ 'pricing.free.title'|trans }}</td>
+					<td>{{ 'pricing.starter.title'|trans }}</td>
+					<td>{{ 'pricing.premium.title'|trans }}</td>
 				</tr>
 			</thead>
 
 			<tbody>
-				<tr class="text-center">
-					<td>Unlimited links</td>
-					<td><i class="fa-solid fa-check"></i></td>
-					<td><i class="fa-solid fa-check"></i></td>
-					<td><i class="fa-solid fa-check"></i></td>
-				</tr>
-
-				<tr class="text-center">
-					<td>Personalization</td>
-					<td><i class="fa-solid fa-check"></i></td>
-					<td><i class="fa-solid fa-check"></i></td>
-					<td><i class="fa-solid fa-xmark"></i></td>
-				</tr>
-
-				<tr class="text-center">
-					<td>SuperDeathPack</td>
-					<td><i class="fa-solid fa-check"></i></td>
-					<td><i class="fa-solid fa-check"></i></td>
-					<td><i class="fa-solid fa-xmark"></i></td>
-				</tr>
+				{% for detail in details %}
+					<tr class="text-center">
+						<td>{{ detail.title|trans }}</td>
+						<td>{{ detail.free|trans }}</td>
+						<td>{{ detail.starter|trans }}</td>
+						<td>{{ detail.premium|trans }}</td>
+					</tr>
+				{% endfor %}
 			</tbody>
 		</table>
 
