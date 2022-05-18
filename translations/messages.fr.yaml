@@ -9,6 +9,9 @@ main:
 # Navbar
 navbar:
   home: "Accueil"
+  blog: "Blog"
+  pricing: "Tarifs"
+  help: "Aide"
   login: "Connexion"
   signup: "Inscription"
   logout: "Déconnexion"
@@ -17,9 +20,13 @@ navbar:
 
 # Homepage
 homepage:
-  welcome: "Bienvenue sur readme"
+  title: "Bienvenue sur "
 
-# Readme
+# Pricing
+pricing:
+  title: "Tarifs"
+
+# Profile
 view:
   notVisible: "Le profil de l'utilisateur n'est pas visible."
   alwaysVisible: "Votre profil est toujours visible et accessible par vous-même, même si vous l'avez mis en non visible."
@@ -97,12 +104,12 @@ settings:
 
 # Readme
   readme:
-    title: "Gestion de mon readme"
+    title: "Gestion de mon profil"
     seeProfile: "Visualiser mon profil"
 
     model:
       title: "Gestion de mes modèles"
-      noModels: "Votre Readme est vide pour le moment."
+      noModels: "Vous n'avez aucun modèle pour l'instant."
       buttonAdd: "Ajouter un modèle"
       tableModel: "Modèle"
       tableUsername: "Nom d'utilisateur"
@@ -139,7 +146,7 @@ settings:
         help: "Un texte de 255 caractères (au maximum) pour vous présenter, qui se situera en haut de votre profil."
         
       visibility:
-        title: "Visibilité de votre readme"
+        title: "Visibilité de votre profil"
         input: "Rendre votre profil visible ?"
         help: "En cochant cette case, vous rendez votre profil public pour tout le monde. En décochant cette case, votre profil ne sera accessible qu'à vous-même."
 

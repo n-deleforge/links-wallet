@@ -15,16 +15,24 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="app_home")
      */
-    public function index(): Response
+    public function home(): Response
     {
         $generator = new Generator;
         $lorem = $generator->getParagraphs(2);
 
-        return $this->render('default/index.html.twig', [
+        return $this->render('default/home.html.twig', [
             "lorem" => $lorem
         ]);
     }
 
+    /**
+     * @Route("/pricing", name="app_pricing")
+     */
+    public function pricing(): Response
+    {
+        return $this->render('default/pricing.html.twig');
+    }
+    
     /**
      * @Route("/@{username}", name="app_view")
      */

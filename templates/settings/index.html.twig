@@ -16,7 +16,7 @@
 		<div class="bg-light p-3 mt-3">
 			<h2>{{ "settings.readme.title"|trans }}</h2>
 			<div class="p-2">
-				<a class="btn btn-primary" href="{{ path('app_view', {username: app.user.name}) }}" role="button">{{ "settings.readme.seeProfile"|trans }}</a>
+				<a class="btn btn-primary" target="_blank" href="{{ path('app_view', {username: app.user.name}) }}" role="button">{{ "settings.readme.seeProfile"|trans }}</a>
 				<a class="btn btn-primary" href="{{ path('app_settings_add_model') }}" role="button">{{ "settings.readme.model.buttonAdd"|trans }}</a>
 				<a class="btn btn-primary" href="{{ path('app_settings_personalization') }}" role="button">{{ "settings.readme.personalization.title"|trans }}</a>
 			</div>

@@ -22,8 +22,17 @@
 			<div class="container">
 				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-						<li>
-							<a href="{{ path('app_home') }}" class="nav-link px-2 link-secondary">{{ "navbar.home"|trans }}</a>
+						<li class="mx-3">
+							<a href="{{ path('app_home') }}" class="nav-link link-secondary">{{ "navbar.home"|trans }}</a>
+						</li>
+						<li class="mx-3">
+							<a href="" class="nav-link link-secondary disabled">{{ "navbar.blog"|trans }}</a>
+						</li>
+						<li class="mx-3">
+							<a href="{{ path('app_pricing') }}" class="nav-link link-secondary">{{ "navbar.pricing"|trans }}</a>
+						</li>
+						<li class="mx-3">
+							<a href="" class="nav-link link-secondary disabled">{{ "navbar.help"|trans }}</a>
 						</li>
 					</ul>
 
@@ -36,11 +45,11 @@
 								<li>
 									<a class="dropdown-item" href="{{ path('app_settings') }}">{{ "navbar.settings"|trans }}</a>
 								</li>
-									{% if is_granted('ROLE_ADMIN') %}
+								{% if is_granted('ROLE_ADMIN') %}
 									<li>
-										<a class="dropdown-item" href="{{ path('app_admin') }}">{{ "navbar.admin"|trans }}</a>
+										<a class="dropdown-item" target="_blank" href="{{ path('app_admin') }}">{{ "navbar.admin"|trans }}</a>
 									</li>
-									{% endif %}
+								{% endif %}
 								<li>
 									<a class="dropdown-item" href="{{ path('app_logout') }}">{{ "navbar.logout"|trans }}</a>
 								</li>
