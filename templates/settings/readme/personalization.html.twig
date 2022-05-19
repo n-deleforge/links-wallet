@@ -15,7 +15,12 @@
 		<div class="bg-light p-3 mt-3">
 			<h1 class="h3 mb-3 font-weight-normal">{{ 'settings.readme.personalization.bio.title'|trans }}</h1>
 
-			{{ form_row(settingsForm.bio, { 'label' : 'settings.readme.personalization.bio.input'|trans }) }}
+			{{ form_row(settingsForm.bio, { 
+				'label' : 'settings.readme.personalization.bio.input'|trans,
+				'id' : 'bioTextarea', 
+			}) }}
+
+			<small data-controller="bio"></small>
 		</div>
 
 		<div class="bg-light p-3 mt-3">

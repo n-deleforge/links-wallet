@@ -77,6 +77,14 @@ class DefaultController extends AbstractController
             'details' => $details
         ]);
     }
+
+    /**
+     * @Route("/help", name="app_help")
+     */
+    public function help(): Response
+    {
+        return $this->render('default/help.html.twig');
+    }
     
     /**
      * @Route("/@{username}", name="app_view")
