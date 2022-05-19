@@ -46,23 +46,11 @@ pricing:
     text: "L'offre Premium permet; en plus des deux tiers précédents, de modifier la structure et le style de votre profil selon des modèles établis."
 
   details:
-    unlimitedLinks:
-      title: "Liens illimités"
-      free: "Oui"
-      starter: "Oui"
-      premium: "Oui"
-
-    personalization:
-      title: "Personnalisation"
-      free: "Non"
-      starter: "Oui"
-      premium: "Oui"
-
-    advancedPersonalization:
-      title: "Personnalisation avancée"
-      free: "Non"
-      starter: "Non"
-      premium: "Oui"
+    unlimitedLinks: "Liens illimités"
+    sharing: "Partage facile"
+    bio: "Biographie"
+    avatar: "Image d'illustration"
+    advancedPersonalization: "Personnalisation avancée"
 
 # Profile
 view:

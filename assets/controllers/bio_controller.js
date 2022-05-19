@@ -13,10 +13,10 @@ export default class extends Controller {
             this.element.textContent = count + " / " + nbMax;
 
             if (count > nbMax) {
-                this.element.style.color = "red";
+                this.element.classList.add('text-danger');
             }
             else {
-                this.element.style.color = "black";
+                this.element.classList.remove('text-danger');
             }
         })
     }

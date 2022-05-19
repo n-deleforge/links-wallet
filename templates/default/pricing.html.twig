@@ -5,41 +5,81 @@
 		<h1 class="text-center p-3">{{ "pricing.title"|trans }}</h1>
 
 		<div class="row p-3 justify-content-center">
-			{% for offer in offers %}
-				<div class="col-sm-3">
-					<div class="card">
-						<div class="card-body">
-							<h2 class="card-title">{{ offer.title|trans }}</h2>
-							<h5>{{ offer.price|trans }}</h5>
-							<p class="card-text text-justify">{{ offer.text|trans }}</p>
-							<a href="" class="btn btn-primary">{{ offer.button|trans }}</a>
-						</div>
+			<div class="col-sm-3">
+				<div class="card">
+					<div class="card-body">
+						<h2 class="card-title">{{ 'pricing.premium.title'|trans }}</h2>
+							<h5>{{ 'pricing.premium.price'|trans }}</h5>
+							<p class="card-text text-justify">{{ 'pricing.premium.text'|trans }}</p>
+							<a href="" class="btn btn-primary">{{ 'pricing.premium.button'|trans }}</a>
 					</div>
 				</div>
-			{% endfor %}
+			</div>
+			<div class="col-sm-3">
+				<div class="card">
+					<div class="card-body">
+						<h2 class="card-title">{{ 'pricing.starter.title'|trans }}</h2>
+							<h5>{{ 'pricing.starter.price'|trans }}</h5>
+							<p class="card-text text-justify">{{ 'pricing.starter.text'|trans }}</p>
+							<a href="" class="btn btn-primary">{{ 'pricing.starter.button'|trans }}</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="card">
+					<div class="card-body">
+						<h2 class="card-title">{{ 'pricing.free.title'|trans }}</h2>
+							<h5>{{ 'pricing.free.price'|trans }}</h5>
+							<p class="card-text text-justify">{{ 'pricing.free.text'|trans }}</p>
+							<a href="" class="btn btn-primary">{{ 'pricing.free.button'|trans }}</a>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<h1 class="text-center p-3">{{ "pricing.subtitle"|trans }}</h1>
 
-		<table class="table table-hover table-striped">
+		<table id="pricing" class="table table-hover table-striped">
 			<thead>
-				<tr class="text-center">
+				<tr>
 					<td></td>
-					<td>{{ 'pricing.free.title'|trans }}</td>
-					<td>{{ 'pricing.starter.title'|trans }}</td>
 					<td>{{ 'pricing.premium.title'|trans }}</td>
+					<td>{{ 'pricing.starter.title'|trans }}</td>
+					<td>{{ 'pricing.free.title'|trans }}</td>
 				</tr>
 			</thead>
 
 			<tbody>
-				{% for detail in details %}
-					<tr class="text-center">
-						<td>{{ detail.title|trans }}</td>
-						<td>{{ detail.free|trans }}</td>
-						<td>{{ detail.starter|trans }}</td>
-						<td>{{ detail.premium|trans }}</td>
+					<tr>
+						<td>{{ 'pricing.details.unlimitedLinks'|trans }}</td>
+						<td><i class="fa-solid fa-check"></i></td>
+						<td><i class="fa-solid fa-check"></i></td>
+						<td><i class="fa-solid fa-check"></i></td>
 					</tr>
-				{% endfor %}
+					<tr>
+						<td>{{ 'pricing.details.sharing'|trans }}</td>
+						<td><i class="fa-solid fa-check"></i></td>
+						<td><i class="fa-solid fa-check"></i></td>
+						<td><i class="fa-solid fa-check"></i></td>
+					</tr>
+					<tr>
+						<td>{{ 'pricing.details.bio'|trans }}</td>
+						<td><i class="fa-solid fa-check"></i></td>
+						<td><i class="fa-solid fa-check"></i></td>
+						<td><i class="fa-solid fa-xmark"></i></td>
+					</tr>
+					<tr>
+						<td>{{ 'pricing.details.avatar'|trans }}</td>
+						<td><i class="fa-solid fa-check"></i></td>
+						<td><i class="fa-solid fa-check"></i></td>
+						<td><i class="fa-solid fa-xmark"></i></td>
+					</tr>
+					<tr>
+						<td>{{ 'pricing.details.advancedPersonalization'|trans }}</td>
+						<td><i class="fa-solid fa-check"></i></td>
+						<td><i class="fa-solid fa-xmark"></i></td>
+						<td><i class="fa-solid fa-xmark"></i></td>
+					</tr>
 			</tbody>
 		</table>
 

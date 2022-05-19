@@ -72,10 +72,7 @@ class DefaultController extends AbstractController
             ],
         ];
 
-        return $this->render('default/pricing.html.twig', [
-            'offers' => $offers ,
-            'details' => $details
-        ]);
+        return $this->render('default/pricing.html.twig');
     }
 
     /**
