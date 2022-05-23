@@ -6,6 +6,7 @@ use App\Entity\Article;
 use App\Entity\Model;
 use App\Entity\User;
 use Badcow\LoremIpsum\Generator;
+use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -59,10 +60,14 @@ class AppFixtures extends Fixture
             $lorem = $generator->getRandomWords("250");
             $lorem = implode(" ", $lorem);
 
+            $datetime = new DateTime("now");
+
             $article = new Article();
             $article->setTitle("Article " . $i);
             $article->setContent($lorem);
             $article->setAuthor($user);
+            $article->setCreatedAt($datetime);
+            $article->setUpdatedAt($datetime);
             $manager->persist($article);
         }
 

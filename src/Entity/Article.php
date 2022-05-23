@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Symfony\Component\Uid\Uuid;
 
 /**
@@ -12,6 +13,8 @@ use Symfony\Component\Uid\Uuid;
  */
 class Article
 {
+    use TimestampableEntity;
+    
     /**
      * @ORM\Id
      * @ORM\Column(type="uuid", unique=true)
