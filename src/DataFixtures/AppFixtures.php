@@ -2,8 +2,10 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Article;
 use App\Entity\Model;
 use App\Entity\User;
+use Badcow\LoremIpsum\Generator;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -48,6 +50,20 @@ class AppFixtures extends Fixture
             $newModel->setIcon($model[2]);
 
             $manager->persist($newModel);
+        }
+
+        // articles
+        $nbArticle = 3;
+        for ($i = 0; $i < $nbArticle; $i++) {
+            $generator = new Generator;
+            $lorem = $generator->getRandomWords("250");
+            $lorem = implode(" ", $lorem);
+
+            $article = new Article();
+            $article->setTitle("Article " . $i);
+            $article->setContent($lorem);
+            $article->setAuthor($user);
+            $manager->persist($article);
         }
 
         $manager->flush();

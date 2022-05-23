@@ -16,7 +16,7 @@
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 	</head>
-	<body>
+	<body class="d-flex flex-column min-vh-100">
 
 		<header class="p-3 mb-3 border-bottom">
 			<div class="container">
@@ -101,5 +101,12 @@
 		{% endfor %}
 
 		{% block body %}{% endblock %}
+
+	<footer class="mt-auto">
+		<div class="bg-dark text-light text-center p-2">
+			{{ 'footer.copyright'|trans }} - {{ get_env("APP_TITLE") }}
+  		</div>
+	</footer>
+
 	</body>
 </html>

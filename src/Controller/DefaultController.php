@@ -17,12 +17,7 @@ class DefaultController extends AbstractController
      */
     public function home(): Response
     {
-        $generator = new Generator;
-        $lorem = $generator->getParagraphs(2);
-
-        return $this->render('default/home.html.twig', [
-            "lorem" => $lorem
-        ]);
+        return $this->render('default/home.html.twig');
     }
 
     /**
