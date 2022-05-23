@@ -202,3 +202,5 @@ admin:
     linkUser: "Liens des utilisateurs"
     modelTitle: "Modèles"
     model:  "Liste des modèles"
+    blogTitle: "Blog"
+    article: "Liste des articles"

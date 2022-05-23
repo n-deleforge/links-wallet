@@ -5,7 +5,7 @@
 		<h1>{{ "blog.title"|trans }}</h1>
 
 		<div class="row p-3 justify-content-left">
-			{% for article in articles %}
+			{% for article in pager %}
 				<div class="col-sm-6 my-2">
 					<div class="card">
 						<div class="card-body">
@@ -17,5 +17,10 @@
 				</div>
 			{% endfor %}
 		</div>
+
+		<div class="d-flex justify-content-center mt-3">
+			{{ pagerfanta(pager) }}
+		</div>
+
 	</div>
 {% endblock %}

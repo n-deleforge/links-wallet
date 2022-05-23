@@ -53,7 +53,7 @@ class AppFixtures extends Fixture
         }
 
         // articles
-        $nbArticle = 3;
+        $nbArticle = 95;
         for ($i = 0; $i < $nbArticle; $i++) {
             $generator = new Generator;
             $lorem = $generator->getRandomWords("250");

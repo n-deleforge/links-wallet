@@ -2,6 +2,8 @@
 
 namespace App\Controller\Admin;
 
+use App\Controller\BlogController;
+use App\Entity\Article;
 use App\Entity\Model;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -29,12 +31,15 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToRoute(new TranslatableMessage('main.back'), 'fa-solid fa-arrow-left', 'app_home');
+        yield MenuItem::linkToRoute(new TranslatableMessage('main.back'), 'fa solid fa-arrow-left', 'app_home');
 
         yield MenuItem::section(new TranslatableMessage('admin.navbar.userTitle'));
         yield MenuItem::linkToCrud(new TranslatableMessage('admin.navbar.user'), 'fa solid fa-users', User::class);
 
         yield MenuItem::section(new TranslatableMessage('admin.navbar.modelTitle'));
         yield MenuItem::linkToCrud(new TranslatableMessage('admin.navbar.model'), 'fa solid fa-sitemap', Model::class);
+
+        yield MenuItem::section(new TranslatableMessage('admin.navbar.blogTitle'));
+        yield MenuItem::linkToCrud(new TranslatableMessage('admin.navbar.article'), 'fa solid fa-sitemap', Article::class);
     }
 }

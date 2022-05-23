@@ -1,4 +1,7 @@
 {
+    "babdev/pagerfanta-bundle": {
+        "version": "v3.6.1"
+    },
     "badcow/lorem-ipsum": {
         "version": "v1.1.1"
     },
@@ -127,6 +130,15 @@
     },
     "nikic/php-parser": {
         "version": "v4.13.2"
+    },
+    "pagerfanta/core": {
+        "version": "v3.6.1"
+    },
+    "pagerfanta/doctrine-orm-adapter": {
+        "version": "v3.6.1"
+    },
+    "pagerfanta/twig": {
+        "version": "v3.6.1"
     },
     "phar-io/manifest": {
         "version": "2.0.3"
