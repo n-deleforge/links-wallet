@@ -7,7 +7,6 @@ use Doctrine\Persistence\ManagerRegistry;
 use Pagerfanta\Adapter\ArrayAdapter;
 use Pagerfanta\Pagerfanta;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -23,8 +22,9 @@ class BlogController extends AbstractController
 
         $adapter = new ArrayAdapter($articles);
         $pager = new Pagerfanta($adapter);
-        $pager->setMaxPerPage(4);
-        $pager->setCurrentPage($page);
+        $pager
+            ->setMaxPerPage(4)
+            ->setCurrentPage($page);
 
         return $this->render('blog/index.html.twig', [
             'pager' => $pager,

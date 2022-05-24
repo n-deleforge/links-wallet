@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
@@ -27,6 +29,12 @@ class Article
     private $title;
 
     /**
+     * @ORM\Column(type="string", length=100, unique=true)
+     * @Gedmo\Slug(fields={"title"})
+     */
+    private $slug;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $content;
@@ -38,14 +46,14 @@ class Article
     private $author;
 
     /**
-     * @ORM\Column(type="string", length=100, unique=true)
-     * @Gedmo\Slug(fields={"title"})
+     * @ORM\ManyToMany(targetEntity=Tag::class, inversedBy="articles")
      */
-    private $slug;
+    private $tags;
 
     public function __construct()
     {
         $this->id = Uuid::v4();
+        $this->tags = new ArrayCollection();
     }
 
     public function getId(): ?Uuid
@@ -64,6 +72,18 @@ class Article
 
         return $this;
     }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    // public function setSlug(string $slug): self
+    // {
+    //     $this->slug = $slug;
+
+    //     return $this;
+    // }
 
     public function getContent(): ?string
     {
@@ -89,15 +109,27 @@ class Article
         return $this;
     }
 
-    public function getSlug(): ?string
+    /**
+     * @return Collection<int, Tag>
+     */
+    public function getTags(): Collection
     {
-        return $this->slug;
+        return $this->tags;
     }
 
-    // public function setSlug(string $slug): self
-    // {
-    //     $this->slug = $slug;
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+        }
 
-    //     return $this;
-    // }
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        $this->tags->removeElement($tag);
+
+        return $this;
+    }
 }

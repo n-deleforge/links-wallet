@@ -204,3 +204,4 @@ admin:
     model:  "Liste des modèles"
     blogTitle: "Blog"
     article: "Liste des articles"
+    tag : "Liste des tags"

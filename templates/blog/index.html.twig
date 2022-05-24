@@ -13,6 +13,15 @@
 							<p class="text-justify">{{ article.content|slice(0, 500) }}...</p>
 							<a href="{{ path('app_blog_article', {slug: article.slug}) }}" class="btn btn-primary">Lire la suite</a>
 						</div>
+
+						{% if article.tags|length != 0 %}
+							<div class="card-footer">
+								{% for tag in article.tags %}
+									{{ tag.name }}
+								{% endfor %}
+							</div>
+						{% endif %}
+
 					</div>
 				</div>
 			{% endfor %}

@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Article;
 use App\Entity\Model;
+use App\Entity\Tag;
 use App\Entity\User;
 use Badcow\LoremIpsum\Generator;
 use DateTime;
@@ -53,21 +54,33 @@ class AppFixtures extends Fixture
             $manager->persist($newModel);
         }
 
-        // articles
-        $nbArticle = 95;
+        // articles / tags
+        $nbArticle = 50;
         for ($i = 0; $i < $nbArticle; $i++) {
-            $generator = new Generator;
-            $lorem = $generator->getRandomWords("250");
+            // article : content
+            $loremGenerator = new Generator;
+            $lorem = $loremGenerator->getRandomWords(250);
             $lorem = implode(" ", $lorem);
 
             $datetime = new DateTime("now");
 
+            // article
             $article = new Article();
             $article->setTitle("Article " . $i);
             $article->setContent($lorem);
             $article->setAuthor($user);
             $article->setCreatedAt($datetime);
             $article->setUpdatedAt($datetime);
+
+            // tag
+            $tagGenerator = new Generator;
+            $randomTag = $tagGenerator->getRandomWords(1);
+            $tag = new Tag();
+            $tag->setName($randomTag[0]); 
+            $manager->persist($tag);
+
+            $article->addTag($tag);
+
             $manager->persist($article);
         }
 
