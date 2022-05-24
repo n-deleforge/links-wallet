@@ -25,6 +25,7 @@ class ArticleCrudController extends AbstractCrudController
         return [
             TextField::new('title'),
             TextEditorField::new('content')->hideOnIndex(),
+            AssociationField::new('tags')->hideOnIndex()
         ];
     }
 }

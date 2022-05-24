@@ -35,6 +35,10 @@ class Tag
         $this->articles = new ArrayCollection();
     }
 
+    public function __toString() {
+        return $this->name;
+    }
+
     public function getId(): ?Uuid
     {
         return $this->id;
