@@ -71,11 +71,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $avatar;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="author")
-     */
-    private $articles;
-
     public function __construct()
     {
         $this->id = Uuid::v4();
@@ -267,36 +262,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setAvatar(?string $avatar): self
     {
         $this->avatar = $avatar;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Article>
-     */
-    public function getArticles(): Collection
-    {
-        return $this->articles;
-    }
-
-    public function addArticle(Article $article): self
-    {
-        if (!$this->articles->contains($article)) {
-            $this->articles[] = $article;
-            $article->setAuthor($this);
-        }
-
-        return $this;
-    }
-
-    public function removeArticle(Article $article): self
-    {
-        if ($this->articles->removeElement($article)) {
-            // set the owning side to null (unless already changed)
-            if ($article->getAuthor() === $this) {
-                $article->setAuthor(null);
-            }
-        }
 
         return $this;
     }

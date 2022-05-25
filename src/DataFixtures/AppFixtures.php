@@ -4,37 +4,26 @@ namespace App\DataFixtures;
 
 use App\Entity\Article;
 use App\Entity\Model;
-use App\Entity\Tag;
 use App\Entity\User;
-use Badcow\LoremIpsum\Generator;
-use DateTime;
+use APp\Entity\Tag;
+use App\Factory\ArticleFactory;
+use App\Factory\UserFactory;
+use App\Factory\TagFactory;
+use App\Repository\ArticleRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
-    private UserPasswordHasherInterface $hasher;
-
     public function __construct(UserPasswordHasherInterface $hasher)
     {
         $this->hasher = $hasher;
     }
-    
-    public function load(ObjectManager $manager): void
-    {
-        // admin user
-        $user = new User();
-        $user->setEmail("hello@nicolas-deleforge.fr");
-        $password = $this->hasher->hashPassword($user, 'password');
-        $user->setPassword($password);
-        $user->setName("Nicolas");
-        $user->setRoles(["ROLE_ADMIN"]);
-        $user->setIsVerified(1);
-        $user->setIsVisible(0);
-        $manager->persist($user);
 
-        // models
+    public function load(ObjectManager $manager)
+    {
+        // Models
         $models = [
             ["LinkedIn", "https://www.linkedin.com/in/", "fa-brands fa-linkedin-in"],
             ["Twitter", "https://www.twitter.com/", "fa-brands fa-twitter"],
@@ -45,7 +34,7 @@ class AppFixtures extends Fixture
             ["Youtube", "https://www.youtube.com/c/", "fa-brands fa-youtube"]
         ];
 
-        foreach($models as $model) {
+        foreach ($models as $model) {
             $newModel = new Model();
             $newModel->setName($model[0]);
             $newModel->setUrl($model[1]);
@@ -54,36 +43,28 @@ class AppFixtures extends Fixture
             $manager->persist($newModel);
         }
 
-        // articles / tags
-        $nbArticle = 50;
-        for ($i = 0; $i < $nbArticle; $i++) {
-            // article : content
-            $loremGenerator = new Generator;
-            $lorem = $loremGenerator->getRandomWords(250);
-            $lorem = implode(" ", $lorem);
+        // Admin user
+        $user = new User();
+        $password = $this->hasher->hashPassword($user, 'password');
+        $user
+            ->setEmail("hello@nicolas-deleforge.fr")
+            ->setPassword($password)
+            ->setName("Nicolas")
+            ->setRoles(["ROLE_ADMIN"])
+            ->setIsVerified(1)
+            ->setIsVisible(0);
 
-            $datetime = new DateTime("now");
+        $manager->persist($user);
 
-            // article
-            $article = new Article();
-            $article->setTitle("Article " . $i);
-            $article->setContent($lorem);
-            $article->setAuthor($user);
-            $article->setCreatedAt($datetime);
-            $article->setUpdatedAt($datetime);
+        // Users
+        UserFactory::createMany(15);
 
-            // tag
-            $tagGenerator = new Generator;
-            $randomTag = $tagGenerator->getRandomWords(1);
-            $tag = new Tag();
-            $tag->setName($randomTag[0]); 
-            $manager->persist($tag);
+        // Tags
+        TagFactory::createMany(30);
 
-            $article->addTag($tag);
-
-            $manager->persist($article);
-        }
-
+        // Articles
+        ArticleFactory::createMany(12);
+        
         $manager->flush();
     }
 }
