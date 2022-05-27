@@ -11,11 +11,19 @@ use App\Factory\UserFactory;
 use App\Factory\TagFactory;
 use App\Repository\ArticleRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-class AppFixtures extends Fixture
+class AppFixtures extends Fixture implements DependentFixtureInterface
 {
+    public function getDependencies()
+    {
+        return [
+            TagFactory::class,
+        ];
+    }
+    
     public function __construct(UserPasswordHasherInterface $hasher)
     {
         $this->hasher = $hasher;
