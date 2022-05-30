@@ -1,0 +1,8 @@
+# Custom error message for register
+"There is already an account with this email." : "There is already an account with this email."
+"There is already an account with this name." : "There is already an account with this name."
+"The password fields must match." : "The password fields must match."
+"Your password does not respect the asked standards." : "Your password does not respect the asked standards."
+
+# Custom error message for readme
+"Your readme already contains this model." : "Your readme already contains this model."

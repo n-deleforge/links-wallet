@@ -15,7 +15,7 @@
 		<div class="bg-light p-3 mt-3">
 			<h1 class="h3 mb-3 font-weight-normal">{{ 'settings.readme.personalization.bio.title'|trans }}</h1>
 
-			<label for="bioTextarea" class="form-label">Biographie (<small data-controller="bio"></small>)</label>
+			<label for="bioTextarea" class="form-label">{{ 'settings.readme.personalization.bio.input'|trans }} (<small data-controller="bio"></small>)</label>
 			{{ form_widget(settingsForm.bio, { 
 				'id' : 'bioTextarea', 
 			}) }}

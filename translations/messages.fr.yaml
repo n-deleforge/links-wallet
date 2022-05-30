@@ -59,6 +59,12 @@ pricing:
 # Blog
 blog:
   title: "Blog"
+  readArticle: "Lire l'article"
+
+# Help
+help:
+  title: "Aide"
+  noHelp: "Ce contenu n'est pas accessible pour le moment."
 
 # Profile
 view:
@@ -126,7 +132,7 @@ settings:
       input: "Nouveau courriel"
       help: "Votre courriel doit être valide, il sera utilisé en cas de problème de connexion."
       success: "Votre courriel a été mis à jour."
-      notVerified: "Vous ne pouvez pas modifier votre courriel tant que ce dernier n'est pas valide"
+      notVerified: "Vous ne pouvez pas modifier votre courriel tant que ce dernier n'est pas valide."
 
     password:
       title: "Modifier mot de passe"
@@ -153,7 +159,7 @@ settings:
         username: "Nom d'utilisateur"
         usernameHelp: "Nom d'utilisateur sur l'application choisie."
         model: "Modèle"
-        modelHelp : "Modèle d'application à ajouter"
+        modelHelp : "Modèle d'application à ajouter."
 
       add:
         title: "Ajouter un modèle"
@@ -162,7 +168,7 @@ settings:
         submit: "Ajouter"
 
       update:
-        title: "Modifier un modèle existant"
+        title: "Modifier un modèle"
         success: "Le modèle a été modifié."
         submit: "Mettre à jour"
 

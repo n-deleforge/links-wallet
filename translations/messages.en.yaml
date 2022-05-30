@@ -1,0 +1,213 @@
+# General
+main:
+  add: "Add"
+  update: "Update"
+  back: "Back"
+  delete: "Delete"
+  error: "An error has occured"
+
+# Navbar
+navbar:
+  home: "Home"
+  blog: "Blog"
+  pricing: "Pricing"
+  help: "Help"
+  login: "Log in"
+  signup: "Sign up"
+  logout: "Logout"
+  settings: "Settings"
+  admin: "Admin panel"
+
+# Footer
+footer:
+  copyright: "© 2022 Copyright"
+
+# Homepage
+homepage:
+  title: "Welcome on "
+
+# Pricing
+pricing:
+  title: "An offer for everyone."
+  subtitle: "Choose according to your needs!"
+
+  free:
+    title: "Free"
+    price: "Free for ever"
+    button: "Join for free"
+    text: "The free offer allows you to create your profile and share it with everyone. You can add all the links you want."
+
+  starter:
+    title: "Starter"
+    price: "2€ / month"
+    button: "Get the starter pack"
+    text: "The Starter offer allows, in addition to the previous tier, to personalize your profile with a short biography and a profile picture."
+
+  premium:
+    title: "Premium"
+    price: "5€ / month"
+    button: "Get the premium pack"
+    text: "The Premium offer allows, in addition to the previous two tier, to modify the structure and style of your profile according to established templates."
+
+  details:
+    unlimitedLinks: "Unlimited links"
+    sharing: "Easy sharing"
+    bio: "Biography"
+    avatar: "Illustration image"
+    advancedPersonalization: "Advanced personalization"
+
+# Blog
+blog:
+  title: "Blog"
+  readArticle: "Read the article"
+
+# Help
+help:
+  title: "Help"
+  noHelp: "This content is not available for now."
+
+# Profile
+view:
+  notVisible: "The user's profile is not visible."
+  alwaysVisible: "Your profile is always visible and accessible by yourself, even if you have set it to not visible."
+  doNotExist: "Sorry, this user does not exist."
+
+# Login
+login:
+  title: "Log in"
+  email: "Email"
+  password: "Password"
+  rememberMe: "Remember me ?"
+  loginButton: "Login"
+  help: "Check this box if you want to stay logged in after leaving the application."
+
+# Register
+register:
+  title: "Sign up"
+  email: "Email"
+  emailHelp: "Your email must be valid, you will have to confirm your registration with a link sent by email."
+  name: "Username"
+  nameHelp: "Your username will be used for posting and sharing your profile."
+  password: "Password"
+  passwordHelp: "Your password must be at least 8 characters long, including one lower case, one upper case, one number and one special character."
+  confirm: "Password confirmation"
+  registerButton: "Sign up"
+
+# Custom error message for login
+"Invalid credentials." : "Incorrect email or password."
+"Invalid CSRF token." : "An error has occurred, please try again."
+
+# Email
+email:
+  title: "Welcome"
+  confirm: "Please validate your account by clicking on the following link : "
+  link: "validate"
+  secondLink: "If the link does not work, you can copy and paste the address directly into the address bar of your browser : "
+  expire: "This link will expire in "
+  success: "Your account is validated."
+  incorrect: "An error occurred while verifying your account."
+  notVerified: "Please check your email, you must validate your account before you can use the application."
+  resend: "Resend a verification email"
+
+# Settings
+settings:
+  title: "Settings"
+
+  # Account
+  account:
+    title: "Manage my account"
+    updateName: "Change username"
+    updateEmail: "Change email"
+    updatePassword: "Change password"
+
+    name:
+      title: "Modify username"
+      input: "New username"
+      help: "Your username will be used for posting and sharing your profile."
+      success: "Username updated."
+      notVerified: "You cannot change your username until your email is valid."
+
+    email:
+      title: "Modify email"
+      input: "New email"
+      help: "Your email must be valid, it will be used in case of connection problems."
+      success: "Email updated."
+      notVerified: "You cannot change your email until your email is valid."
+
+    password:
+      title: "Modify password"
+      input: "New password"
+      help: "Your password must be at least 8 characters long including one lowercase, one uppercase, one number and one special character."
+      confirm: "Confirmation of the new password"
+      success: "Password updated."
+      notVerified: "You cannot change your password until your email is valid."
+
+# Readme
+  readme:
+    title: "Manage my profile"
+    seeProfile: "View my profile"
+
+    model:
+      title: "Manage my models"
+      noModels: "You don't have any models at the moment."
+      buttonAdd: "Add a model"
+      tableModel: "Model"
+      tableUsername: "Username"
+      tableActions: "Actions"
+
+      form:
+        username: "Username"
+        usernameHelp: "Username on the selected application."
+        model: "Model"
+        modelHelp : "Application template to add."
+
+      add:
+        title: "Add a model"
+        success: "New model added."
+        notVerified: "You cannot add a template until your email is valid."
+        submit: "Add"
+
+      update:
+        title: "Modify a model"
+        success: "Model updated."
+        submit: "Update"
+
+      delete:
+        error: "An error has occured."
+        success: "A movel has been deleted."
+
+    personalization:
+      title: "Additional parameters"
+      success: "Your settings have been updated."
+
+      bio:
+        title: "Update your biography"
+        input: "Biography"
+        help: "A short text to introduce yourself, which will be located at the top of your profile."
+        
+      visibility:
+        title: "Profil visibility"
+        input: "Make your profile visible?"
+        help: "By checking this box, you make your profile public for everyone. By unchecking this box, your profile will only be accessible to yourself."
+
+      avatar:
+        title: "Profile image"
+        input: "Image"
+        help: "The chosen image cannot be larger than 2MB and must be in PNG or JPG format."
+        delete: "Delete the current image"
+        deleted: "Image has been deleted."
+
+# Admin
+admin:
+  title: "Panneau d'administation"
+  content: "Bienvenue sur le panneau d'adminstation. Sur cette interface, il est possible de modifier les données des utilisateurs, des modèles et bien plus encore."
+
+  navbar:
+    userTitle: "Utilisateurs"
+    user: "Liste des utilisateurs"
+    linkUser: "Liens des utilisateurs"
+    modelTitle: "Modèles"
+    model:  "Liste des modèles"
+    blogTitle: "Blog"
+    article: "Liste des articles"
+    tag : "Liste des tags"

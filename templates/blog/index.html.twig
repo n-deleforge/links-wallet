@@ -14,7 +14,7 @@
 							<p class="text-justify">{{ article.content|slice(0, 500) }}...</p>
 
 							<div class="d-flex justify-content-end">
-								<a href="{{ path('app_blog_article', {slug: article.slug}) }}" class="btn btn-primary">Lire la suite</a>
+								<a href="{{ path('app_blog_article', {slug: article.slug}) }}" class="btn btn-primary">{{ 'blog.readArticle'|trans }}</a>
 							</div>
 						</div>
 
