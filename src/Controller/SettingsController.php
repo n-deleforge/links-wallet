@@ -33,7 +33,13 @@ class SettingsController extends AbstractController
     }
 
     /**
-     * @Route("/settings", name="app_settings")
+     * @Route(
+     *     "/{_locale}/settings",
+     *     name="app_settings",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
      */
     public function index(): Response
     {
@@ -41,7 +47,13 @@ class SettingsController extends AbstractController
     }
 
     /**
-     * @Route("/settings/account/name", name="app_settings_update_name")
+     * @Route(
+     *     "/{_locale}/settings/name",
+     *     name="app_settings_update_name",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
      */
     public function updateName(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -69,7 +81,13 @@ class SettingsController extends AbstractController
     }
 
     /**
-     * @Route("/settings/account/email", name="app_settings_update_email")
+     * @Route(
+     *     "/{_locale}/settings/email",
+     *     name="app_settings_update_email",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
      */
     public function updateEmail(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -97,9 +115,15 @@ class SettingsController extends AbstractController
     }
 
     /**
-     * @Route("/settings/account/password", name="app_settings_update_password")
+     * @Route(
+     *     "/{_locale}/settings/password",
+     *     name="app_settings_update_password",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
      */
-    public function updatePassword(Request $request, UserPasswordHasherInterface $userPasswordHasher ,EntityManagerInterface $entityManager): Response
+    public function updatePassword(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = $this->security->getUser();
 
@@ -131,9 +155,14 @@ class SettingsController extends AbstractController
         ]);
     }
 
-
     /**
-     * @Route("/settings/readme/add-model/", name="app_settings_add_model")
+     * @Route(
+     *     "/{_locale}/settings/add-model/",
+     *     name="app_settings_add_model",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
      */
     public function addModel(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -165,7 +194,13 @@ class SettingsController extends AbstractController
     }
 
     /**
-     * @Route("/settings/readme/update-model/{id}", name="app_settings_update_model")
+     * @Route(
+     *     "/{_locale}/settings/update-model/{id}",
+     *     name="app_settings_update_model",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
      */
     public function updateModel(Request $request, ManagerRegistry $doctrine, EntityManagerInterface $entityManager, $id): Response
     {
@@ -178,8 +213,7 @@ class SettingsController extends AbstractController
 
         if ($user->getId() !== $link->getUser()->getId()) {
             $this->addFlash('warning', new TranslatableMessage("main.error"));
-        } 
-        else {
+        } else {
             if ($form->isSubmitted() && $form->isValid()) {
                 $entityManager->persist($link);
                 $entityManager->flush();
@@ -196,7 +230,13 @@ class SettingsController extends AbstractController
     }
 
     /**
-     * @Route("/settings/readme/delete-model/{id}", name="app_settings_delete_model")
+     * @Route(
+     *     "/{_locale}/settings/delete-model/{id}",
+     *     name="app_settings_delete_model",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
      */
     public function deleteModel(ManagerRegistry $doctrine, EntityManagerInterface $entityManager, $id): Response
     {
@@ -206,8 +246,7 @@ class SettingsController extends AbstractController
 
         if ($user->getId() !== $link->getUser()->getId()) {
             $this->addFlash('warning', new TranslatableMessage("main.error"));
-        } 
-        else {
+        } else {
             $entityManager->remove($link);
             $entityManager->flush();
 
@@ -218,7 +257,13 @@ class SettingsController extends AbstractController
     }
 
     /**
-     * @Route("/settings/readme/personalization", name="app_settings_personalization")
+     * @Route(
+     *     "/{_locale}/settings/personalization",
+     *     name="app_settings_personalization",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
      */
     public function updatePersonalization(Request $request, EntityManagerInterface $entityManager, FileUploader $fileUploader): Response
     {

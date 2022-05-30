@@ -13,7 +13,13 @@ use Symfony\Component\Translation\TranslatableMessage;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/", name="app_home")
+     * @Route(
+     *     "/{_locale}/",
+     *     name="app_home",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
      */
     public function home(): Response
     {
@@ -21,7 +27,13 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/pricing", name="app_pricing")
+     * @Route(
+     *     "/{_locale}/princing",
+     *     name="app_pricing",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
      */
     public function pricing(): Response
     {
@@ -29,16 +41,28 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/help", name="app_help")
-     */
+     * @Route(
+     *     "/{_locale}/help",
+     *     name="app_help",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
+     */ 
     public function help(): Response
     {
         return $this->render('default/help.html.twig');
     }
-    
+
     /**
-     * @Route("/@{username}", name="app_view")
-     */
+     * @Route(
+     *     "/{_locale}/@{username}",
+     *     name="app_view",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
+     */ 
     public function view(ManagerRegistry $doctrine, $username): Response
     {
         $repository = $doctrine->getRepository(User::class);

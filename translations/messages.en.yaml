@@ -181,13 +181,13 @@ settings:
       success: "Your settings have been updated."
 
       bio:
-        title: "Update your biography"
+        title: "Edit the biography"
         input: "Biography"
         help: "A short text to introduce yourself, which will be located at the top of your profile."
         
       visibility:
         title: "Profil visibility"
-        input: "Make your profile visible?"
+        input: "Visible?"
         help: "By checking this box, you make your profile public for everyone. By unchecking this box, your profile will only be accessible to yourself."
 
       avatar:

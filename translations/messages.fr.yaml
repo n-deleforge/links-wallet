@@ -181,13 +181,13 @@ settings:
       success: "Vos paramètres ont été mis à jour."
 
       bio:
-        title: "Mettre à jour votre biographie"
+        title: "Éditer la biographie"
         input: "Biographie"
         help: "Un texte court pour vous présenter, qui se situera en haut de votre profil."
         
       visibility:
-        title: "Visibilité de votre profil"
-        input: "Rendre votre profil visible ?"
+        title: "Visibilité du profil"
+        input: "Visible ?"
         help: "En cochant cette case, vous rendez votre profil public pour tout le monde. En décochant cette case, votre profil ne sera accessible qu'à vous-même."
 
       avatar:

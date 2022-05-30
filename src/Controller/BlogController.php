@@ -13,8 +13,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class BlogController extends AbstractController
 {
     /**
-     * @Route("/blog/{page<\d+>}", name="app_blog")
-     */
+     * @Route(
+     *     "/{_locale}/blog/{page<\d+>}",
+     *     name="app_blog",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
+     */ 
     public function blog(ManagerRegistry $doctrine, int $page = 1): Response
     {
         $repository = $doctrine->getRepository(Article::class);
@@ -32,8 +38,14 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog/{slug}", name="app_blog_article")
-     */
+     * @Route(
+     *     "/{_locale}/blog/{slug}}",
+     *     name="app_blog_article",
+     *     requirements={
+     *         "_locale": "en|fr",
+     *     }
+     * )
+     */ 
     public function article(ManagerRegistry $doctrine, $slug)
     {
         $repository = $doctrine->getRepository(Article::class);
