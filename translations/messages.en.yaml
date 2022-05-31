@@ -21,6 +21,7 @@ navbar:
 # Footer
 footer:
   copyright: "© 2022 Copyright"
+  switch: "Passer en Français"
 
 # Homepage
 homepage:

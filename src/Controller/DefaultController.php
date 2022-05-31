@@ -14,11 +14,8 @@ class DefaultController extends AbstractController
 {
     /**
      * @Route(
-     *     "/{_locale}/",
-     *     name="app_home",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/",
+     *     name="app_home"
      * )
      */
     public function home(): Response
@@ -28,11 +25,8 @@ class DefaultController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/princing",
-     *     name="app_pricing",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/princing",
+     *     name="app_pricing"
      * )
      */
     public function pricing(): Response
@@ -42,11 +36,8 @@ class DefaultController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/help",
-     *     name="app_help",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/help",
+     *     name="app_help"
      * )
      */ 
     public function help(): Response
@@ -56,11 +47,8 @@ class DefaultController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/@{username}",
-     *     name="app_view",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/@{username}",
+     *     name="app_view"
      * )
      */ 
     public function view(ManagerRegistry $doctrine, $username): Response

@@ -34,11 +34,8 @@ class SettingsController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/settings",
-     *     name="app_settings",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/settings",
+     *     name="app_settings"
      * )
      */
     public function index(): Response
@@ -48,11 +45,8 @@ class SettingsController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/settings/name",
+     *     "/settings/name",
      *     name="app_settings_update_name",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
      * )
      */
     public function updateName(Request $request, EntityManagerInterface $entityManager): Response
@@ -82,11 +76,8 @@ class SettingsController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/settings/email",
-     *     name="app_settings_update_email",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/settings/email",
+     *     name="app_settings_update_email"
      * )
      */
     public function updateEmail(Request $request, EntityManagerInterface $entityManager): Response
@@ -116,11 +107,8 @@ class SettingsController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/settings/password",
-     *     name="app_settings_update_password",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/settings/password",
+     *     name="app_settings_update_password"
      * )
      */
     public function updatePassword(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
@@ -157,11 +145,8 @@ class SettingsController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/settings/add-model/",
-     *     name="app_settings_add_model",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/settings/add-model/",
+     *     name="app_settings_add_model"
      * )
      */
     public function addModel(Request $request, EntityManagerInterface $entityManager): Response
@@ -195,11 +180,8 @@ class SettingsController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/settings/update-model/{id}",
-     *     name="app_settings_update_model",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/settings/update-model/{id}",
+     *     name="app_settings_update_model"
      * )
      */
     public function updateModel(Request $request, ManagerRegistry $doctrine, EntityManagerInterface $entityManager, $id): Response
@@ -231,11 +213,8 @@ class SettingsController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/settings/delete-model/{id}",
-     *     name="app_settings_delete_model",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/settings/delete-model/{id}",
+     *     name="app_settings_delete_model"
      * )
      */
     public function deleteModel(ManagerRegistry $doctrine, EntityManagerInterface $entityManager, $id): Response
@@ -258,11 +237,8 @@ class SettingsController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/settings/personalization",
-     *     name="app_settings_personalization",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/settings/personalization",
+     *     name="app_settings_personalization"
      * )
      */
     public function updatePersonalization(Request $request, EntityManagerInterface $entityManager, FileUploader $fileUploader): Response
@@ -297,7 +273,10 @@ class SettingsController extends AbstractController
     }
 
     /**
-     * @Route("/settings/readme/personalization/delete-avatar", name="app_settings_personalization_delete_avatar")
+     * @Route(
+     *      "/settings/personalization/delete-avatar",
+     *      name="app_settings_personalization_delete_avatar"
+     * )
      */
     public function deleteAvatar(EntityManagerInterface $entityManager): Response
     {

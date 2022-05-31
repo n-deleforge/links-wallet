@@ -14,11 +14,8 @@ class BlogController extends AbstractController
 {
     /**
      * @Route(
-     *     "/{_locale}/blog/{page<\d+>}",
-     *     name="app_blog",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/blog/{page<\d+>}",
+     *     name="app_blog"
      * )
      */ 
     public function blog(ManagerRegistry $doctrine, int $page = 1): Response
@@ -39,11 +36,8 @@ class BlogController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/blog/{slug}}",
-     *     name="app_blog_article",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/blog/{slug}",
+     *     name="app_blog_article"
      * )
      */ 
     public function article(ManagerRegistry $doctrine, $slug)

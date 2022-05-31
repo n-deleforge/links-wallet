@@ -33,11 +33,8 @@ class RegistrationController extends AbstractController
 
     /**
      * @Route(
-     *     "/{_locale}/register",
-     *     name="app_register",
-     *     requirements={
-     *         "_locale": "en|fr",
-     *     }
+     *     "/register",
+     *     name="app_register"
      * )
      */ 
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, FormLoginAuthenticator $formLoginAuthenticator, EntityManagerInterface $entityManager): Response
@@ -84,7 +81,10 @@ class RegistrationController extends AbstractController
     }
 
     /**
-     * @Route("/verify/email", name="app_register_verifyEmail")
+     * @Route(
+     *      "/verify/email",
+     *      name="app_register_verifyEmail"
+     * )
      */
     public function verifyUserEmail(Request $request, TranslatorInterface $translator): Response
     {
@@ -104,7 +104,10 @@ class RegistrationController extends AbstractController
     }
 
     /**
-     * @Route("/verify/resend", name="app_register_resendEmail")
+     * @Route(
+     *      "/verify/resend",
+     *      name="app_register_resendEmail"
+     * )
      */
     public function resendEmail()
     {
