@@ -1,9 +1,5 @@
 # Links Wallet
 
-<p align="center">
-A LinkTree clone made with Symfony.  
-</div>
-
 <div align="center">
 
 [![GitHub license](https://img.shields.io/github/license/n-deleforge/links-wallet?style=for-the-badge)](https://github.com/n-deleforge/links-wallet/blob/main/LICENCE)
@@ -12,6 +8,8 @@ A LinkTree clone made with Symfony.
 [![GitHub stars](https://img.shields.io/github/stars/n-deleforge/links-wallet?style=for-the-badge)](https://github.com/n-deleforge/links-wallet/stargazers)
 [![Paypal](https://img.shields.io/badge/DONATE-PAYPAL.ME-lightgrey?style=for-the-badge)](https://www.paypal.com/paypalme/nicolasdeleforge)
 
+  
+**A LinkTree clone made with Symfony.**
 </div>
 
 
