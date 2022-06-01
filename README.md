@@ -16,5 +16,4 @@ A LinkTree clone made with Symfony.
 
 
 ## What is it ?
-This is a personal exercice to progress with Symphony. It is currently ongoing and not made for productive environnement.  
-Anyway, it is possible to try in local developpement environnement.
+This is a personal exercice to progress with Symphony. It is currently ongoing and not made for production environnement. 
