@@ -104,21 +104,8 @@
 
 	<footer class="mt-auto">
 		<div class="bg-dark text-light text-center p-2">
-			{% set locale = app.request.locale %}
-			{% set route = app.request.get('_route') %}
-
-			{{ 'footer.copyright'|trans }} -
-			
-			<a 
-				class="text-white text-decoration-none" 
-				href=
-				{% if locale == 'fr' %}
-					'{{ path(route, {_locale: 'en'}) }}'
-				{% elseif locale == 'en' %}
-					'{{ path(route, {_locale: 'fr'}) }}'
-				{% endif %}
-				><i class="fa-solid fa-repeat"></i> {{ 'footer.switch'|trans }}</a>
-  		</div>
+			{{ 'footer.copyright'|trans }}
+		</div>
 	</footer>
 
 	</body>

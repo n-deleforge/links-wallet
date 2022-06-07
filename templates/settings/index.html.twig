@@ -54,7 +54,24 @@
 					</tbody>
 				</table>
 			{% endif %}
-
 		</div>
+
+		<div class="bg-light p-3 mt-3">
+			<h2>{{ "settings.interface.title"|trans }}</h2>
+			<div class="p-2">
+				<a 
+					class="btn btn-primary" 
+					href=
+					{% if locale == 'fr' %}
+						'{{ path(route, {_locale: 'en'}) }}'
+					{% elseif locale == 'en' %}
+						'{{ path(route, {_locale: 'fr'}) }}'
+					{% endif %}
+					> {{ 'settings.interface.switch'|trans }}
+				</a>
+			</div>
+		</div>
+
+
 	</div>
 {% endblock %}

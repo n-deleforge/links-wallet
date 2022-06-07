@@ -21,7 +21,6 @@ navbar:
 # Footer
 footer:
   copyright: "© 2022 Copyright"
-  switch: "Passer en Français"
 
 # Homepage
 homepage:
@@ -197,6 +196,11 @@ settings:
         help: "The chosen image cannot be larger than 2MB and must be in PNG or JPG format."
         delete: "Delete the current image"
         deleted: "Image has been deleted."
+
+# Interface
+  interface:
+    title: "Manage my interface"
+    switch: "Passer en Français"
 
 # Admin
 admin:

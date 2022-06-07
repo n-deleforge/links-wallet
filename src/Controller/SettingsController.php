@@ -38,9 +38,15 @@ class SettingsController extends AbstractController
      *     name="app_settings"
      * )
      */
-    public function index(): Response
+    public function index(Request $request): Response
     {
-        return $this->render('settings/index.html.twig');
+        $locale = $request->getLocale();
+        $route = $request->attributes->get('_route');
+
+        return $this->render('settings/index.html.twig',[
+            'locale' => $locale,
+            'route' => $route
+        ]);
     }
 
     /**
